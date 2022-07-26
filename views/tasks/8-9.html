@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/style/main_style.css">
+    <link rel="stylesheet" type="text/css" href="/style/header.css">
+    <link rel="stylesheet" type="text/css" href="/style/code.css">
+    <title>Задача 8-9</title>
+</head>
+
+<body>
+
+    <div class="page_start"></div>
+
+    <div class="page">
+        <script>
+            'use strict';
+            let login = prompt("Введите логин", "Админ");
+
+            if (login === "" || login === null) {
+                alert("Отменено");
+            } else if (login === "Админ") {
+
+                let password = prompt("Введите пароль", "Я главный");
+
+                if (password === "" || password === null) {
+                    alert("Отменено");
+                } else if (password === "Я главный") {
+                    alert("Здравствуйте!");
+                } else {
+                    alert("Неверный пароль");
+                }
+            } else {
+                alert("Я вас не знаю");
+            }
+
+        </script>
+    </div>
+
+    <div class="page_end"></div>
+    <script src="/scripts/source_code_replacer.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>

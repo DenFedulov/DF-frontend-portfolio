@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traversal</title>
+    <link rel="stylesheet" type="text/css" href="/style/main_style.css">
+    <link rel="stylesheet" type="text/css" href="/style/code.css">
+    <link rel="stylesheet" type="text/css" href="/style/header.css">
+    <link rel="stylesheet" type="text/css" href="/views/js/style/traversal.css">
+</head>
+
+<body>
+    <div class="page_start"></div>
+    <div class="page">
+        <div class="gparent" id="gparent-id">
+            <div class="parent">
+                <div class="child" id="child1"></div>
+                <div class="child"></div>
+            </div>
+            <div class="parent" id="second-parent">
+                <div class="child"></div>
+                <div class="child"></div>
+            </div>
+        </div>
+        <script src="/views/js/scripts/traversal.js"></script>
+    </div>
+    <div class="page_end"></div>
+
+    <script src="/scripts/source_code_replacer.js"></script>
+    <script>
+        replaceCodeSection("/views/js/style/traversal.css", "css_code");
+        replaceCodeSection("/views/js/scripts/traversal.js", "js_code");
+    </script>
+</body>
+
+</html>

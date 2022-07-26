@@ -1,0 +1,28 @@
+img.sidebar_toggle_button,
+.to_top.sidebar_toggle_off,
+.to_top,
+img.sidebar_toggle_button.off {
+    transition: margin-left 0.5s;
+}
+
+.sidebar {
+    transition: width 0.5s, min-width 0.5s, max-width 0.5s;
+}
+
+.sidebar.sidebar_toggle_off {
+    transition: width 0.5s;
+}
+
+.app {
+    transition: width 0.5s, margin-left 0.5s;
+}
+
+img.sidebar_toggle_button,
+.to_top.sidebar_toggle_off,
+.to_top,
+img.sidebar_toggle_button.off,
+.sidebar,
+.sidebar.sidebar_toggle_off,
+.app {
+    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+}

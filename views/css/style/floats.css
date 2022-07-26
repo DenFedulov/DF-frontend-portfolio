@@ -1,0 +1,65 @@
+.style1{
+    float: left;
+    border: 3px solid white;
+    border-radius: 15px;
+    text-align: center;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.style1:nth-child(1){
+    color: green;
+}
+
+.style1 h2{
+    border: 1px solid rgb(126, 0, 0);
+    font-family: 'Times New Roman', Times, serif;
+    margin: 10px auto 0 auto;
+    width: fit-content;
+}
+
+.style2{
+    float: left;
+    border: 3px solid white;
+    border-radius: 15px;
+    text-align: center;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.style2 h2{
+    border: 1px solid rgb(21, 126, 0);
+    font-family: 'Times New Roman', Times, serif;
+    margin: 10px auto 0 auto;
+    width: fit-content;
+}
+
+section{
+    column-count: 3;
+    column-gap: 10px;
+    column-rule: 2px solid white;
+}
+
+.top{
+    margin: 10px 0;
+}
+
+h2{
+    margin: 5px;
+}
+
+.clr{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.clr::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.endpage{
+    margin-top: 200px;
+}

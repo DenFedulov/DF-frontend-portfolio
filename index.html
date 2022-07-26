@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/style/main_style.css">
+    <link rel="stylesheet" type="text/css" href="/style/header.css">
+    <link rel="stylesheet" type="text/css" href="/style/to_top_button.css">
+    <link rel="stylesheet" type="text/css" href="/style/animations.css">
+    <link rel="stylesheet" type="text/css" href="/style/links_style.css">
+    <link rel="stylesheet" type="text/css" href="/style/home.css">
+    <title>Denis Fedulov frontend pratice</title>
+</head>
+
+<body>
+    <div class="page">
+        <div class="header">
+            <ul>
+                <a href="/"><img src="media/approved_icon.png" alt="Home" title="Home"></a>
+                <li><a onclick="load('sidebar','/views/html/');">HTML</a></li>
+                <li><a onclick="load('sidebar','/views/css/');">CSS</a></li>
+                <li><a onclick="load('sidebar','/views/js/');">JavaScript</a></li>
+                <li><a onclick="load('app','/views/templates.html');">Templates</a>
+                    <a class="directLink" href="/views/templates.html" target="_parent">></a>
+                </li>
+                <li><a onclick="load('sidebar','/views/learnJsTasks.html');"> Completed learn.javascript.ru
+                        tasks (WIP)</a>
+                    <a class="directLink" href="/views/learnJsTasks.html" target="_parent">></a>
+                </li>
+            </ul>
+            <img class="header_scroll" src="/media/bookmark.png" alt="Toggle header" title="Toggle header"
+                onclick="windowScrollToggle();">
+            <img class="lock_scroll on" src="/media/lock.png" alt="Unlock/Lock header on scroll"
+                title="Unlock/Lock header on scroll" onclick="lock_scroll_toggle();">
+        </div>
+        <div class="wrapper">
+            <img onclick="toggleSidebar();" src="media/sidebar_toggle_button_left.png" class="sidebar_toggle_button"
+                alt="Toggle sidebar" title="Toggle sidebar"></img>
+
+            <div class="to_top" onclick="scrollToTop()">
+                <p>
+                    ↑<br>
+                    Scroll to top
+                </p>
+            </div>
+
+            <div class="sidebar">
+                <iframe src="/views/html/" class="sidebar_frame"></iframe>
+            </div>
+
+            <div class="app">
+                <iframe src="/views/intro/" class="app_frame"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="/scripts/app.js"></script>
+    <script src="/scripts/home_page_dformat.js"></script>
+</body>
+
+</html>

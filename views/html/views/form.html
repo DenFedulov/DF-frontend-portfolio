@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="keywords" content="HTML, CSS" />
+  <meta name="description" content="" />
+  <title>Form example</title>
+  <link rel="stylesheet" type="text/css" href="/style/main_style.css">
+  <link rel="stylesheet" type="text/css" href="/style/header.css">
+  <link rel="stylesheet" type="text/css" href="/style/code.css">
+</head>
+
+<body>
+  <div class="page_start"></div>
+  <div class="page">
+    <div class="container">
+      <div class="heading">
+        <h1>FILL THE FORM</h1>
+        <p>DOGS! <em>&lt;HTML&gt;&copy;</em></p>
+        <img src="/media/dog.gif" alt="Dog gif" />
+      </div>
+      <div id="banner">
+        <img src="/media/dog.jpg" alt="Banner" />
+      </div>
+      <div class="form1">
+        <form action="" method="get" autocomplete="off" oninput="ph.value=parseInt(phone.value)">
+          <fieldset>
+            <legend>DOG FORM</legend>
+            <label for="dl3">DO YOU LOVE DOGS?:</label><br />
+            <input id="dl1" name="dog love" type="radio" value="yes" autofocus />
+            <label for="dl1">YES</label><br />
+            <input id="dl2" name="dog love" type="radio" value="no" />
+            <label for="dl2">NO</label><br />
+            <select name="dog love" id="dl3" size="2">
+              <option value="yes">YES</option>
+              <option value="no">NO</option>
+            </select><br /><br />
+            <label for="fc">YOUR FAVORITE DOG COLOR?</label><br />
+            <input type="color" name="favcolor" id="fc" /><br /><br />
+            <label for="dc">HOW MANY DOGS DO YOU HAVE?:</label><br />
+            <input required id="dc" name="dog count" type="number" /><br /><br />
+            <label for="fd">WHEN DID YOU GET YOUR FIRST DOG?</label><br />
+            <input type="date" name="firstdog" id="fd" /><br /><br />
+            <label for="email">ENTER YOUR EMAIL</label><br />
+            <input type="email" name="email" id="email" /><br /><br />
+            <label for="credit">ATTACH PHOTOS OF DOGS</label><br />
+            <input type="file" name="credit" id="credit" multiple /><br /><br />
+            <label for="phone">RATE YOUR EXPERIENCE</label><br />
+            <input type="range" name="phone" id="phone" min="0" max="10" />
+            <output name="ph"></output><br /><br />
+            <button type="submit">SUBMIT</button>
+            <input type="submit" name="submit" value="SUBMIT" />
+            <input type="reset" value="RESET" />
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <div class="endpage"></div>
+  </div>
+  <div class="page_end"></div>
+
+  <script src="/scripts/source_code_replacer.js"></script>
+  <script>
+  </script>
+</body>
+
+</html>

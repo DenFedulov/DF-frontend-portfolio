@@ -1,0 +1,36 @@
+a {
+    color: #b8fdff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:visited {
+    color: #b8c5ff;
+}
+
+a:hover {
+    color: #00ffff;
+}
+
+.header a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.header a img {
+    cursor: inherit;
+}
+
+.homeheader a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #fff;
+}
+
+a.directLink {
+    color: #406cff;
+}
+
+a.directLink:visited {
+    color: #406cff;
+}
