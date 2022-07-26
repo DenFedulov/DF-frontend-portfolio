@@ -15,7 +15,27 @@
     <div class="page_start"></div>
 
     <div class="page">
-        <p>birthday заглавными буквами, age в нижнем регистре</p>
+        <script>
+
+            function calcPrimes(interval) {
+                let primeArray = [];
+
+                for (let i = 2; i < interval; i++) {
+                    for (let j = 2; j <= i; j++) {
+
+                        if (i == j) {
+                            primeArray.push(i);
+                        } else if (i % j == 0) {
+                            break;
+                        }
+                    }
+
+                }
+                return primeArray;
+            }
+
+            alert(calcPrimes(50));
+        </script>
     </div>
 
     <div class="page_end"></div>
