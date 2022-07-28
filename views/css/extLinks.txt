@@ -1,0 +1,11 @@
+https://www.w3schools.com/cssref/default.asp CSS reference
+https://www.w3schools.com/cssref/pr_class_float.asp CSS float Property
+https://www.w3schools.com/cssref/pr_class_display.asp CSS display Property
+https://www.w3schools.com/cssref/pr_class_position.asp CSS position Property
+https://youtu.be/M7m_3b1Jjzc CSS Grid Tutorial
+https://youtu.be/fYq5PXgSsbE Flexbox Tutorial
+https://www.w3schools.com/cssref/css3_pr_transition.asp CSS transition Property 
+https://www.w3schools.com/css/css3_gradients.asp CSS Gradients
+https://www.w3schools.com/cssref/pr_class_cursor.asp CSS cursor Property
+https://www.w3schools.com/cssref/css3_pr_mediaquery.asp CSS @media Rule
+https://youtu.be/lAOkx2yZESY Responsive design tutorial

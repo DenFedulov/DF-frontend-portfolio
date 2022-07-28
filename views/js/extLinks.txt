@@ -1,0 +1,16 @@
+https://262.ecma-international.org/12.0/ ECMAScript® 2021 Language Specification
+https://www.w3schools.com/jsref/default.asp JavaScript reference
+https://learn.javascript.ru/ JavaScript reference 2
+https://learn.javascript.ru/shadow-dom Shadow DOM
+https://youtu.be/v7rSSy8CaYE DOM Traversal
+https://www.w3schools.com/jsref/dom_obj_all.asp HTML DOM Elements
+https://learn.javascript.ru/fetch Fetch
+https://learn.javascript.ru/arrow-functions-basics Arrow functions
+https://learn.javascript.ru/async Promises/Async/await
+https://youtube.com/playlist?list=PLoYCgNOIyGABs-wDaaxChu82q_xQgUb4f Modular JavaScript
+https://www.w3schools.com/js/js_hoisting.asp Hoisting
+https://www.w3schools.com/js/js_scope.asp Scope
+https://www.w3schools.com/js/js_strict.asp Use Strict
+https://learn.javascript.ru/bubbling-and-capturing Event Bubbling
+https://www.w3schools.com/js/js_ajax_intro.asp AJAX Introduction
+https://www.w3schools.com/js/js_object_prototypes.asp Object Prototypes

@@ -41,18 +41,18 @@ async function placeHTMLSourceCode() {
 function addTitle() {
 
     let taskName = "Задача " + document.location.pathname.split('/').pop().match('.*(?=\\.)')[0];
-    const head = document.querySelector('head');
-    const page = document.querySelector('.page');
+    if (taskName.match(/\d+-\d+/)) {
+        const head = document.querySelector('head');
+        const page = document.querySelector('.page');
 
-    console.log(head);
+        const h1 = document.createElement('h1');
+        const title = document.createElement('title');
+        h1.innerText = taskName;
+        title.innerText = taskName;
 
-    const h1 = document.createElement('h1');
-    const title = document.createElement('title');
-    h1.innerText = taskName;
-    title.innerText = taskName;
-
-    head.append(title);
-    page.prepend(h1);
+        head.append(title);
+        page.prepend(h1);
+    }
 }
 
 function toggleSection(className) { // Used in /views/code_sections.html 

@@ -1,0 +1,2 @@
+/views/html/views/basic.html Basic
+/views/html/views/form.html Form
