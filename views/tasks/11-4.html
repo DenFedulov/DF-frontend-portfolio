@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/style/main_style.css">
+    <link rel="stylesheet" type="text/css" href="/style/header.css">
+    <link rel="stylesheet" type="text/css" href="/style/code.css">
+</head>
+
+<body>
+
+    <div class="page_start"></div>
+
+    <div class="page">
+        <script>
+            let x = +prompt("Введите число");
+            let n = +prompt("Введите степень");
+
+            pow(x, n);
+
+            function pow(x, n) {
+                if (n < 1 || Number.isInteger(n) == false) {
+                    return alert('Неправильная степень');
+                }
+                let sum = x;
+                for (let i = 1; i < n; i++) {
+                    sum *= x;
+                }
+                alert(sum);
+                return sum;
+            }
+        </script>
+    </div>
+
+    <div class="page_end"></div>
+    <script src="/scripts/source_code_replacer.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>
