@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/style/main_style.css">
+    <link rel="stylesheet" type="text/css" href="/style/header.css">
+    <link rel="stylesheet" type="text/css" href="/style/code.css">
+</head>
+
+<body>
+
+    <div class="page_start"></div>
+
+    <div class="page">
+        <script>
+            let calculator = {
+                readNumbers: [],
+
+                read(a, b) {
+                    if (a && b) {
+                        this.readNumbers.push(a);
+                        this.readNumbers.push(b);
+                    }
+                },
+
+                sum() {
+                    let sum = 0;
+
+                    for (const index in this.readNumbers) {
+                        if (Object.hasOwnProperty.call(this.readNumbers, index)) {
+                            const element = this.readNumbers[index];
+                            sum += element;
+                        }
+                    }
+                    return sum;
+                },
+
+                mul() {
+                    if (this.readNumbers.length <= 0) return 0;
+
+                    let mul = 1;
+
+                    for (const index in this.readNumbers) {
+                        if (Object.hasOwnProperty.call(this.readNumbers, index)) {
+                            const element = this.readNumbers[index];
+                            mul *= element;
+                        }
+                    }
+                    return mul;
+                }
+            };
+
+            calculator.read(3, 5);
+            alert(calculator.sum());
+            alert(calculator.mul());
+        </script>
+    </div>
+
+    <div class="page_end"></div>
+    <script src="/scripts/source_code_replacer.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>

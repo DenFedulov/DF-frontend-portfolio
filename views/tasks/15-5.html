@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/style/main_style.css">
+    <link rel="stylesheet" type="text/css" href="/style/header.css">
+    <link rel="stylesheet" type="text/css" href="/style/code.css">
+</head>
+
+<body>
+
+    <div class="page_start"></div>
+
+    <div class="page">
+        <script>
+            // до вызова функции
+            let menu = {
+                width: 200,
+                height: 300,
+                title: "My menu"
+            };
+
+            console.log(menu);
+
+            multiplyNumeric(menu);
+
+            console.log(menu);
+            // после вызова функции
+            menu = {
+                width: 400,
+                height: 600,
+                title: "My menu"
+            };
+
+            function multiplyNumeric(obj) {
+                for (let key in obj) {
+                    if (typeof obj[key] == 'number') {
+                        obj[key] *= 2;
+                    }
+                }
+            }
+        </script>
+    </div>
+
+    <div class="page_end"></div>
+    <script src="/scripts/source_code_replacer.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>
