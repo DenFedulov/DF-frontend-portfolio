@@ -1,3 +1,33 @@
+.to_top {
+    z-index: 1;
+    font-size: 12px;
+    background-color: #61719c;
+    border: 2px solid #7889b6;
+    position: fixed;
+    left: 55%;
+    height: 30px;
+    width: 40px;
+    opacity: 0.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.to_top:hover {
+    opacity: 1;
+}
+
+.to_top p {
+    text-align: center;
+    margin: 0;
+}
+
+.to_top a {
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+}
+
 .header {
     background-color: #2c356b;
     top: 0;

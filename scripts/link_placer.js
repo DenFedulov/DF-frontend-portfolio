@@ -1,6 +1,6 @@
 'use strict';
 
-class linkPlacer {
+class LinkPlacer {
 
     constructor() {
         this.intLinks = [];
@@ -83,4 +83,4 @@ class linkPlacer {
 
 }
 
-new linkPlacer().init();
+new LinkPlacer().init();

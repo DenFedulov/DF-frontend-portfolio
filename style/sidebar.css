@@ -2,6 +2,18 @@ body {
     background-color: rgb(63, 81, 129);
 }
 
+.filter {
+    width: 100%;
+}
+
+.filter input {
+    width: calc(100% - 24px);
+    margin: 8px;
+    margin-bottom: 0;
+    padding: 2px;
+    border: 2px;
+}
+
 .page {
     padding: 0.5em;
     height: 100%;
@@ -44,4 +56,9 @@ body {
     border-radius: 6px;
     padding: 0.5em;
     margin-bottom: 1em;
+    display: block;
+}
+
+.page .section.off {
+    display: none;
 }

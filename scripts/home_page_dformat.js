@@ -5,7 +5,6 @@ const sidebar = document.querySelector('.sidebar');
 const sidebar_toggle_button = document.querySelector('.sidebar_toggle_button');
 const wrapper = document.querySelector('.wrapper');
 const header = document.querySelector('.header');
-const to_top = document.querySelector('.to_top');
 const lock_scroll = document.querySelector('.lock_scroll');
 
 let enable_scroll_format = false;
@@ -50,18 +49,12 @@ function toggleSidebar(enable_sidebar) {
     sidebar_toggle_button.classList.toggle("off", enable_sidebar);
 
     app.classList.toggle("sidebar_toggle_off", enable_sidebar);
-
-    to_top.classList.toggle("sidebar_toggle_off", enable_sidebar);
 }
 
 function updateWrapperHeights() {
     let height = window.innerHeight - (header.offsetHeight - window.scrollY) + "px";
     sidebar.style.height = height
     app.style.height = height;
-}
-
-function scrollToTop() {
-    app_frame.contentWindow.scrollTo(0, 0);
 }
 
 function windowScrollToggle() {
