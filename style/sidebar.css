@@ -4,6 +4,7 @@ body {
 
 .filter {
     width: 100%;
+    text-align: center;
 }
 
 .filter input {
@@ -12,6 +13,12 @@ body {
     margin-bottom: 0;
     padding: 2px;
     border: 2px;
+}
+
+.filter button {
+    margin: 8px;
+    margin-bottom: 0;
+    width: 40%;
 }
 
 .page {
@@ -60,5 +67,9 @@ body {
 }
 
 .page .section.off {
+    display: none;
+}
+
+.page .section li.off {
     display: none;
 }
