@@ -17,27 +17,18 @@
     <div class="page">
         <script>
             'use strict';
-            let salaries = {
-                John: 100,
-                Ann: 160,
-                Pete: 130
-            };
-
-            alert(salariesSum(salaries));
-
-            salaries = {};
-
-            alert(salariesSum(salaries));
-
-            function salariesSum(obj) {
-                let sum = 0;
-
-                for (let key in obj) {
-                    sum += obj[key];
-                }
-
-                return sum;
+            let o = {};
+            function A() {
+                return o;
             }
+            function B() {
+                return o;
+            }
+
+            let a = new A;
+            let b = new B;
+
+            alert(a == b); 
         </script>
     </div>
 

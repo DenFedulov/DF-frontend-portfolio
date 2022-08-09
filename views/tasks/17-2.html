@@ -17,27 +17,26 @@
     <div class="page">
         <script>
             'use strict';
-            let salaries = {
-                John: 100,
-                Ann: 160,
-                Pete: 130
-            };
+            function Calculator() {
+                this.read = () => {
+                    this.a = +prompt('первое число', '2');
+                    this.b = +prompt('второе число', '3');
+                };
 
-            alert(salariesSum(salaries));
+                this.sum = () => {
+                    return this.a + this.b;
+                };
 
-            salaries = {};
-
-            alert(salariesSum(salaries));
-
-            function salariesSum(obj) {
-                let sum = 0;
-
-                for (let key in obj) {
-                    sum += obj[key];
-                }
-
-                return sum;
+                this.mul = () => {
+                    return this.a * this.b;
+                };
             }
+
+            let calculator = new Calculator();
+            calculator.read();
+
+            alert("Sum=" + calculator.sum());
+            alert("Mul=" + calculator.mul());
         </script>
     </div>
 

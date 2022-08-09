@@ -1,23 +1,46 @@
 'use strict';
 
-const taskElems = document.querySelectorAll('.section li');
-const TASKS_FOLDER_PATH = '/views/tasks/';
+class TaskPlacer {
 
-for (const elem of taskElems) {
-    let link = document.createElement('a');
-    let directLink = document.createElement('a');
+    constructor() {
+        this.taskElems = document.querySelectorAll('.section li');
+        this.tasksFolderPath = '/views/tasks/';
+    }
 
-    let fullPath = TASKS_FOLDER_PATH + elem.className + '.html';
+    init() {
+        for (const elem of this.taskElems) {
 
-    link.addEventListener('click', () => load('app', fullPath)); // from app.js
-    link.innerText = "Задача " + elem.className;
+            let fullPath = this.tasksFolderPath + elem.className + '.html';
 
-    directLink.classList.add('directLink');
-    directLink.href = fullPath;
-    directLink.innerText = " >";
-    directLink.target = "_parent";
+            let link = this.createLinkElement(fullPath, elem);
+            let directLink = this.createDirectLinkElement(fullPath);
 
-    elem.append(link);
-    elem.append(directLink);
+            elem.append(link);
+            elem.append(directLink);
+
+        }
+    }
+
+    createLinkElement(path, parent) {
+        let link = document.createElement('a');
+
+        link.addEventListener('click', () => load('app', path)); // from app.js
+        link.innerText = "Задача " + parent.className;
+
+        return link;
+    }
+
+    createDirectLinkElement(path) {
+        let directLink = document.createElement('a');
+
+        directLink.classList.add('directLink');
+        directLink.href = path;
+        directLink.innerText = " >";
+        directLink.target = "_parent";
+
+        return directLink;
+    }
 
 }
+
+new TaskPlacer().init();

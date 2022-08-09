@@ -17,27 +17,20 @@
     <div class="page">
         <script>
             'use strict';
-            let salaries = {
-                John: 100,
-                Ann: 160,
-                Pete: 130
-            };
+            function Accumulator(startingValue) {
+                this.value = startingValue;
 
-            alert(salariesSum(salaries));
-
-            salaries = {};
-
-            alert(salariesSum(salaries));
-
-            function salariesSum(obj) {
-                let sum = 0;
-
-                for (let key in obj) {
-                    sum += obj[key];
-                }
-
-                return sum;
+                this.read = () => {
+                    this.value += +prompt('введите число', '1');
+                };
             }
+
+            let accumulator = new Accumulator(1); // начальное значение 1
+
+            accumulator.read(); // прибавит ввод prompt к текущему значению
+            accumulator.read(); // прибавит ввод prompt к текущему значению
+
+            alert(accumulator.value); // выведет сумму этих значений
         </script>
     </div>
 
