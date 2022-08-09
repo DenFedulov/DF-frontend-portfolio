@@ -1,0 +1,4 @@
+https://www.youtube.com/watch?v=x3c1ih2NJEg How does the INTERNET work?
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview An overview of HTTP
+https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/ How Browsers Work
+https://www.cloudflare.com/learning/dns/what-is-dns/ What is DNS?

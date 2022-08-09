@@ -35,8 +35,9 @@ class Filter {
                     const sectionLinks = sectionElem.querySelectorAll('a');
 
                     const namesToCheck = [];
-
-                    namesToCheck.push(sectionName.innerText);
+                    if (sectionName != undefined) {
+                        namesToCheck.push(sectionName.innerText);
+                    }
                     for (const i in sectionLinks) {
                         if (Object.hasOwnProperty.call(sectionLinks, i)) {
                             const linkElem = sectionLinks[i];
@@ -48,8 +49,12 @@ class Filter {
                     for (const i in namesToCheck) {
                         if (Object.hasOwnProperty.call(namesToCheck, i)) {
                             const name = namesToCheck[i];
-                            if (name.match(new RegExp(inputValue, 'i')) != null) {
-                                noMatch = false;
+                            try {
+                                if (name.match(new RegExp(inputValue, 'i')) != null) {
+                                    noMatch = false;
+                                }
+                            } catch (e) {
+
                             }
                         }
                     }

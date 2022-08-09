@@ -6,6 +6,7 @@
 /views/css/views/grid.html > Grid
 /views/css/views/flexbox.html > Flexbox
 /views/css/views/shadow_DOM.html > Shadow DOM
+-
 https://www.w3schools.com/cssref/default.asp CSS reference
 https://www.w3schools.com/cssref/pr_class_float.asp CSS float Property
 https://www.w3schools.com/cssref/pr_class_display.asp CSS display Property
@@ -17,3 +18,5 @@ https://www.w3schools.com/css/css3_gradients.asp CSS Gradients
 https://www.w3schools.com/cssref/pr_class_cursor.asp CSS cursor Property
 https://www.w3schools.com/cssref/css3_pr_mediaquery.asp CSS @media Rule
 https://youtu.be/lAOkx2yZESY Responsive design tutorial
+https://www.youtube.com/watch?v=yfoY53QXEnI CSS Crash Course For Absolute Beginners
+https://www.youtube.com/watch?v=M7m_3b1Jjzc Полный гайд по CSS Grid: адаптивная верстка за пару минут

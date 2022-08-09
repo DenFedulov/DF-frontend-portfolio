@@ -4,7 +4,6 @@ class LinkPlacer {
 
     constructor() {
         this.links = [];
-        this.extraLinks = [];
         this.uls = document.querySelectorAll('.link_parent');
     }
 
@@ -22,7 +21,7 @@ class LinkPlacer {
 
                 xml.onreadystatechange = () => {
                     if (xml.readyState === 4 && xml.status === 200) {
-                        this.parseOutExtraLinks(splitTextByLines(xml.responseText, this.links));
+                        this.splitLinesBySections(splitTextByLines(xml.responseText));
                         resolve();
                     }
                 };
@@ -35,26 +34,19 @@ class LinkPlacer {
     }
 
     renderElements() {
-        for (const line of this.links) {
-            let liElem = document.createElement('li');
 
-            let [link, isInternal] = this.createLink(line);
+        for (const i in this.links) {
+            if (Object.hasOwnProperty.call(this.links, i)) {
+                const section = this.links[i];
+                for (const line of section) {
+                    let liElem = document.createElement('li');
 
-            liElem.append(...link);
+                    let link = this.createLink(line);
 
-            if (isInternal) {
-                this.uls[0].append(liElem);
-            } else {
-                this.uls[1].append(liElem);
+                    liElem.append(...link);
+                    this.uls[i].append(liElem);
+                }
             }
-        }
-        for (const line of this.extraLinks) {
-            let liElem = document.createElement('li');
-
-            let [link] = this.createLink(line);
-
-            liElem.append(...link);
-            this.uls[2].append(liElem);
         }
     }
 
@@ -65,42 +57,27 @@ class LinkPlacer {
         let name = rest.slice(rest.indexOf(' ') + 1);
 
         if (arrow == '>') {
-            return [createInternalLink(url, name), true];
+            return createInternalLink(url, name);
         } else {
-            return [createRegularLink(url, arrow + " " + name + " (" + url.match('(?<=://).*?\.*?(?=/)')?.[0] + ")"), false];
+            return createRegularLink(url, arrow + " " + name + " (" + url.match('(?<=://).*?\.*?(?=/)')?.[0] + ")");
         }
     }
 
-    isLinkInternal(line) {
-        if (line != undefined) {
-            let rest = line.slice(line.indexOf(' ') + 1);
-            let arrow = rest.slice(0, rest.indexOf(' '));
-
-            if (arrow == '>') {
-                return true;
+    splitLinesBySections(array) {
+        let splitPoints = [-1];
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] == '-') {
+                splitPoints.push(i);
+            }
+        }
+        for (let j = 0; j < splitPoints.length; j++) {
+            if (j != splitPoints.length) {
+                this.links.push(array.slice(splitPoints[j] + 1, splitPoints[j + 1]));
             } else {
-                return false;
+                this.links.push(array.slice(splitPoints[j]));
             }
         }
     }
-
-    parseOutExtraLinks(links) {
-        let afterIntLinks;
-        for (let i = 0; i < links.length; i++) {
-            if (!this.isLinkInternal(links[i + 1])) {
-                afterIntLinks = links.slice(i + 1, links.length);
-                break;
-            }
-        }
-        for (let i = 0; i < afterIntLinks.length; i++) {
-            if (this.isLinkInternal(afterIntLinks[i + 1])) {
-                this.links = links.slice(0, i + 1 + links.length - afterIntLinks.length);
-                this.extraLinks = afterIntLinks.slice(i + 1, afterIntLinks.length);
-                break;
-            }
-        }
-    }
-
 }
 
 new LinkPlacer().init();
