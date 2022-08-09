@@ -46,11 +46,10 @@ function addTitle() {
         const page = document.querySelector('.page');
 
         const h1 = document.createElement('h1');
-        const title = document.createElement('title');
+        const title = document.querySelector('title');
         h1.innerText = taskName;
         title.innerText = taskName;
 
-        head.append(title);
         page.prepend(h1);
     }
 }

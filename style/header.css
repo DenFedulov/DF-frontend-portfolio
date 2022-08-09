@@ -36,9 +36,10 @@
     width: 100%;
     font-size: 1.15em;
     height: 69px;
+    display: flex;
 }
 
-.header ul img {
+.header .home_button {
     all: initial;
     height: 50px;
     width: 50px;
@@ -53,7 +54,7 @@
     list-style-type: none;
     text-align: center;
     justify-content: left;
-    display: flex;
+    display: inline-flex;
 }
 
 .header ul li {

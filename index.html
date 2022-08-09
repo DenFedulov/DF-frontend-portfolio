@@ -16,17 +16,16 @@
 <body>
     <div class="page">
         <div class="header">
+            <a class="home_button" href="/"><img src="media/approved_icon.png" alt="Home" title="Home"></a>
             <ul>
-                <a href="/"><img src="media/approved_icon.png" alt="Home" title="Home"></a>
                 <li><a onclick="load('sidebar','/views/html/');">HTML</a></li>
                 <li><a onclick="load('sidebar','/views/css/');">CSS</a></li>
                 <li><a onclick="load('sidebar','/views/js/');">JavaScript</a></li>
                 <li><a onclick="load('app','/views/templates.html');">Templates</a>
                     <a class="directLink" href="/views/templates.html" target="_parent">></a>
                 </li>
-                <li><a onclick="load('sidebar','/views/learnJsTasks.html');"> Completed learn.javascript.ru
+                <li><a onclick="load('sidebar','/views/tasks/');"> Completed learn.javascript.ru
                         tasks (WIP)</a>
-                    <a class="directLink" href="/views/learnJsTasks.html" target="_parent">></a>
                 </li>
             </ul>
             <img class="header_scroll" src="/media/bookmark.png" alt="Toggle header" title="Toggle header"
@@ -36,7 +35,7 @@
         </div>
         <div class="wrapper">
             <img onclick="toggleSidebar();" src="media/sidebar_toggle_button_left.png" class="sidebar_toggle_button"
-                alt="Toggle sidebar" title="Toggle sidebar"></img>
+                alt="Toggle sidebar" title="Toggle sidebar">
 
             <div class="sidebar">
                 <iframe src="/views/html/" class="sidebar_frame"></iframe>
