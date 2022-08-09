@@ -2,9 +2,14 @@
 /views/js/views/DOM.html > DOM manupulation
 /views/js/views/fetch_API.html > Fetch API
 -
+https://jsonplaceholder.typicode.com/guide/ JSONPlaceholder - Guide
+https://kangax.github.io/compat-table/es6/ ECMAScript 6 compatibility table
+-
 https://262.ecma-international.org/12.0/ ECMAScript® 2021 Language Specification
 https://www.w3schools.com/jsref/default.asp JavaScript reference
+https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference Справочник по JavaScript - JavaScript | MDN
 https://learn.javascript.ru/ JavaScript reference 2
+https://roadmap.sh/frontend Frontend Developer Roadmap
 https://learn.javascript.ru/shadow-dom Shadow DOM
 https://youtu.be/v7rSSy8CaYE DOM Traversal
 https://www.w3schools.com/jsref/dom_obj_all.asp HTML DOM Elements
@@ -19,3 +24,4 @@ https://learn.javascript.ru/bubbling-and-capturing Event Bubbling
 https://www.w3schools.com/js/js_ajax_intro.asp AJAX Introduction
 https://www.w3schools.com/js/js_object_prototypes.asp Object Prototypes
 https://newbedev.com/inspect-shadow-dom-with-firefox Inspect Shadow DOM with Firefox
+https://medium.com/swlh/implement-a-simple-promise-in-javascript-20c9705f197a Implementing a simple Promise in Javascript | by Zhi Sun
