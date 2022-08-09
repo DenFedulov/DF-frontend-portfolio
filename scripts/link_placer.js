@@ -59,7 +59,7 @@ class LinkPlacer {
         if (arrow == '>') {
             return createInternalLink(url, name);
         } else {
-            return createRegularLink(url, arrow + " " + name + " (" + url.match('(?<=://).*?\.*?(?=/)')?.[0] + ")");
+            return createRegularLink(url, rest + " (" + url.match('(?<=://).*?\.*?(?=/)')?.[0] + ")");
         }
     }
 
