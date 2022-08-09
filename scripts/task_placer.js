@@ -13,7 +13,7 @@ class TaskPlacer {
             let fullPath = this.tasksFolderPath + elem.className + '.html';
 
             let link = this.createLinkElement(fullPath, elem);
-            let directLink = this.createDirectLinkElement(fullPath);
+            let directLink = createDirectLinkElement(fullPath);
 
             elem.append(link);
             elem.append(directLink);
@@ -30,16 +30,7 @@ class TaskPlacer {
         return link;
     }
 
-    createDirectLinkElement(path) {
-        let directLink = document.createElement('a');
 
-        directLink.classList.add('directLink');
-        directLink.href = path;
-        directLink.innerText = " >";
-        directLink.target = "_parent";
-
-        return directLink;
-    }
 
 }
 

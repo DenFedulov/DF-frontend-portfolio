@@ -1,3 +1,6 @@
+/views/js/views/traversal.html > Traversal
+/views/js/views/DOM.html > DOM manupulation
+/views/js/views/fetch_API.html > Fetch API
 https://262.ecma-international.org/12.0/ ECMAScript® 2021 Language Specification
 https://www.w3schools.com/jsref/default.asp JavaScript reference
 https://learn.javascript.ru/ JavaScript reference 2

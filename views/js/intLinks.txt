@@ -1,3 +1,0 @@
-/views/js/views/traversal.html Traversal
-/views/js/views/DOM.html DOM manupulation
-/views/js/views/fetch_API.html Fetch API
