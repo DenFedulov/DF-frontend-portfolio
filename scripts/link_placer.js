@@ -73,10 +73,8 @@ class LinkPlacer {
 
     isLinkInternal(line) {
         if (line != undefined) {
-            let url = line.slice(0, line.indexOf(' '));
             let rest = line.slice(line.indexOf(' ') + 1);
             let arrow = rest.slice(0, rest.indexOf(' '));
-            let name = rest.slice(rest.indexOf(' ') + 1);
 
             if (arrow == '>') {
                 return true;
