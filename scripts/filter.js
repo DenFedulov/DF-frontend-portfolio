@@ -71,6 +71,17 @@ class Filter {
         }
     }
 
+    isNoMatches(list, query) {
+        for (const i in list) {
+            try {
+                if (list[i].match(new RegExp(query, 'i')) != null) {
+                    return false;
+                }
+            } catch (e) { }
+        }
+        return true;
+    }
+
     updateSections(filterQuery) {
         for (let i = 0; i < this.sectionElems.length; i++) {
             const sectionElem = this.sectionElems[i];
@@ -83,25 +94,11 @@ class Filter {
                     namesToCheck.push(sectionName.innerText);
                 }
                 for (const i in sectionLinks) {
-                    if (Object.hasOwnProperty.call(sectionLinks, i)) {
-                        const linkElem = sectionLinks[i];
-                        namesToCheck.push(linkElem.innerText);
-                    }
+                    namesToCheck.push(sectionLinks[i].innerText);
                 }
 
-                let noMatch = true;
-                for (const i in namesToCheck) {
-                    if (Object.hasOwnProperty.call(namesToCheck, i)) {
-                        const name = namesToCheck[i];
-                        try {
-                            if (name.match(new RegExp(filterQuery, 'i')) != null) {
-                                noMatch = false;
-                            }
-                        } catch (e) {
+                let noMatch = this.isNoMatches(namesToCheck, filterQuery);
 
-                        }
-                    }
-                }
                 sectionElem.classList.toggle('off', noMatch);
             } else {
                 sectionElem.classList.toggle('off', false);
@@ -123,25 +120,11 @@ class Filter {
 
                     const namesToCheck = [];
                     for (const i in liLinks) {
-                        if (Object.hasOwnProperty.call(liLinks, i)) {
-                            const linkElem = liLinks[i];
-                            namesToCheck.push(linkElem.innerText);
-                        }
+                        namesToCheck.push(liLinks[i].innerText);
                     }
 
-                    let noMatch = true;
-                    for (const i in namesToCheck) {
-                        if (Object.hasOwnProperty.call(namesToCheck, i)) {
-                            const name = namesToCheck[i];
-                            try {
-                                if (name.match(new RegExp(filterQuery, 'i')) != null) {
-                                    noMatch = false;
-                                }
-                            } catch (e) {
+                    let noMatch = this.isNoMatches(namesToCheck, filterQuery);
 
-                            }
-                        }
-                    }
                     if (noMatch) sectionCheckArray.push(noMatch);
                     liElem.classList.toggle('off', noMatch);
                 }
