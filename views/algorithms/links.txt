@@ -1,1 +1,2 @@
 /views/algorithms/views/sqrt.html > Sqrt(x) implementation
+/views/algorithms/views/binary_search.html > Binary search
