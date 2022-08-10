@@ -55,24 +55,19 @@ class Filter {
     }
 
     restoreAllElements() {
-        for (const i in this.sectionElems) {
-            if (Object.hasOwnProperty.call(this.sectionElems, i)) {
-                const sectionElem = this.sectionElems[i];
-                sectionElem.classList.toggle('off', false);
+        for (let i = 0; i < this.sectionElems.length; i++) {
+            const sectionElem = this.sectionElems[i];
+            sectionElem.classList.toggle('off', false);
 
-                const liElems = sectionElem.querySelectorAll('li');
-                for (const j in liElems) {
-                    if (Object.hasOwnProperty.call(liElems, j)) {
-                        const liElem = liElems[j];
-                        liElem.classList.toggle('off', false);
-                    }
-                }
+            const liElems = sectionElem.querySelectorAll('li');
+            for (let j = 0; j < liElems.length; j++) {
+                liElems[j].classList.toggle('off', false);
             }
         }
     }
 
     isNoMatches(list, query) {
-        for (const i in list) {
+        for (let i = 0; i < list.length; i++) {
             try {
                 if (list[i].match(new RegExp(query, 'i')) != null) {
                     return false;
@@ -93,7 +88,7 @@ class Filter {
                 if (sectionName != undefined) {
                     namesToCheck.push(sectionName.innerText);
                 }
-                for (const i in sectionLinks) {
+                for (let i = 0; i < sectionLinks.length; i++) {
                     namesToCheck.push(sectionLinks[i].innerText);
                 }
 
@@ -119,7 +114,7 @@ class Filter {
                     const liLinks = liElem.querySelectorAll('a');
 
                     const namesToCheck = [];
-                    for (const i in liLinks) {
+                    for (let i = 0; i < liLinks.length; i++) {
                         namesToCheck.push(liLinks[i].innerText);
                     }
 

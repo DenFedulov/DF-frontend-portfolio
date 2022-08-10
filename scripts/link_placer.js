@@ -35,7 +35,7 @@ class LinkPlacer {
 
     renderElements() {
 
-        for (const i in this.links) {
+        for (let i = 0; i < this.links.length; i++) {
             if (Object.hasOwnProperty.call(this.links, i)) {
                 const section = this.links[i];
                 for (const line of section) {
