@@ -64,6 +64,8 @@ async function replaceCodeSection(path, targetElem) { // Used inside html in <sc
     await codePromise;
     let target;
     try {
+        if (path == 'path') throw new Error('Please specify file path for ' + targetElem);
+
         let fullPath = location.origin + path;
         target = document.getElementsByClassName(targetElem)[0];
         let xhttp = new XMLHttpRequest();
