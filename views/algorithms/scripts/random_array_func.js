@@ -61,7 +61,7 @@ function randomInt(min, max) {
     return Math.floor((max + 1 - min) * Math.random() + min);
 }
 
-function generateRandomArray(size, min, max, isSorted = false) {
+function genRandomArray(size, min, max, isSorted = false) {
     let arr = [];
 
     for (let i = 0; i < size; i++) {
@@ -73,12 +73,31 @@ function generateRandomArray(size, min, max, isSorted = false) {
     return arr;
 }
 
-let arr1 = [3, 9, 11, 1, 10, 20, 18, 17, 19, 7, 5, 15, 13, 8, 2, 16, 6, 14, 12, 4];
+function genShuffledArray(first, last) {
+    let nums = [];
+
+    for (let i = first; i <= last; i++) {
+        nums.push(i);
+    }
+
+    let shuffledNums = [];
+
+    while (nums.length > 0) {
+        let random = randomInt(0, nums.length - 1);
+        shuffledNums.push(nums[random]);
+        nums.splice(random, 1);
+    }
+
+    return shuffledNums;
+}
+
+let arr1 = genShuffledArray(1, 20);
 let arr2 = [4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3];
+let arr3 = genRandomArray(10, 0, 100);
 
-wConsoleLog(arr1);
-wConsoleLog("Set array:", quickSort(arr1));
-wConsoleLog(arr2);
-wConsoleLog("Set array:", quickSort(arr2));
-
-wConsoleLog("Random array:", generateRandomArray(10, 0, 100, true));
+wConsoleLog("Shuffled array:", arr1);
+wConsoleLog(quickSort(arr1));
+wConsoleLog("Set array:", arr2);
+wConsoleLog(quickSort(arr2));
+wConsoleLog("Random array:", arr3);
+wConsoleLog(quickSort(arr3));
