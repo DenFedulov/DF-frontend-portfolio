@@ -7,6 +7,8 @@ class SourceCodeReplacer {
         this.replaceHTML("/views/homeheader.html", ".page_start");
         this.placeHTMLSourceCode();
         this.addTaskTitle();
+
+        this.consoleElem = document.querySelector('.console');
     }
 
     replaceHTML(path, target) {
@@ -89,10 +91,37 @@ class SourceCodeReplacer {
 
         xml.send();
     }
+
+    wConsoleLog(...args) {
+        let li = document.createElement('li');
+        li.innerText = '▶ ';
+
+        for (const value of args) {
+            if (typeof value == 'object') {
+                if (value instanceof Array) {
+                    li.innerText += `Array(${value.length}) ${JSON.stringify(value)}  `
+                } else {
+                    li.innerText += `Object ${JSON.stringify(value)}  `
+                }
+            } else if (typeof value == 'string') {
+                li.innerText += `"${value}"  `;
+            } else {
+                li.innerText += value + '  ';
+            }
+        }
+
+
+        this.consoleElem.append(li);
+    }
 }
 
 const sourceCodeReplacer = new SourceCodeReplacer();
 
 async function replaceCodeSection(path, targetElem) { // Used inside html in <script> to choose which code section to place
     sourceCodeReplacer.replaceCodeSection(path, targetElem);
+}
+
+function wConsoleLog(...args) {
+    console.log(...args);
+    sourceCodeReplacer.wConsoleLog(...args);
 }
