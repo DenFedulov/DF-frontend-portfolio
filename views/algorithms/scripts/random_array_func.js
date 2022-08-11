@@ -2,8 +2,10 @@
 
 function quickSort(arr, arrStart = 0, arrEnd = arr.length) {
 
+    if (isSorted(arr)) return arr;
+
     if (arrEnd - arrStart > 3) {
-        let pivot = pickPivotAndPrepareArray(arr, arrStart, arrEnd); //issue is here
+        let pivot = Math.floor((arrEnd - 1) / 2);
 
         swapValuesInArray(arr, pivot, arrEnd - 1);
 
@@ -24,6 +26,8 @@ function quickSort(arr, arrStart = 0, arrEnd = arr.length) {
                 }
             }
 
+            if (isSorted(arr)) return arr;
+
             if (largerIndFromLeft <= smallerIndFromRight) {
                 swapValuesInArray(arr, largerIndFromLeft, smallerIndFromRight);
             } else {
@@ -40,19 +44,11 @@ function quickSort(arr, arrStart = 0, arrEnd = arr.length) {
     return simpleSort(arr);
 }
 
-function pickPivotAndPrepareArray(arr, arrStart = 0, arrEnd = arr.length) {
-    let pivotOptions = [];
-    pivotOptions.push(arr[arrStart]);
-    pivotOptions.push(arr[Math.floor((arrEnd - 1) / 2)]);
-    pivotOptions.push(arr[arrEnd - 1]);
-
-    simpleSort(pivotOptions);
-
-    arr[arrStart] = pivotOptions[0];
-    arr[Math.floor((arrEnd - 1) / 2)] = pivotOptions[1];
-    arr[arrEnd - 1] = pivotOptions[2];
-
-    return Math.floor((arrEnd - 1) / 2);
+function isSorted(arr) {
+    for (let i = 0; i < arr.length - 1; i++) {
+        if (arr[i] > arr[i + 1]) return false;
+    }
+    return true;
 }
 
 function swapValuesInArray(arr, firstIndex, secondIndex) {
@@ -87,6 +83,8 @@ function generateRandomArray(size, min, max, isSorted = false) {
     return arr;
 }
 
-console.log(generateRandomArray(10, 0, 100));
-console.log(generateRandomArray(10, 0, 100, true));
-console.log(generateRandomArray(10, 0, 100, true).toString());
+wConsoleLog(quickSort([3, 9, 11, 1, 10, 20, 18, 17, 19, 7, 5, 15, 13, 8, 2, 16, 6, 14, 12, 4]));
+
+wConsoleLog(generateRandomArray(10, 0, 100, true));
+wConsoleLog(generateRandomArray(10, 0, 100, true));
+wConsoleLog(generateRandomArray(10, 0, 100, true));
