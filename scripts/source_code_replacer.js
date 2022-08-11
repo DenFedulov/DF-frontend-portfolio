@@ -8,7 +8,9 @@ class SourceCodeReplacer {
         this.placeHTMLSourceCode();
         this.addTaskTitle();
 
-        this.consoleElem = document.querySelector('.console');
+        try {
+            this.consoleElem = document.querySelector('.console');
+        } catch (e) { }
     }
 
     replaceHTML(path, target) {
