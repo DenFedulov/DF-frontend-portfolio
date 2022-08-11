@@ -112,7 +112,6 @@ class SourceCodeReplacer {
             }
         }
 
-
         this.consoleElem.append(li);
     }
 }
