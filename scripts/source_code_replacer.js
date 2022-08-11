@@ -8,6 +8,11 @@ class SourceCodeReplacer {
         this.placeHTMLSourceCode();
         this.addTaskTitle();
 
+        this.getConsoleElem();
+    }
+
+    async getConsoleElem() {
+        await this.codePromise;
         try {
             this.consoleElem = document.querySelector('.console');
         } catch (e) { }
@@ -103,7 +108,7 @@ class SourceCodeReplacer {
         xml.send();
     }
 
-    wConsoleLog(...args) {
+    async wConsoleLog(...args) {
         let li = document.createElement('li');
         li.innerText = '▶ ';
 
@@ -120,6 +125,8 @@ class SourceCodeReplacer {
                 li.innerText += value + '  ';
             }
         }
+
+        await this.codePromise;
 
         this.consoleElem.append(li);
     }

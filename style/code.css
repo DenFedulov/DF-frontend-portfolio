@@ -19,9 +19,26 @@
     font-size: 1.5em;
 }
 
+.console_box {
+    margin: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 4px;
+    border-color: rgb(199, 199, 199);
+    border-style: solid;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
 .console {
     list-style-type: none;
     font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    padding: 10px;
+    margin: 0;
+    font-size: initial;
 }
 
 .line {
@@ -35,6 +52,7 @@
     display: flex;
     margin: 10px;
     margin-bottom: 0;
+    margin-top: 0;
 }
 
 .section_toggles * {
