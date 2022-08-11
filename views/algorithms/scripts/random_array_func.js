@@ -3,13 +3,11 @@
 function quickSort(arr, arrStart = 0, arrEnd = arr.length) {
 
     if (arrEnd - arrStart > 3) {
-        let pivot = pickPivotAndPrepareArray(arr); //issue is here
-
-        console.log(arr[pivot]);
+        let pivot = pickPivotAndPrepareArray(arr, arrStart, arrEnd); //issue is here
 
         swapValuesInArray(arr, pivot, arrEnd - 1);
 
-        while (true) {
+        for (let i = arrStart; i < arrEnd; i++) {
             let largerIndFromLeft = -1;
             let smallerIndFromRight = -1;
 
@@ -30,6 +28,8 @@ function quickSort(arr, arrStart = 0, arrEnd = arr.length) {
                 swapValuesInArray(arr, largerIndFromLeft, smallerIndFromRight);
             } else {
                 swapValuesInArray(arr, largerIndFromLeft, arrEnd - 1);
+                quickSort(arr, arrStart, largerIndFromLeft);
+                quickSort(arr, largerIndFromLeft + 1, arrEnd);
                 break;
             }
         }
@@ -40,19 +40,19 @@ function quickSort(arr, arrStart = 0, arrEnd = arr.length) {
     return simpleSort(arr);
 }
 
-function pickPivotAndPrepareArray(arr) {
+function pickPivotAndPrepareArray(arr, arrStart = 0, arrEnd = arr.length) {
     let pivotOptions = [];
-    pivotOptions.push(arr[0]);
-    pivotOptions.push(arr[Math.floor((arr.length - 1) / 2)]);
-    pivotOptions.push(arr[arr.length - 1]);
+    pivotOptions.push(arr[arrStart]);
+    pivotOptions.push(arr[Math.floor((arrEnd - 1) / 2)]);
+    pivotOptions.push(arr[arrEnd - 1]);
 
     simpleSort(pivotOptions);
 
-    arr[0] = pivotOptions[0];
-    arr[Math.floor((arr.length - 1) / 2)] = pivotOptions[1];
-    arr[arr.length - 1] = pivotOptions[2];
+    arr[arrStart] = pivotOptions[0];
+    arr[Math.floor((arrEnd - 1) / 2)] = pivotOptions[1];
+    arr[arrEnd - 1] = pivotOptions[2];
 
-    return Math.floor((arr.length - 1) / 2);
+    return Math.floor((arrEnd - 1) / 2);
 }
 
 function swapValuesInArray(arr, firstIndex, secondIndex) {
@@ -61,9 +61,9 @@ function swapValuesInArray(arr, firstIndex, secondIndex) {
     arr[secondIndex] = placeholder;
 }
 
-function simpleSort(arr) {
-    for (let j = 0; j < arr.length; j++) {
-        for (let i = 0; i < arr.length; i++) {
+function simpleSort(arr, arrStart = 0, arrEnd = arr.length) {
+    for (let j = arrStart; j < arrEnd; j++) {
+        for (let i = arrStart; i < arrEnd; i++) {
             if (arr[i] > arr[i + 1]) {
                 swapValuesInArray(arr, i, i + 1);
             }
@@ -82,9 +82,11 @@ function generateRandomArray(size, min, max, isSorted = false) {
         arr.push(randomInt(min, max));
     }
 
-    quickSort(arr);
+    if (isSorted) quickSort(arr);
 
     return arr;
 }
 
 console.log(generateRandomArray(10, 0, 100));
+console.log(generateRandomArray(10, 0, 100, true));
+console.log(generateRandomArray(10, 0, 100, true).toString());
