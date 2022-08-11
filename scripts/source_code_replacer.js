@@ -106,7 +106,7 @@ class SourceCodeReplacer {
                     li.innerText += `Object ${JSON.stringify(value)}  `
                 }
             } else if (typeof value == 'string') {
-                li.innerText += `"${value}"  `;
+                li.innerText += `'${value}'  `;
             } else {
                 li.innerText += value + '  ';
             }
