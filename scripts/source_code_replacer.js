@@ -61,8 +61,16 @@ class SourceCodeReplacer {
         }
     }
 
+    showSection(className) {
+        for (const i of document.getElementsByClassName(className)) {
+            i.classList.remove('off');
+        }
+    }
+
     async replaceCodeSection(path, targetElem) {
         await this.codePromise;
+        if (targetElem == "css_code") this.showSection("CSS_toggle");
+        if (targetElem == "js_code") this.showSection("JavaScript_toggle");
         let target;
         try {
             if (path == 'path') throw new Error('Please specify file path for ' + targetElem);

@@ -21,6 +21,7 @@
 
 .console {
     list-style-type: none;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .line {

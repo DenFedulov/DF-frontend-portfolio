@@ -70,24 +70,3 @@ function lock_scroll_toggle() {
     lock_scroll.classList.toggle("on", enable_scroll_format);
     enable_scroll_format = !enable_scroll_format;
 }
-
-// document.addEventListener('scroll', function () {
-//     if (scrollY == 0 && header.style.position !== "relative") {
-
-//         header.style.position = "relative";
-//         header.style.position = "relative";
-//         wrapper[0].style.marginTop = 0;
-
-//         sidebar.style.position = "relative";
-//         app.style.marginLeft = 0;
-
-//     } else if (scrollY != 0 && header.style.position !== "fixed") {
-//         header.style.position = "fixed";
-//         wrapper[0].style.marginTop = header.offsetHeight + 'px';
-
-//         sidebar.style.position = "fixed";
-//         sidebar.style.width = sidebar.offsetWidth + 'px';
-//         app.style.marginLeft = sidebar.offsetWidth + 'px';
-
-//     };
-// })

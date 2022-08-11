@@ -73,7 +73,12 @@ function generateRandomArray(size, min, max, isSorted = false) {
     return arr;
 }
 
-wConsoleLog("Set array: ", quickSort([3, 9, 11, 1, 10, 20, 18, 17, 19, 7, 5, 15, 13, 8, 2, 16, 6, 14, 12, 4]));
-wConsoleLog("Set array: ", quickSort([4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3]));
+let arr1 = [3, 9, 11, 1, 10, 20, 18, 17, 19, 7, 5, 15, 13, 8, 2, 16, 6, 14, 12, 4];
+let arr2 = [4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3];
 
-wConsoleLog("Random array: ", generateRandomArray(10, 0, 100, true));
+wConsoleLog(arr1);
+wConsoleLog("Set array:", quickSort(arr1));
+wConsoleLog(arr2);
+wConsoleLog("Set array:", quickSort(arr2));
+
+wConsoleLog("Random array:", generateRandomArray(10, 0, 100, true));
