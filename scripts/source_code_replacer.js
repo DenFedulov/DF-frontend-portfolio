@@ -79,8 +79,9 @@ class SourceCodeReplacer {
             target = document.getElementsByClassName(targetElem)[0];
 
             this.defaultXMLHttpRequest(fullPath, function (xml) {
-                target.innerHTML = "<br>";
+                target.innerHTML += path + ":<br>";
                 target.innerText += xml.responseText;
+                target.innerHTML += "<br><br>";
             })
 
         } catch (e) {
