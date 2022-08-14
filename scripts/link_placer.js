@@ -57,6 +57,7 @@ class LinkPlacer {
         let name = rest.slice(rest.indexOf(' ') + 1);
 
         if (arrow == '>') {
+            url = location.pathname + 'views/' + url;
             return createInternalLink(url, name);
         } else {
             return createRegularLink(url, rest + " (" + url.match('(?<=://).*?\.*?(?=/)')?.[0] + ")");

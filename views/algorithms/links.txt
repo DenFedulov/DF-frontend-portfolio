@@ -1,3 +1,3 @@
-/views/algorithms/views/sqrt.html > Sqrt(x) implementation
-/views/algorithms/views/binary_search.html > Binary search
-/views/algorithms/views/quick_sort.html > Quick sort
+sqrt.html > Sqrt(x) implementation
+binary_search.html > Binary search
+quick_sort.html > Quick sort

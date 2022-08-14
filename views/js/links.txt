@@ -1,6 +1,6 @@
-/views/js/views/traversal.html > Traversal
-/views/js/views/DOM.html > DOM manupulation
-/views/js/views/fetch_API.html > Fetch API
+traversal.html > Traversal
+DOM.html > DOM manupulation
+fetch_API.html > Fetch API
 -
 https://jsonplaceholder.typicode.com/guide/ JSONPlaceholder - Guide
 https://kangax.github.io/compat-table/es6/ ECMAScript 6 compatibility table

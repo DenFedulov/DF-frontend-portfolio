@@ -1,7 +1,7 @@
-/views/html/views/basic.html > Basic
-/views/html/views/form.html > Form
+basic.html > Basic
+form.html > Form
 -
-/views/templates.html > Templates
+templates.html > Templates
 https://validator.w3.org/ The W3C Markup Validation Service
 -
 https://www.w3schools.com/tags/default.asp HTML Element Reference
