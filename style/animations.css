@@ -17,12 +17,23 @@ img.sidebar_toggle_button.off {
     transition: width 0.5s, margin-left 0.5s;
 }
 
+.header ul.combo,
+.header ul.combo.off,
+.header ul.combo li,
+.header ul.combo.off li {
+    transition: height 0.5s, padding 0.5s, margin 0.5s, font-size 0.5s;
+}
+
 img.sidebar_toggle_button,
 .to_top.sidebar_toggle_off,
 .to_top,
 img.sidebar_toggle_button.off,
 .sidebar,
 .sidebar.sidebar_toggle_off,
-.app {
+.app,
+.header ul.combo,
+.header ul.combo.off,
+.header ul.combo li,
+.header ul.combo.off li {
     transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
 }

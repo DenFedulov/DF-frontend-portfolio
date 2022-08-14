@@ -6,6 +6,8 @@ class HomePageFormatter {
         this.app = document.querySelector('.app');
         this.appFrame = document.querySelector('.app_frame');
 
+        this.combos = document.querySelectorAll('.combo');
+
         this.sidebar = document.querySelector('.sidebar');
         this.sidebarToggleButton = document.querySelector('.sidebar_toggle_button');
         this.sidebarFrame = document.querySelector('.sidebar_frame');
@@ -24,6 +26,16 @@ class HomePageFormatter {
         window.addEventListener('resize', () => {
             this.updateHeights();
         });
+
+        for (const combo of this.combos) {
+            combo.parentElement.addEventListener('mouseover', () => {
+                combo.classList.remove('off');
+            });
+
+            combo.parentElement.addEventListener('mouseout', () => {
+                combo.classList.add('off');
+            });
+        }
 
         this.appFrame.onload = () => {
             const iwindow = appFrame.contentWindow;

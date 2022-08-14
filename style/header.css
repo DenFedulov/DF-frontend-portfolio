@@ -58,10 +58,38 @@
 }
 
 .header ul li {
-    margin: 0.5em;
-    padding: 0.8em;
-    border-radius: 0.5em;
-    background-color: rgb(35, 18, 97);
+    margin: 5px;
+    margin-bottom: 0;
+    padding: 5px;
+    background-color: #231261;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    flex-direction: column;
+}
+
+.header ul.combo {
+    top: 69px;
+    margin: 0;
+    padding: 2px;
+    position: absolute;
+    background-color: #2d62d6;
+    z-index: 2;
+}
+
+.header ul.combo li {
+    margin: 0;
+}
+
+.header ul.combo.off {
+    height: 0;
+    padding: 0;
+}
+
+.header ul.combo.off li {
+    padding: 0;
+    font-size: 0;
 }
 
 .homeheader a {
