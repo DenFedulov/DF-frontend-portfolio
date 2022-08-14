@@ -9,37 +9,28 @@
     <link rel="stylesheet" type="text/css" href="/style/header.css">
     <link rel="stylesheet" type="text/css" href="/style/code.css">
     <title>to replace</title>
+    <script src="/scripts/source_code_replacer.js"></script>
 </head>
 
 <body>
-
-    <div class="page_start"></div>
-
-    <div class="page">
-        <script>
-            'use strict';
-            let x = +prompt("Введите число");
-            let n = +prompt("Введите степень");
-
-            pow(x, n);
-
-            function pow(x, n) {
-                if (n < 1 || Number.isInteger(n) == false) {
-                    return alert('Неправильная степень');
-                }
-                let sum = x;
-                for (let i = 1; i < n; i++) {
-                    sum *= x;
-                }
-                alert(sum);
-                return sum;
-            }
-        </script>
-    </div>
-
-    <div class="page_end"></div>
-    <script src="/scripts/source_code_replacer.js"></script>
     <script>
+        'use strict';
+        let x = +prompt("Введите число");
+        let n = +prompt("Введите степень");
+
+        pow(x, n);
+
+        function pow(x, n) {
+            if (n < 1 || Number.isInteger(n) == false) {
+                return wConsoleLog('Неправильная степень');
+            }
+            let sum = x;
+            for (let i = 1; i < n; i++) {
+                sum *= x;
+            }
+            wConsoleLog(sum);
+            return sum;
+        }
     </script>
 </body>
 

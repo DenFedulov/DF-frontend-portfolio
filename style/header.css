@@ -59,13 +59,16 @@
 
 .header ul li {
     margin: 5px;
+    margin-top: 1em;
     margin-bottom: 0;
     padding: 5px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     background-color: #231261;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 15px;
+    font-size: 1em;
     flex-direction: column;
 }
 
@@ -80,6 +83,7 @@
 
 .header ul.combo li {
     margin: 0;
+    border-radius: 0;
 }
 
 .header ul.combo.off {

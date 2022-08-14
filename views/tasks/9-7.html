@@ -9,40 +9,31 @@
     <link rel="stylesheet" type="text/css" href="/style/header.css">
     <link rel="stylesheet" type="text/css" href="/style/code.css">
     <title>to replace</title>
+    <script src="/scripts/source_code_replacer.js"></script>
 </head>
 
 <body>
-
-    <div class="page_start"></div>
-
-    <div class="page">
-        <script>
-            'use strict';
-
-            function calcPrimes(interval) {
-                let primeArray = [];
-
-                for (let i = 2; i < interval; i++) {
-                    for (let j = 2; j <= i; j++) {
-
-                        if (i == j) {
-                            primeArray.push(i);
-                        } else if (i % j == 0) {
-                            break;
-                        }
-                    }
-
-                }
-                return primeArray;
-            }
-
-            alert(calcPrimes(50));
-        </script>
-    </div>
-
-    <div class="page_end"></div>
-    <script src="/scripts/source_code_replacer.js"></script>
     <script>
+        'use strict';
+
+        function calcPrimes(interval) {
+            let primeArray = [];
+
+            for (let i = 2; i < interval; i++) {
+                for (let j = 2; j <= i; j++) {
+
+                    if (i == j) {
+                        primeArray.push(i);
+                    } else if (i % j == 0) {
+                        break;
+                    }
+                }
+
+            }
+            return primeArray;
+        }
+
+        wConsoleLog(calcPrimes(50));
     </script>
 </body>
 

@@ -9,42 +9,33 @@
     <link rel="stylesheet" type="text/css" href="/style/header.css">
     <link rel="stylesheet" type="text/css" href="/style/code.css">
     <title>to replace</title>
+    <script src="/scripts/source_code_replacer.js"></script>
 </head>
 
 <body>
-
-    <div class="page_start"></div>
-
-    <div class="page">
-        <script>
-            'use strict';
-            let salaries = {
-                John: 100,
-                Ann: 160,
-                Pete: 130
-            };
-
-            alert(salariesSum(salaries));
-
-            salaries = {};
-
-            alert(salariesSum(salaries));
-
-            function salariesSum(obj) {
-                let sum = 0;
-
-                for (let key in obj) {
-                    sum += obj[key];
-                }
-
-                return sum;
-            }
-        </script>
-    </div>
-
-    <div class="page_end"></div>
-    <script src="/scripts/source_code_replacer.js"></script>
     <script>
+        'use strict';
+        let salaries = {
+            John: 100,
+            Ann: 160,
+            Pete: 130
+        };
+
+        wConsoleLog(salariesSum(salaries));
+
+        salaries = {};
+
+        wConsoleLog(salariesSum(salaries));
+
+        function salariesSum(obj) {
+            let sum = 0;
+
+            for (let key in obj) {
+                sum += obj[key];
+            }
+
+            return sum;
+        }
     </script>
 </body>
 

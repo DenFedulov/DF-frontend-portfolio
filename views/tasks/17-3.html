@@ -9,35 +9,26 @@
     <link rel="stylesheet" type="text/css" href="/style/header.css">
     <link rel="stylesheet" type="text/css" href="/style/code.css">
     <title>to replace</title>
+    <script src="/scripts/source_code_replacer.js"></script>
 </head>
 
 <body>
-
-    <div class="page_start"></div>
-
-    <div class="page">
-        <script>
-            'use strict';
-            function Accumulator(startingValue) {
-                this.value = startingValue;
-
-                this.read = () => {
-                    this.value += +prompt('введите число', '1');
-                };
-            }
-
-            let accumulator = new Accumulator(1); // начальное значение 1
-
-            accumulator.read(); // прибавит ввод prompt к текущему значению
-            accumulator.read(); // прибавит ввод prompt к текущему значению
-
-            alert(accumulator.value); // выведет сумму этих значений
-        </script>
-    </div>
-
-    <div class="page_end"></div>
-    <script src="/scripts/source_code_replacer.js"></script>
     <script>
+        'use strict';
+        function Accumulator(startingValue) {
+            this.value = startingValue;
+
+            this.read = () => {
+                this.value += +prompt('введите число', '1');
+            };
+        }
+
+        let accumulator = new Accumulator(1); // начальное значение 1
+
+        accumulator.read(); // прибавит ввод prompt к текущему значению
+        accumulator.read(); // прибавит ввод prompt к текущему значению
+
+        wConsoleLog(accumulator.value); // выведет сумму этих значений
     </script>
 </body>
 

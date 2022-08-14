@@ -3,13 +3,29 @@
 class SourceCodeReplacer {
 
     constructor() {
-        this.replaceHTML("/views/homeheader.html", ".page_start");
-        this.codePromise = this.replaceHTML("/views/code_sections.html", ".page_end").then(() => {
-            this.placeHTMLSourceCode();
-            this.getConsoleElem();
-        });
 
-        this.addTaskTitle();
+        let headerElems = this.createHeader();
+        this.pageElem = this.createElementWithClass('div', 'page');
+
+        let consoleElem = this.createConsole();
+        let togglesElem = this.createCodeSectionToggles();
+        let codeElem = this.createCodeSections();
+        this.codeSectionLoadedPromise = new Promise((resolve, reject) => {
+
+            window.onload = () => {
+                let body = document.querySelector('body');
+                this.htmlCode.innerText = this.getHTMLCode(body);
+
+                this.moveBodyToElement(this.pageElem);
+                body.prepend(...headerElems);
+                body.append(this.createElementWithClass('div', 'line'), consoleElem, togglesElem, codeElem);
+
+                this.addTaskTitle();
+
+                resolve();
+
+            };
+        });
     }
 
     getConsoleElem() {
@@ -18,54 +34,21 @@ class SourceCodeReplacer {
         } catch (e) { }
     }
 
-    replaceHTML(path, target) {
-        return new Promise((resolve, reject) => {
-            try {
-                const targetElem = document.querySelector(target);
-
-                this.defaultXMLHttpRequest(path, function (xml) {
-                    targetElem.outerHTML = xml.responseText;
-                    resolve();
-                })
-
-            } catch (e) {
-                console.error(e);
-            }
-        })
-    }
-
-    placeHTMLSourceCode() {
-        try {
-            let pageHTML = document.querySelector('.page').innerHTML;
-
-            if (pageHTML.slice(0, 2).includes('\n')) {
-                pageHTML = location.pathname + ':\n' + pageHTML.slice(2);
-            }
-
-            document.querySelector('.html_code').innerText = pageHTML;
-        } catch (e) {
-            console.error(e);
-            document.querySelector('.html_code').innerText = "Error loading file: " + e;
-        }
-    }
-
     addTaskTitle() {
-
         let taskName = "Задача " + document.location.pathname.split('/').pop().match('.*(?=\\.)')[0];
         if (taskName.match(/\d+-\d+/)) {
             const head = document.querySelector('head');
-            const page = document.querySelector('.page');
 
             const h1 = document.createElement('h1');
             const title = document.querySelector('title');
             h1.innerText = taskName;
             title.innerText = taskName;
 
-            page.prepend(h1);
+            this.pageElem.prepend(h1);
         }
     }
 
-    toggleSection(className) { // Used in /views/code_sections.html 
+    toggleSection(className) {
         for (const i of document.getElementsByClassName(className)) {
             i.classList.toggle('off');
         }
@@ -78,7 +61,7 @@ class SourceCodeReplacer {
     }
 
     async replaceCodeSection(path, targetElem) {
-        await this.codePromise;
+        await this.codeSectionLoadedPromise;
 
         if (targetElem == "css_code") this.showSection("CSS_toggle");
         if (targetElem == "js_code") this.showSection("JavaScript_toggle");
@@ -110,7 +93,6 @@ class SourceCodeReplacer {
                 callback(this);
             }
         }
-
         xml.send();
     }
 
@@ -132,9 +114,117 @@ class SourceCodeReplacer {
             }
         }
 
-        await this.codePromise;
+        await this.codeSectionLoadedPromise;
 
         this.consoleElem.append(li);
+    }
+
+    createElementWithClass(elementName, ...classNames) {
+        let elem = document.createElement(elementName);
+        elem.classList.add(...classNames);
+
+        return elem;
+    }
+
+    createHeader() {
+        let toTop = this.createElementWithClass('div', 'to_top');
+        let toTopLink = document.createElement('a');
+        toTopLink.href = '#';
+        toTopLink.innerHTML = '^ <br> To top';
+        toTop.append(toTopLink);
+
+        let homeHeader = this.createElementWithClass('div', 'homeheader');
+        let ul = document.createElement('ul');
+        let li = document.createElement('li');
+        let homeLink = document.createElement('a');
+        homeLink.href = '/';
+        homeLink.target = '_parent';
+        homeLink.innerText = 'Home';
+        li.append(homeLink);
+        ul.append(li);
+        homeHeader.append(ul);
+
+        return [toTop, homeHeader];
+    }
+
+    moveBodyToElement(elem) {
+        let body = document.querySelector('body');
+        let allBodyElems = document.querySelectorAll('body > *');
+
+        for (const be of allBodyElems) {
+            elem.append(be);
+        }
+
+        body.append(elem);
+    }
+
+    createConsole() {
+        let consoleBoxElem = this.createElementWithClass('div', 'console_box');
+        consoleBoxElem.innerText = 'Console:';
+        this.consoleElem = this.createElementWithClass('ul', 'console');
+        consoleBoxElem.append(this.consoleElem);
+
+        return consoleBoxElem;
+    }
+
+    createCodeSectionToggles() {
+        let sectionTogglesElem = this.createElementWithClass('div', 'section_toggles');
+
+        let htmlToggle = this.createElementWithClass('div', 'HTML_toggle');
+        htmlToggle.addEventListener('click', () => this.toggleSection('HTML_toggle'));
+        htmlToggle.title = 'HTML toggle';
+        htmlToggle.innerText = 'HTML';
+
+        let cssToggle = this.createElementWithClass('div', 'CSS_toggle', 'off');
+        cssToggle.addEventListener('click', () => this.toggleSection('CSS_toggle'));
+        cssToggle.title = 'CSS toggle';
+        cssToggle.innerText = 'CSS';
+
+        let jsToggle = this.createElementWithClass('div', 'JavaScript_toggle', 'off');
+        jsToggle.addEventListener('click', () => this.toggleSection('JavaScript_toggle'));
+        jsToggle.title = 'JavaScript toggle';
+        jsToggle.innerText = 'JavaScript';
+
+        sectionTogglesElem.append(htmlToggle, cssToggle, jsToggle);
+
+        return sectionTogglesElem;
+    }
+
+    createCodeSections() {
+        let code = this.createElementWithClass('div', 'code');
+
+        let htmlSection = this.createElementWithClass('div', 'code_section', 'HTML_toggle');
+        htmlSection.innerText = 'HTML Source code:';
+        this.htmlCode = this.createElementWithClass('div', 'html_code');
+        htmlSection.append(this.htmlCode);
+
+        let cssSection = this.createElementWithClass('div', 'code_section', 'CSS_toggle', 'off');
+        cssSection.innerText = 'CSS Source code (linked):';
+        this.cssCode = this.createElementWithClass('div', 'css_code');
+        cssSection.append(this.cssCode);
+
+        let jsSection = this.createElementWithClass('div', 'code_section', 'JavaScript_toggle', 'off');
+        jsSection.innerText = 'JavaScript Source code (linked):';
+        this.jsCode = this.createElementWithClass('div', 'js_code');
+        jsSection.append(this.jsCode);
+
+        code.append(htmlSection, cssSection, jsSection);
+
+        return code;
+    }
+
+    getHTMLCode(body) {
+        let text = body.innerHTML;
+        let liveCodeIndx = text.indexOf('<!-- Code injected');
+        if (liveCodeIndx >= 0) {
+            text = text.slice(0, liveCodeIndx);
+        }
+
+        if (text.slice(0, 2).includes('\n')) {
+            text = location.pathname + ':\n' + text.slice(2);
+        }
+
+        return text;
     }
 }
 

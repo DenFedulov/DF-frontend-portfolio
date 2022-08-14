@@ -9,38 +9,29 @@
     <link rel="stylesheet" type="text/css" href="/style/header.css">
     <link rel="stylesheet" type="text/css" href="/style/code.css">
     <title>to replace</title>
+    <script src="/scripts/source_code_replacer.js"></script>
 </head>
 
 <body>
-
-    <div class="page_start"></div>
-
-    <div class="page">
-        <script>
-            'use strict';
-            let ladder = {
-                step: 0,
-                up() {
-                    this.step++;
-                    return this;
-                },
-                down() {
-                    this.step--;
-                    return this;
-                },
-                showStep: function () { // показывает текущую ступеньку
-                    alert(this.step);
-                    return this;
-                }
-            };
-
-            ladder.up().up().down().showStep();
-        </script>
-    </div>
-
-    <div class="page_end"></div>
-    <script src="/scripts/source_code_replacer.js"></script>
     <script>
+        'use strict';
+        let ladder = {
+            step: 0,
+            up() {
+                this.step++;
+                return this;
+            },
+            down() {
+                this.step--;
+                return this;
+            },
+            showStep: function () { // показывает текущую ступеньку
+                wConsoleLog(this.step);
+                return this;
+            }
+        };
+
+        ladder.up().up().down().showStep();
     </script>
 </body>
 

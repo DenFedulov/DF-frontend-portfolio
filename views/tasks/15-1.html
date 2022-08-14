@@ -9,26 +9,17 @@
     <link rel="stylesheet" type="text/css" href="/style/header.css">
     <link rel="stylesheet" type="text/css" href="/style/code.css">
     <title>to replace</title>
+    <script src="/scripts/source_code_replacer.js"></script>
 </head>
 
 <body>
-
-    <div class="page_start"></div>
-
-    <div class="page">
-        <script>
-            'use strict';
-            let user = {};
-            user.name = "John";
-            user.surname = "Smith";
-            user.name = "Pete";
-            delete user.name;
-        </script>
-    </div>
-
-    <div class="page_end"></div>
-    <script src="/scripts/source_code_replacer.js"></script>
     <script>
+        'use strict';
+        let user = {};
+        user.name = "John";
+        user.surname = "Smith";
+        user.name = "Pete";
+        delete user.name;
     </script>
 </body>
 

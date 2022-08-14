@@ -9,39 +9,30 @@
     <link rel="stylesheet" type="text/css" href="/style/header.css">
     <link rel="stylesheet" type="text/css" href="/style/code.css">
     <title>to replace</title>
+    <script src="/scripts/source_code_replacer.js"></script>
 </head>
 
 <body>
+    <script>
+        "use strict";
 
-    <div class="page_start"></div>
-
-    <div class="page">
-        <script>
-            "use strict";
-
-            function sumInput() {
-                let num = [];
-                while (true) {
-                    let input = prompt('введите число', 0);
-                    if (input == '' || input == null || !isFinite(input)) break;
-                    num.push(+input);
-                }
-
-                let sum = 0;
-
-                for (let i = 0; i < num.length; i++) {
-                    sum += num[i];
-                }
-                return sum;
+        function sumInput() {
+            let num = [];
+            while (true) {
+                let input = prompt('введите число', 0);
+                if (input == '' || input == null || !isFinite(input)) break;
+                num.push(+input);
             }
 
-            console.log(sumInput());
-        </script>
-    </div>
+            let sum = 0;
 
-    <div class="page_end"></div>
-    <script src="/scripts/source_code_replacer.js"></script>
-    <script>
+            for (let i = 0; i < num.length; i++) {
+                sum += num[i];
+            }
+            return sum;
+        }
+
+        wConsoleLog(sumInput());
     </script>
 </body>
 

@@ -9,41 +9,32 @@
     <link rel="stylesheet" type="text/css" href="/style/header.css">
     <link rel="stylesheet" type="text/css" href="/style/code.css">
     <title>to replace</title>
+    <script src="/scripts/source_code_replacer.js"></script>
 </head>
 
 <body>
+    <script>
+        "use strict";
 
-    <div class="page_start"></div>
+        function getMaxSubSum(arr) {
+            let max = 0;
+            let current = 0;
+            for (let i = 0; i < arr.length; i++) {
+                current += arr[i];
+                if (current < 0) current = 0;
 
-    <div class="page">
-        <script>
-            "use strict";
-
-            function getMaxSubSum(arr) {
-                let max = 0;
-                let current = 0;
-                for (let i = 0; i < arr.length; i++) {
-                    current += arr[i];
-                    if (current < 0) current = 0;
-
-                    if (current > max) max = current;
-                }
-
-                return max;
+                if (current > max) max = current;
             }
 
-            console.log(getMaxSubSum([-1, 2, 3, -9]));
-            console.log(getMaxSubSum([2, -1, 2, 3, -9]));
-            console.log(getMaxSubSum([-1, 2, 3, -9, 11]));
-            console.log(getMaxSubSum([-2, -1, 1, 2]));
-            console.log(getMaxSubSum([100, -9, 2, -3, 5]));
-            console.log(getMaxSubSum([1, 2, 3]));
-        </script>
-    </div>
+            return max;
+        }
 
-    <div class="page_end"></div>
-    <script src="/scripts/source_code_replacer.js"></script>
-    <script>
+        wConsoleLog(getMaxSubSum([-1, 2, 3, -9]));
+        wConsoleLog(getMaxSubSum([2, -1, 2, 3, -9]));
+        wConsoleLog(getMaxSubSum([-1, 2, 3, -9, 11]));
+        wConsoleLog(getMaxSubSum([-2, -1, 1, 2]));
+        wConsoleLog(getMaxSubSum([100, -9, 2, -3, 5]));
+        wConsoleLog(getMaxSubSum([1, 2, 3]));
     </script>
 </body>
 

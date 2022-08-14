@@ -9,35 +9,26 @@
     <link rel="stylesheet" type="text/css" href="/style/header.css">
     <link rel="stylesheet" type="text/css" href="/style/code.css">
     <title>to replace</title>
+    <script src="/scripts/source_code_replacer.js"></script>
 </head>
 
 <body>
-
-    <div class="page_start"></div>
-
-    <div class="page">
-        <script>
-            "use strict";
-            let styles = ['Джаз', 'Блюз'];
-            console.log(styles);
-
-            styles.push('Рок-н-ролл')
-            console.log(styles);
-
-            styles[Math.floor(styles.length - 1 / 2)] = 'Классика';
-            console.log(styles);
-
-            console.log(styles.shift());
-            console.log(styles);
-
-            styles.unshift('Рэп', 'Регги');
-            console.log(styles);
-        </script>
-    </div>
-
-    <div class="page_end"></div>
-    <script src="/scripts/source_code_replacer.js"></script>
     <script>
+        "use strict";
+        let styles = ['Джаз', 'Блюз'];
+        wConsoleLog(styles);
+
+        styles.push('Рок-н-ролл')
+        wConsoleLog(styles);
+
+        styles[Math.floor(styles.length - 1 / 2)] = 'Классика';
+        wConsoleLog(styles);
+
+        wConsoleLog(styles.shift());
+        wConsoleLog(styles);
+
+        styles.unshift('Рэп', 'Регги');
+        wConsoleLog(styles);
     </script>
 </body>
 

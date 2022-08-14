@@ -7,11 +7,11 @@ async function getResp() {
       if (Response.ok) {
         return Response.json();
       } else {
-        console.log("failed");
+        wConsoleLog("failed");
       }
     })
     .then((json) => {
-      console.log(json);
+      wConsoleLog(json);
       return JSON.stringify(json);
     });
 }
@@ -36,11 +36,11 @@ async function createPost() {
       if (Response.ok) {
         return Response.json();
       } else {
-        console.log("failed");
+        wConsoleLog("failed");
       }
     })
     .then((json) => {
-      console.log(json);
+      wConsoleLog(json);
       return JSON.stringify(json);
     });
 }

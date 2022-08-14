@@ -1,2 +1,2 @@
 'use strict';
-alert('Я JavaScript!');
+wConsoleLog('Я JavaScript!');

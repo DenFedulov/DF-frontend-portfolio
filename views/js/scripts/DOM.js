@@ -8,8 +8,8 @@ body.appendChild(div);
 body.append(div); // not appending because it's already appended
 
 const divt = document.querySelector("div");
-console.log(divt.innerText); // equal to text shown on page
-console.log(divt.textContent); // equal to text shown in html
+wConsoleLog(divt.innerText); // equal to text shown on page
+wConsoleLog(divt.textContent); // equal to text shown in html
 
 const div2 = document.createElement("div");
 div2.innerHTML = "<em>Appended div with text and hmtl code</em>";
@@ -23,33 +23,33 @@ const span = document.querySelector("#sp");
 span.remove();
 
 const span2 = document.querySelector("#sp2");
-console.log(span2.getAttribute("id"));
-console.log(span2.id);
-console.log(span2.title);
+wConsoleLog(span2.getAttribute("id"));
+wConsoleLog(span2.id);
+wConsoleLog(span2.title);
 span2.title = "new title";
-console.log(span2.title);
+wConsoleLog(span2.title);
 span2.removeAttribute("Title");
-console.log(span2.title);
+wConsoleLog(span2.title);
 
-console.log(span2.dataset);
-console.log(span2.dataset.test);
-console.log(span2.dataset.testName);
+wConsoleLog(span2.dataset);
+wConsoleLog(span2.dataset.test);
+wConsoleLog(span2.dataset.testName);
 span2.dataset.test = "789";
 span2.dataset.testName = "0";
-console.log(span2.dataset.test);
-console.log(span2.dataset.testName);
+wConsoleLog(span2.dataset.test);
+wConsoleLog(span2.dataset.testName);
 
-console.log(span2.classList);
+wConsoleLog(span2.classList);
 span2.classList.remove("test2");
-console.log(span2.classList);
+wConsoleLog(span2.classList);
 span2.classList.add("test3");
-console.log(span2.classList);
+wConsoleLog(span2.classList);
 span2.classList.toggle("test");
-console.log(span2.classList);
+wConsoleLog(span2.classList);
 span2.classList.toggle("test3", false);
-console.log(span2.classList);
+wConsoleLog(span2.classList);
 span2.classList.toggle("test3", true);
-console.log(span2.classList);
+wConsoleLog(span2.classList);
 
 span2.style.backgroundColor = "red";
 

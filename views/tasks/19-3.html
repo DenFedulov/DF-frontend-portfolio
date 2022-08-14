@@ -9,31 +9,22 @@
     <link rel="stylesheet" type="text/css" href="/style/header.css">
     <link rel="stylesheet" type="text/css" href="/style/code.css">
     <title>to replace</title>
+    <script src="/scripts/source_code_replacer.js"></script>
 </head>
 
 <body>
-
-    <div class="page_start"></div>
-
-    <div class="page">
-        <script>
-            "use strict";
-            function readNumber() {
-                let number;
-                while (isNaN(number)) {
-                    number = prompt('введите число', '');
-                    if (number == null || number == '') return null;
-
-                }
-                return number;
-            }
-            alert(readNumber());
-        </script>
-    </div>
-
-    <div class="page_end"></div>
-    <script src="/scripts/source_code_replacer.js"></script>
     <script>
+        "use strict";
+        function readNumber() {
+            let number;
+            while (isNaN(number)) {
+                number = prompt('введите число', '');
+                if (number == null || number == '') return null;
+
+            }
+            return number;
+        }
+        wConsoleLog(readNumber());
     </script>
 </body>
 

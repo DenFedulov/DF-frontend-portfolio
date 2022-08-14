@@ -9,35 +9,26 @@
     <link rel="stylesheet" type="text/css" href="/style/header.css">
     <link rel="stylesheet" type="text/css" href="/style/code.css">
     <title>to replace</title>
+    <script src="/scripts/source_code_replacer.js"></script>
 </head>
 
 <body>
-
-    <div class="page_start"></div>
-
-    <div class="page">
-        <script>
-            'use strict';
-            let schedule = {};
-
-            alert(isEmpty(schedule)); // true
-
-            schedule["8:30"] = "get up";
-
-            alert(isEmpty(schedule)); // false
-
-            function isEmpty(obj) {
-                for (const key in obj) {
-                    return false;
-                }
-                return true;
-            }
-        </script>
-    </div>
-
-    <div class="page_end"></div>
-    <script src="/scripts/source_code_replacer.js"></script>
     <script>
+        'use strict';
+        let schedule = {};
+
+        wConsoleLog(isEmpty(schedule)); // true
+
+        schedule["8:30"] = "get up";
+
+        wConsoleLog(isEmpty(schedule)); // false
+
+        function isEmpty(obj) {
+            for (const key in obj) {
+                return false;
+            }
+            return true;
+        }
     </script>
 </body>
 

@@ -9,36 +9,27 @@
     <link rel="stylesheet" type="text/css" href="/style/header.css">
     <link rel="stylesheet" type="text/css" href="/style/code.css">
     <title>to replace</title>
+    <script src="/scripts/source_code_replacer.js"></script>
 </head>
 
 <body>
+    <script>
+        "use strict";
+        function checkSpam(str) {
 
-    <div class="page_start"></div>
+            let badWords = ['viagra', 'xxx'];
+            let lowStr = str.toLowerCase();
 
-    <div class="page">
-        <script>
-            "use strict";
-            function checkSpam(str) {
-
-                let badWords = ['viagra', 'xxx'];
-                let lowStr = str.toLowerCase();
-
-                for (const word of badWords) {
-                    if (lowStr.indexOf(word) != -1) return true;
-                }
-
-                return false;
+            for (const word of badWords) {
+                if (lowStr.indexOf(word) != -1) return true;
             }
 
-            console.log(checkSpam("buy ViAgRA now"));
-            console.log(checkSpam("free xxxxx"));
-            console.log(checkSpam("innocent rabbit"));
-        </script>
-    </div>
+            return false;
+        }
 
-    <div class="page_end"></div>
-    <script src="/scripts/source_code_replacer.js"></script>
-    <script>
+        wConsoleLog(checkSpam("buy ViAgRA now"));
+        wConsoleLog(checkSpam("free xxxxx"));
+        wConsoleLog(checkSpam("innocent rabbit"));
     </script>
 </body>
 

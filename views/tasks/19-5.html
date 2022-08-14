@@ -9,29 +9,20 @@
     <link rel="stylesheet" type="text/css" href="/style/header.css">
     <link rel="stylesheet" type="text/css" href="/style/code.css">
     <title>to replace</title>
+    <script src="/scripts/source_code_replacer.js"></script>
 </head>
 
 <body>
-
-    <div class="page_start"></div>
-
-    <div class="page">
-        <script>
-            "use strict";
-            function random(min, max) {
-                return (max - min) * Math.random() + min;
-            }
-            console.log(random(1, 5));
-            console.log(random(1, 5));
-            console.log(random(1, 5));
-            console.log(random(1, 5));
-            console.log(random(1, 5));
-        </script>
-    </div>
-
-    <div class="page_end"></div>
-    <script src="/scripts/source_code_replacer.js"></script>
     <script>
+        "use strict";
+        function random(min, max) {
+            return (max - min) * Math.random() + min;
+        }
+        wConsoleLog(random(1, 5));
+        wConsoleLog(random(1, 5));
+        wConsoleLog(random(1, 5));
+        wConsoleLog(random(1, 5));
+        wConsoleLog(random(1, 5));
     </script>
 </body>
 

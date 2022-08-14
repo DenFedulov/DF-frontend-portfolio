@@ -9,25 +9,16 @@
     <link rel="stylesheet" type="text/css" href="/style/header.css">
     <link rel="stylesheet" type="text/css" href="/style/code.css">
     <title>to replace</title>
+    <script src="/scripts/source_code_replacer.js"></script>
 </head>
 
 <body>
-
-    <div class="page_start"></div>
-
-    <div class="page">
-        <script>
-            "use strict";
-            alert(1.35.toFixed(20));
-            alert(6.35.toFixed(20));
-
-            alert(Math.round(6.35 * 10) / 10);
-        </script>
-    </div>
-
-    <div class="page_end"></div>
-    <script src="/scripts/source_code_replacer.js"></script>
     <script>
+        "use strict";
+        wConsoleLog(1.35.toFixed(20));
+        wConsoleLog(6.35.toFixed(20));
+
+        wConsoleLog(Math.round(6.35 * 10) / 10);
     </script>
 </body>
 

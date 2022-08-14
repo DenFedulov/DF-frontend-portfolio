@@ -9,37 +9,28 @@
     <link rel="stylesheet" type="text/css" href="/style/header.css">
     <link rel="stylesheet" type="text/css" href="/style/code.css">
     <title>to replace</title>
+    <script src="/scripts/source_code_replacer.js"></script>
 </head>
 
 <body>
-
-    <div class="page_start"></div>
-
-    <div class="page">
-        <script>
-            'use strict';
-            const number = +prompt('Введите число между 0 и 3', '');
-
-            switch (number) {
-                case 0:
-                    alert('Вы ввели число 0');
-                    break;
-
-                case 1:
-                    alert('Вы ввели число 1');
-                    break;
-
-                case 2:
-                case 3:
-                    alert('Вы ввели число 2, а может и 3');
-                    break;
-            }
-        </script>
-    </div>
-
-    <div class="page_end"></div>
-    <script src="/scripts/source_code_replacer.js"></script>
     <script>
+        'use strict';
+        const number = +prompt('Введите число между 0 и 3', '');
+
+        switch (number) {
+            case 0:
+                wConsoleLog('Вы ввели число 0');
+                break;
+
+            case 1:
+                wConsoleLog('Вы ввели число 1');
+                break;
+
+            case 2:
+            case 3:
+                wConsoleLog('Вы ввели число 2, а может и 3');
+                break;
+        }
     </script>
 </body>
 

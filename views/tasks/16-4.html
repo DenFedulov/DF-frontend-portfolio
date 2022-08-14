@@ -9,61 +9,52 @@
     <link rel="stylesheet" type="text/css" href="/style/header.css">
     <link rel="stylesheet" type="text/css" href="/style/code.css">
     <title>to replace</title>
+    <script src="/scripts/source_code_replacer.js"></script>
 </head>
 
 <body>
-
-    <div class="page_start"></div>
-
-    <div class="page">
-        <script>
-            'use strict';
-            let calculator = {
-                readNumbers: [],
-
-                read(a, b) {
-                    if (a && b) {
-                        this.readNumbers.push(a);
-                        this.readNumbers.push(b);
-                    }
-                },
-
-                sum() {
-                    let sum = 0;
-
-                    for (const index in this.readNumbers) {
-                        if (Object.hasOwnProperty.call(this.readNumbers, index)) {
-                            const element = this.readNumbers[index];
-                            sum += element;
-                        }
-                    }
-                    return sum;
-                },
-
-                mul() {
-                    if (this.readNumbers.length <= 0) return 0;
-
-                    let mul = 1;
-
-                    for (const index in this.readNumbers) {
-                        if (Object.hasOwnProperty.call(this.readNumbers, index)) {
-                            const element = this.readNumbers[index];
-                            mul *= element;
-                        }
-                    }
-                    return mul;
-                }
-            };
-
-            calculator.read(3, 5);
-            alert(calculator.sum());
-            alert(calculator.mul());
-        </script>
-    </div>
-
-    <div class="page_end"></div>
-    <script src="/scripts/source_code_replacer.js"></script>
     <script>
+        'use strict';
+        let calculator = {
+            readNumbers: [],
+
+            read(a, b) {
+                if (a && b) {
+                    this.readNumbers.push(a);
+                    this.readNumbers.push(b);
+                }
+            },
+
+            sum() {
+                let sum = 0;
+
+                for (const index in this.readNumbers) {
+                    if (Object.hasOwnProperty.call(this.readNumbers, index)) {
+                        const element = this.readNumbers[index];
+                        sum += element;
+                    }
+                }
+                return sum;
+            },
+
+            mul() {
+                if (this.readNumbers.length <= 0) return 0;
+
+                let mul = 1;
+
+                for (const index in this.readNumbers) {
+                    if (Object.hasOwnProperty.call(this.readNumbers, index)) {
+                        const element = this.readNumbers[index];
+                        mul *= element;
+                    }
+                }
+                return mul;
+            }
+        };
+
+        calculator.read(3, 5);
+        wConsoleLog(calculator.sum());
+        wConsoleLog(calculator.mul());
     </script>
 </body>
 
