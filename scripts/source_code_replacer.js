@@ -37,7 +37,13 @@ class SourceCodeReplacer {
     async placeHTMLSourceCode() {
         await this.codePromise;
         try {
-            document.querySelector('.html_code').innerText = document.querySelector('.page').innerHTML;
+            let pageHTML = document.querySelector('.page').innerHTML;
+
+            if (pageHTML.slice(0, 2).includes('\n')) {
+                pageHTML = location.pathname + ':\n' + pageHTML.slice(2);
+            }
+
+            document.querySelector('.html_code').innerText = pageHTML;
         } catch (e) {
             console.error(e);
             document.querySelector('.html_code').innerText = "Error loading file: " + e;
