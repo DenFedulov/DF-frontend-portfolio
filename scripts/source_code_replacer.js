@@ -3,16 +3,16 @@
 class SourceCodeReplacer {
 
     constructor() {
-        this.codePromise = this.replaceHTML("/views/code_sections.html", ".page_end");
         this.replaceHTML("/views/homeheader.html", ".page_start");
-        this.placeHTMLSourceCode();
-        this.addTaskTitle();
+        this.codePromise = this.replaceHTML("/views/code_sections.html", ".page_end").then(() => {
+            this.placeHTMLSourceCode();
+            this.getConsoleElem();
+        });
 
-        this.getConsoleElem();
+        this.addTaskTitle();
     }
 
-    async getConsoleElem() {
-        await this.codePromise;
+    getConsoleElem() {
         try {
             this.consoleElem = document.querySelector('.console');
         } catch (e) { }
@@ -34,8 +34,7 @@ class SourceCodeReplacer {
         })
     }
 
-    async placeHTMLSourceCode() {
-        await this.codePromise;
+    placeHTMLSourceCode() {
         try {
             let pageHTML = document.querySelector('.page').innerHTML;
 
@@ -80,6 +79,7 @@ class SourceCodeReplacer {
 
     async replaceCodeSection(path, targetElem) {
         await this.codePromise;
+
         if (targetElem == "css_code") this.showSection("CSS_toggle");
         if (targetElem == "js_code") this.showSection("JavaScript_toggle");
         let target;
