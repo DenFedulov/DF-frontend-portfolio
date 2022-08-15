@@ -21,7 +21,7 @@ img.sidebar_toggle_button.off {
 .header ul.combo.off,
 .header ul.combo li,
 .header ul.combo.off li {
-    transition: height 0.5s, padding 0.5s, margin 0.5s, font-size 0.5s;
+    transition: height 0.3s, padding 0.3s, margin 0.3s, font-size 0.3s;
 }
 
 img.sidebar_toggle_button,

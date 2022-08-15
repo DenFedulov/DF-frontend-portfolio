@@ -1,5 +1,12 @@
 body {
-    background-color: rgb(63, 81, 129);
+    background-color: #3f5181;
+}
+
+.page p {
+    text-align: center;
+    background-color: #743f81;
+    border-radius: 10px;
+    color: #f3ff8afd;
 }
 
 .filter {
