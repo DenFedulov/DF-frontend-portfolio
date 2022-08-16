@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Basic example</title>
+    <link rel="stylesheet" type="text/css" href="/style/main_style.css">
+    <link rel="stylesheet" type="text/css" href="/style/header.css">
+    <link rel="stylesheet" type="text/css" href="/style/code.css">
+    <link rel="stylesheet" type="text/css" href="/style/dark_theme.css">
+    <script src="/scripts/source_code_replacer.js"></script>
+</head>
+
+<body>
+    <h1>Most Used HTML tags</h1>
+
+
+    <h2>Essential tags</h2>
+    <div class="tag">
+        <h3>&lt;!DOCTYPE html&gt;</h3>
+        <p>
+            All HTML documents must start with a
+            &lt;!DOCTYPE html&gt; declaration.<br>
+            The declaration is not an HTML tag. It is an "information" to the browser about what document type to
+            expect.
+        </p>
+    </div>
+    <div class="tag">
+        <h3>&lt;html&gt;</h3>
+        <p>
+            The &lt;html&gt; tag represents the root of an HTML document.<br>
+            The &lt;html&gt; tag is the container for all other HTML elements (except for the &lt;!DOCTYPE html&gt;
+            tag).<br>
+            <br>
+            Default CSS style: <br>
+            display: block;<br>
+        </p>
+    </div>
+    <div class="tag">
+        <h3>&lt;head&gt;</h3>
+        <p>
+            The &lt;head&gt; element is a container for metadata (data about data) and is placed between the
+            &lt;html&gt;
+            tag and the &lt;body&gt; tag.<br>
+            Metadata is data about the HTML document. Metadata is not displayed.<br>
+            Metadata typically define the document title, character set, styles, scripts, and other meta
+            information.<br>
+            The following elements can go inside the &lt;head&gt; element:<br>
+            &lt;title&gt; (required in every HTML document)<br>
+            &lt;style&gt;<br>
+            &lt;base&gt;<br>
+            &lt;link&gt;<br>
+            &lt;meta&gt;<br>
+            &lt;script&gt;<br>
+            &lt;noscript&gt;<br>
+            <br>
+            Default CSS style: <br>
+            display: none;<br>
+        </p>
+    </div>
+    <div class="tag">
+        <h3>&lt;body&gt;</h3>
+        <p>
+            The &lt;body&gt; tag defines the document's body.<br>
+            The &lt;body&gt; element contains all the contents of an HTML document, such as headings, paragraphs,
+            images,
+            hyperlinks, tables, lists, etc.<br>
+            Note: There can only be one &lt;body&gt; element in an HTML document.<br>
+            <br>
+            Default CSS style: <br>
+            display: block;<br>
+            margin: 8px;<br>
+        </p>
+    </div>
+
+
+
+    <h2>Important not displayed element tags</h2>
+    <div class="tag">
+        <h3>&lt;title&gt;</h3>
+        <p>
+            The &lt;title&gt; tag defines the title of the document. The title must be text-only, and it is shown in the
+            browser's title bar or in the page's tab.<br>
+            The &lt;title&gt; tag is required in HTML documents! <br>
+            Here are some tips for creating good titles:<br>
+        </p>
+        <ul>
+            <li>Go for a longer, descriptive title (avoid one- or two-word titles)</li>
+            <li>Search engines will display about 50-60 characters of the title, so try not to have titles longer than
+                that</li>
+            <li>Do not use just a list of words as the title (this may reduce the page's position in search results)
+                So, try to make the title as accurate and meaningful as possible!</li>
+        </ul>
+        <p>
+            Default CSS style: <br>
+            display: none;<br>
+        </p>
+    </div>
+    <div class="tag">
+        <h3>&lt;link&gt;</h3>
+        <p>
+            The &lt;link&gt; tag defines the relationship between the current document and an external resource.<br>
+            The &lt;link&gt; tag is most often used to link to external style sheets or to add a favicon to your
+            website.<br>
+            <br>
+            Default CSS style: <br>
+            display: none;<br>
+        </p>
+    </div>
+    <div class="tag">
+        <h3>&lt;style&gt;</h3>
+        <p>
+            The &lt;style&gt; tag is used to define style information (CSS) for a document.<br>
+            Inside the &lt;style&gt; element you specify how HTML elements should render in a browser.<br>
+            <br>
+            Default CSS style: <br>
+            display: none;<br>
+        </p>
+    </div>
+    <div class="tag">
+        <h3>&lt;script&gt;</h3>
+        <p>
+            The &lt;script&gt; tag is used to embed a client-side script (JavaScript).<br>
+            The &lt;script&gt; element either contains scripting statements, or it points to an external script file
+            through
+            the src attribute.<br>
+            Common uses for JavaScript are image manipulation, form validation, and dynamic changes of content.<br>
+            <br>
+            Default CSS style: <br>
+            display: none;<br>
+        </p>
+    </div>
+
+
+
+    <h2>Displayed tags</h2>
+    <div class="tag">
+        <h3>&lt;div&gt;</h3>
+        <p>
+            The &lt;div&gt; tag defines a division or a section in an HTML document.<br>
+            This tag is commonly used as generic container for various purposes and a target for styling<br>
+            <br>
+            Example:
+        <div class="test" style="background-color: #000; color: #f00;">this is a test div</div>
+        <br>
+        Default CSS style: <br>
+        display: block;<br>
+        </p>
+    </div>
+    <div class="tag">
+        <h3>&lt;h1&gt;...&lt;h6&gt;</h3>
+        <p>
+            The &lt;h1&gt;...&lt;h6&gt; tags are used to define a heading. (from most important to least)<br>
+            <br>
+            Example:
+        <h1>h1</h1>
+        <h2>h2</h2>
+        <h3>h3</h3>
+        <h4>h4</h4>
+        <h5>h5</h5>
+        <h6>h6</h6>
+        <br>
+        Default CSS style: <br>
+        h1 {<br>
+        display: block;<br>
+        font-size: 2em;<br>
+        margin-top: 0.67em;<br>
+        margin-bottom: 0.67em;<br>
+        margin-left: 0;<br>
+        margin-right: 0;<br>
+        font-weight: bold;<br>
+        }<br>
+        font-size decreases every next tag and margin-top, margin-bottom increases <br>
+        </p>
+    </div>
+    <div class="tag">
+        <h3>&lt;p&gt;</h3>
+        <p>
+            The &lt;p&gt; tag defines a paragraph.<br>
+            <br>
+            Example:
+        <p>text</p>
+        <br>
+        Default CSS style: <br>
+        display: block;<br>
+        margin-top: 1em;<br>
+        margin-bottom: 1em;<br>
+        margin-left: 0;<br>
+        margin-right: 0;<br>
+        </p>
+    </div>
+    <div class="tag">
+        <h3>&lt;br&gt;</h3>
+        <p>
+            The &lt;br&gt; tag inserts a line break.<br>
+        </p>
+    </div>
+    <div class="tag">
+        <h3>&lt;span&gt;</h3>
+        <p>
+            The &lt;span&gt; tag is an inline container used to mark part of the text for styling.<br>
+            <br>
+            Example: <span style="text-decoration: underline; font-weight: bold; color: #ff0">text to style</span>
+            <br>
+            Default CSS style: <br>
+            none
+        </p>
+    </div>
+    <div class="tag">
+        <h3>&lt;img&gt;</h3>
+        <p>
+            The &lt;img&gt; tag is used to embed an image in an HTML page.<br>
+            The &lt;img&gt; tag has two required attributes:
+        <ul>
+            <li>
+                src - Specifies the path to the image
+            </li>
+            <li>
+                alt - Specifies an alternate text for the image, if the image for some reason cannot be displayed
+            </li>
+        </ul>
+        Example: <img src="/media/dog.jpg" alt="dog">
+        <br>
+        Default CSS style: <br>
+        display: inline-block;<br>
+        </p>
+    </div>
+    <div class="tag">
+        <h3>&lt;a&gt;</h3>
+        <p>
+            The &lt;a&gt; tag defines a hyperlink, which is used to link from one page to another.<br>
+            The href attribute indicates link's destination. <br>
+            <br>
+            Example: <a href="https://www.google.com/" target="_blank">Google</a>
+            <br>
+            Default CSS style: <br>
+            a:link, a:visited {<br>
+            color: (internal value);<br>
+            text-decoration: underline;<br>
+            cursor: auto;<br>
+            }<br>
+            <br>
+            a:link:active, a:visited:active {<br>
+            color: (internal value);<br>
+            }<br>
+        </p>
+    </div>
+    <div class="tag">
+        <h3>&lt;pre&gt;</h3>
+        <p>
+            The &lt;pre&gt; tag defines preformatted text.<br>
+            Text in a &lt;pre&gt; element is displayed in a fixed-width font, and the text preserves both spaces and
+            line breaks.<br>
+            The text will be displayed exactly as written in the HTML source code.<br>
+            <br>
+            Example:
+        <pre>
+                test
+            </pre>
+        <br>
+        Default CSS style: <br>
+        display: block;<br>
+        font-family: monospace;<br>
+        white-space: pre;<br>
+        margin: 1em 0;<br>
+        </p>
+    </div>
+</body>
+
+</html>

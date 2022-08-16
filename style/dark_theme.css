@@ -1,0 +1,28 @@
+.page {
+    background-color: #3d3d3d;
+    color: #fff;
+    padding: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.page h1 {
+    text-align: center;
+    font-size: 30px;
+}
+
+.page h2 {
+    text-align: center;
+    font-size: 25px;
+}
+
+.page h3 {
+    margin: 5px;
+    font-size: 20px;
+}
+
+.page .tag {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    background-color: #555555;
+    padding: 10px;
+}

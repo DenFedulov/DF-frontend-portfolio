@@ -1,11 +1,13 @@
 basic.html > Basic
 form.html > Form
+common_tags.html > Most Used HTML tags
 -
 templates.html > Templates
 https://validator.w3.org/ The W3C Markup Validation Service
+https://www.w3schools.com/csSref/css_default_values.asp Default CSS tags styles
+https://www.whatsmyip.org/html-characters/ HTML Entities & Special Characters
 -
 https://www.w3schools.com/tags/default.asp HTML Element Reference
-https://www.whatsmyip.org/html-characters/ HTML Entities & Special Characters
 https://professorweb.ru/my/html/html5/level1/html5_index.php Учебник HTML5
 https://whatwg.org/ HTML Standard
 https://www.youtube.com/watch?v=qz0aGYrrlhU HTML Tutorial for Beginners

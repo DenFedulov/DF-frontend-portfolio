@@ -7,7 +7,9 @@ class SourceCodeReplacer {
         let headerElems = this.createHeader();
         this.pageElem = this.createElementWithClass('div', 'page');
 
-        let consoleElem = this.createConsole();
+        this.consoleElemBox = this.createConsole();
+        this.consoleElem = this.consoleElemBox.querySelector('.console');
+
         let togglesElem = this.createCodeSectionToggles();
         let codeElem = this.createCodeSections();
         this.codeSectionLoadedPromise = new Promise((resolve, reject) => {
@@ -18,7 +20,7 @@ class SourceCodeReplacer {
 
                 this.moveBodyToElement(this.pageElem);
                 body.prepend(...headerElems);
-                body.append(this.createElementWithClass('div', 'line'), consoleElem, togglesElem, codeElem);
+                body.append(this.createElementWithClass('div', 'line'), this.consoleElemBox, togglesElem, codeElem);
 
                 this.addTaskTitle();
 
@@ -26,12 +28,6 @@ class SourceCodeReplacer {
 
             };
         });
-    }
-
-    getConsoleElem() {
-        try {
-            this.consoleElem = document.querySelector('.console');
-        } catch (e) { }
     }
 
     addTaskTitle() {
@@ -73,7 +69,7 @@ class SourceCodeReplacer {
             target = document.getElementsByClassName(targetElem)[0];
 
             this.defaultXMLHttpRequest(fullPath, function (xml) {
-                target.innerHTML += path + ":<br>";
+                target.innerHTML += "<br>" + path + ":<br>";
                 target.innerText += xml.responseText;
                 target.innerHTML += "<br><br>";
             })
@@ -136,7 +132,7 @@ class SourceCodeReplacer {
     }
 
     createConsole() {
-        let consoleBoxElem = this.createElementWithClass('div', 'console_box');
+        let consoleBoxElem = this.createElementWithClass('div', 'console_box', 'off');
         consoleBoxElem.innerText = 'Console:';
         this.consoleElem = this.createElementWithClass('ul', 'console');
         consoleBoxElem.append(this.consoleElem);
@@ -172,17 +168,17 @@ class SourceCodeReplacer {
 
         let htmlSection = this.createElementWithClass('div', 'code_section', 'HTML_toggle');
         htmlSection.innerText = 'HTML Source code:';
-        this.htmlCode = this.createElementWithClass('div', 'html_code');
+        this.htmlCode = this.createElementWithClass('code', 'html_code');
         htmlSection.append(this.htmlCode);
 
         let cssSection = this.createElementWithClass('div', 'code_section', 'CSS_toggle', 'off');
         cssSection.innerText = 'CSS Source code (linked):';
-        this.cssCode = this.createElementWithClass('div', 'css_code');
+        this.cssCode = this.createElementWithClass('code', 'css_code');
         cssSection.append(this.cssCode);
 
         let jsSection = this.createElementWithClass('div', 'code_section', 'JavaScript_toggle', 'off');
         jsSection.innerText = 'JavaScript Source code (linked):';
-        this.jsCode = this.createElementWithClass('div', 'js_code');
+        this.jsCode = this.createElementWithClass('code', 'js_code');
         jsSection.append(this.jsCode);
 
         code.append(htmlSection, cssSection, jsSection);
@@ -197,9 +193,7 @@ class SourceCodeReplacer {
             text = text.slice(0, liveCodeIndx);
         }
 
-        if (text.slice(0, 2).includes('\n')) {
-            text = location.pathname + ':\n' + text.slice(2);
-        }
+        text = '\n' + location.pathname + ':' + text;
 
         return text;
     }
@@ -207,6 +201,8 @@ class SourceCodeReplacer {
     async wConsoleLog(...args) {
         let li = document.createElement('li');
         li.innerText = '▶ ';
+
+        this.consoleElemBox.classList.remove('off');
 
         for (const value of args) {
             if (typeof value == 'object') {

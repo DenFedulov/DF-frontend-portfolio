@@ -32,6 +32,10 @@
     font-size: 1.5em;
 }
 
+.console_box.off {
+    display: none;
+}
+
 .console {
     list-style-type: none;
     font-family: 'Courier New', Courier, monospace;
@@ -79,9 +83,6 @@
     display: flex;
     justify-content: center;
     padding: 10px;
-    line-height: 1.5em;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
     text-align: left;
     flex-direction: row;
 }
@@ -106,4 +107,9 @@
 
 .code_section.off {
     display: none;
+}
+
+code {
+    font-size: 18px;
+    line-height: 1.4em;
 }
