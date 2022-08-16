@@ -13,8 +13,9 @@
     <script src="/scripts/source_code_replacer.js"></script>
     <script>
         replaceCodeSection("/views/algorithms/scripts/quick_sort.js", "js_code");
-        replaceCodeSection("/views/algorithms/scripts/random_array_func.js", "js_code");
+        replaceCodeSection("/views/algorithms/scripts/array_generators.js", "js_code");
     </script>
+    <script src="/views/algorithms/scripts/array_generators.js"></script>
 </head>
 
 <body>
@@ -24,8 +25,21 @@
     <p>
         Function that generates array of random integers was created for testing.
     </p>
-    <script defer src="/views/algorithms/scripts/random_array_func.js"></script>
-    <script defer src="/views/algorithms/scripts/quick_sort.js"></script>
+    <script src="/views/algorithms/scripts/quick_sort.js"></script>
+    <script>
+
+        let arr1 = genShuffledIntRangeArray(1, 20);
+        let arr2 = [4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3];
+        let arr3 = genRandomArray(10, 0, 100);
+
+        wConsoleLog("Shuffled array:", arr1);
+        wConsoleLog(quickSort(arr1));
+        wConsoleLog("Set array:", arr2);
+        wConsoleLog(quickSort(arr2));
+        wConsoleLog("Random array:", arr3);
+        wConsoleLog(quickSort(arr3));
+
+    </script>
 </body>
 
 </html>

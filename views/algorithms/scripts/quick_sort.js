@@ -56,14 +56,3 @@ function simpleSort(arr, arrStart = 0, arrEnd = arr.length) {
         }
     }
 }
-
-let arr1 = genShuffledArray(1, 20);
-let arr2 = [4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3];
-let arr3 = genRandomArray(10, 0, 100);
-
-wConsoleLog("Shuffled array:", arr1);
-wConsoleLog(quickSort(arr1));
-wConsoleLog("Set array:", arr2);
-wConsoleLog(quickSort(arr2));
-wConsoleLog("Random array:", arr3);
-wConsoleLog(quickSort(arr3));

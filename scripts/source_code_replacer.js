@@ -96,29 +96,6 @@ class SourceCodeReplacer {
         xml.send();
     }
 
-    async wConsoleLog(...args) {
-        let li = document.createElement('li');
-        li.innerText = '▶ ';
-
-        for (const value of args) {
-            if (typeof value == 'object') {
-                if (value instanceof Array) {
-                    li.innerText += `Array(${value.length}) ${JSON.stringify(value)}  `
-                } else {
-                    li.innerText += `Object ${JSON.stringify(value)}  `
-                }
-            } else if (typeof value == 'string') {
-                li.innerText += `'${value}'  `;
-            } else {
-                li.innerText += value + '  ';
-            }
-        }
-
-        await this.codeSectionLoadedPromise;
-
-        this.consoleElem.append(li);
-    }
-
     createElementWithClass(elementName, ...classNames) {
         let elem = document.createElement(elementName);
         elem.classList.add(...classNames);
@@ -225,6 +202,29 @@ class SourceCodeReplacer {
         }
 
         return text;
+    }
+
+    async wConsoleLog(...args) {
+        let li = document.createElement('li');
+        li.innerText = '▶ ';
+
+        for (const value of args) {
+            if (typeof value == 'object') {
+                if (value instanceof Array) {
+                    li.innerText += `Array(${value.length}) ${JSON.stringify(value)}  `
+                } else {
+                    li.innerText += `Object ${JSON.stringify(value)}  `
+                }
+            } else if (typeof value == 'string') {
+                li.innerText += `'${value}'  `;
+            } else {
+                li.innerText += value + '  ';
+            }
+        }
+
+        await this.codeSectionLoadedPromise;
+
+        this.consoleElem.append(li);
     }
 }
 

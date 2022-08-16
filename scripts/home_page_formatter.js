@@ -28,12 +28,18 @@ class HomePageFormatter {
         });
 
         for (const combo of this.combos) {
-            combo.parentElement.addEventListener('mouseover', () => {
+            combo.parentElement.addEventListener('mouseover', function () {
+                this.IsMouseOn = true;
                 combo.classList.remove('off');
             });
 
-            combo.parentElement.addEventListener('mouseout', () => {
-                combo.classList.add('off');
+            combo.parentElement.addEventListener('mouseout', function () {
+                this.IsMouseOn = false;
+                setTimeout(() => {
+                    if (this.IsMouseOn == false) {
+                        combo.classList.add('off');
+                    }
+                }, 300)
             });
         }
 

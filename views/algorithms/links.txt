@@ -1,3 +1,4 @@
+array_generators.html > Array generators
 sqrt.html > Sqrt(x) implementation
 binary_search.html > Binary search
 quick_sort.html > Quick sort

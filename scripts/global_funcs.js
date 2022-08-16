@@ -5,7 +5,7 @@ function createDirectLinkElement(path) {
 
     directLink.classList.add('directLink');
     directLink.href = path;
-    directLink.innerText = " >";
+    directLink.innerText = " ▶";
     directLink.target = "_parent";
 
     return directLink;

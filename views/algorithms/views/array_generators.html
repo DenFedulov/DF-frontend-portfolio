@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/style/main_style.css">
+    <link rel="stylesheet" type="text/css" href="/style/header.css">
+    <link rel="stylesheet" type="text/css" href="/style/code.css">
+    <title>Binary search</title>
+
+    <script src="/scripts/source_code_replacer.js"></script>
+    <script>
+        replaceCodeSection("/views/algorithms/scripts/array_generators.js", "js_code");
+    </script>
+</head>
+
+<body>
+    <p>
+        Functions for generating arrays used in further testing.
+    </p>
+    <script src="/views/algorithms/scripts/array_generators.js"></script>
+    <script>
+        wConsoleLog("genRandomArray(10, 0, 100) => " + genRandomArray(10, 0, 100));
+        wConsoleLog("genShuffledIntRangeArray(10, 20) => " + genShuffledIntRangeArray(10, 20));
+        wConsoleLog("genRandomNoDupArray(10, 0, 100) => " + genRandomNoDupArray(10, 0, 100));
+        wConsoleLog("genSortedRandomNoDupArray(10, 0, 100) => " + genSortedRandomNoDupArray(10, 0, 100));
+    </script>
+</body>
+
+</html>
