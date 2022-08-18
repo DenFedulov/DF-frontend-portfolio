@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/style/main_style.css">
+    <link rel="stylesheet" type="text/css" href="/style/header.css">
+    <link rel="stylesheet" type="text/css" href="/style/code.css">
+    <title>to replace</title>
+    <script src="/scripts/source_code_replacer.js"></script>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        function unique(arr) {
+            let uniques = [];
+
+            for (let i = 0; i < arr.length; i++) {
+                let notHere = true;
+
+                for (let j = 0; j < uniques.length; j++) {
+                    if (arr[i] == uniques[j]) {
+                        notHere = false;
+                    }
+                }
+
+                if (notHere) uniques.push(arr[i]);
+            }
+
+            return uniques;
+        }
+
+        let strings = ["кришна", "кришна", "харе", "харе",
+            "харе", "харе", "кришна", "кришна", ":-O"
+        ];
+
+        wConsoleLog(unique(strings)); // кришна, харе, :-O
+    </script>
+</body>
+
+</html>

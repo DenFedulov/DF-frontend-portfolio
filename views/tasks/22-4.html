@@ -16,11 +16,11 @@
     <script>
         'use strict';
 
-        function filterRange(arr, a, b) {
-            return arr.filter((value) => value >= a && value <= b);
-        }
+        let arr = [5, 2, 1, -10, 8];
 
-        wConsoleLog(filterRange([5, 3, 8, 1], 1, 4));
+        arr.sort((a, b) => b - a);
+
+        wConsoleLog(arr);
     </script>
 </body>
 

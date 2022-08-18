@@ -16,11 +16,17 @@
     <script>
         'use strict';
 
-        function filterRange(arr, a, b) {
-            return arr.filter((value) => value >= a && value <= b);
-        }
+        let vasya = { name: "Вася", surname: "Пупкин", id: 1 };
+        let petya = { name: "Петя", surname: "Иванов", id: 2 };
+        let masha = { name: "Маша", surname: "Петрова", id: 3 };
 
-        wConsoleLog(filterRange([5, 3, 8, 1], 1, 4));
+        let users = [vasya, petya, masha];
+
+        let names = users.map((value) => {
+            return { fullName: `${value.name} ${value.surname}`, id: value.id };
+        })
+
+        wConsoleLog(names); 
     </script>
 </body>
 

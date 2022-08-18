@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/style/main_style.css">
+    <link rel="stylesheet" type="text/css" href="/style/header.css">
+    <link rel="stylesheet" type="text/css" href="/style/code.css">
+    <title>to replace</title>
+    <script src="/scripts/source_code_replacer.js"></script>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        function Calculator() {
+            this.methodsMap = new Map().set('+', (a, b) => a + b);
+
+            this.calculate = function (str) {
+                let elems = str.split(' ');
+                let method;
+                try {
+                    method = this.methodsMap.get(elems[1]);
+                    return method(+elems[0], +elems[2]);
+                } catch (e) {
+                    if (!method) {
+                        wConsoleLog(`Method for ${str} operation does not exist`);
+                    } else wConsoleLog('MethodError');
+                }
+
+            };
+
+            this.addMethod = function (key, value) {
+                if (this.methodsMap.has(key)) wConsoleLog(`Method ${key} was overwritten`);
+                this.methodsMap.set(key, value);
+            }
+        }
+
+        let powerCalc = new Calculator;
+        powerCalc.addMethod("*", (a, b) => a * b);
+        powerCalc.addMethod("/", (a, b) => a / b);
+        powerCalc.addMethod("**", (a, b) => a ** b);
+        powerCalc.addMethod("**", (a, b) => a - b);
+
+        wConsoleLog('2 ** 3 = ' + powerCalc.calculate("2 ** 3")); // 8
+        wConsoleLog('8 / 2 = ' + powerCalc.calculate("8 / 2"));
+        wConsoleLog('5 * 3 = ' + powerCalc.calculate("5 * 3"));
+        wConsoleLog('5 - 3 = ' + powerCalc.calculate("5 - 3")); 
+    </script>
+</body>
+
+</html>

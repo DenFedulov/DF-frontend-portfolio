@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/style/main_style.css">
+    <link rel="stylesheet" type="text/css" href="/style/header.css">
+    <link rel="stylesheet" type="text/css" href="/style/code.css">
+    <title>to replace</title>
+    <script src="/scripts/source_code_replacer.js"></script>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        function randomInt(min, max) {
+            return Math.floor((max + 1 - min) * Math.random() + min);
+        }
+
+        function shuffle(arr) {
+            for (let i = arr.length - 1; i > 0; i--) {
+                let random = randomInt(0, i);
+                let t = arr[i];
+                arr[i] = arr[random];
+                arr[random] = t;
+            }
+        }
+
+        let arr = [1, 2, 3];
+
+        shuffle(arr);
+        wConsoleLog(arr);
+
+        shuffle(arr);
+        wConsoleLog(arr);
+
+        shuffle(arr);
+        wConsoleLog(arr);
+
+        let count = {
+            '123': 0,
+            '132': 0,
+            '213': 0,
+            '231': 0,
+            '321': 0,
+            '312': 0
+        };
+
+        for (let i = 0; i < 100000; i++) {
+            let array = [1, 2, 3];
+            shuffle(array);
+            count[array.join('')]++;
+        }
+
+        // показать количество всех возможных вариантов
+        for (let key in count) {
+            wConsoleLog(`${key}: ${count[key]}`);
+        }
+    </script>
+</body>
+
+</html>

@@ -16,6 +16,15 @@ function genRandomArray(size, min, max, isSorted = false) {
     return arr;
 }
 
+function shuffleArray(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        let random = randomInt(0, i);
+        let t = arr[i];
+        arr[i] = arr[random];
+        arr[random] = t;
+    }
+}
+
 function genShuffledIntRangeArray(min, max) {
     let nums = [];
 
@@ -23,15 +32,9 @@ function genShuffledIntRangeArray(min, max) {
         nums.push(i);
     }
 
-    let shuffledNums = [];
+    shuffleArray(nums);
 
-    while (nums.length > 0) {
-        let random = randomInt(0, nums.length - 1);
-        shuffledNums.push(nums[random]);
-        nums.splice(random, 1);
-    }
-
-    return shuffledNums;
+    return nums;
 }
 
 function genRandomNoDupArray(size, min, max) {

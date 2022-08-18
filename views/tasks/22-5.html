@@ -16,11 +16,16 @@
     <script>
         'use strict';
 
-        function filterRange(arr, a, b) {
-            return arr.filter((value) => value >= a && value <= b);
+        function copySorted(arr) {
+            return arr.slice().sort();
         }
 
-        wConsoleLog(filterRange([5, 3, 8, 1], 1, 4));
+        let arr = ["HTML", "JavaScript", "CSS"];
+
+        let sorted = copySorted(arr);
+
+        wConsoleLog(sorted); // CSS, HTML, JavaScript
+        wConsoleLog(arr); // HTML, JavaScript, CSS (без изменений)
     </script>
 </body>
 

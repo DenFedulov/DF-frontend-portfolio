@@ -16,11 +16,19 @@
     <script>
         'use strict';
 
-        function filterRange(arr, a, b) {
-            return arr.filter((value) => value >= a && value <= b);
+        function sortByAge(arr) {
+            arr.sort((a, b) => a.age - b.age);
         }
 
-        wConsoleLog(filterRange([5, 3, 8, 1], 1, 4));
+        let vasya = { name: "Вася", age: 25 };
+        let petya = { name: "Петя", age: 30 };
+        let masha = { name: "Маша", age: 28 };
+
+        let users = [vasya, petya, masha];
+
+        sortByAge(users);
+
+        wConsoleLog(users); 
     </script>
 </body>
 

@@ -17,11 +17,11 @@
         'use strict';
 
         function camelize(str) {
-            return str.split('-').map((elem, i) => {
+            return str.split('-').map((value, i) => {
                 if (i > 0) {
-                    return elem.charAt(0).toUpperCase() + elem.slice(1);
+                    return value.charAt(0).toUpperCase() + value.slice(1);
                 }
-                return elem;
+                return value;
             }).join('');
         }
 
