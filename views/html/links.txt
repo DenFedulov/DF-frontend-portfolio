@@ -1,5 +1,6 @@
 basic.html > Basic
 form.html > Form
+table.html > Table
 common_tags.html > Most Used HTML tags
 -
 templates.html > Templates
