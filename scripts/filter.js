@@ -3,36 +3,37 @@
 class Filter {
 
     constructor() {
+        this.filterDiv = document.createElement('div');
+        this.inputElem = document.createElement('input');
+        this.filterModeToggleButton = document.createElement('button');
+
+        this.filterMode = 'Links';
         try {
-            this.filterMode = 'Links';
+            this.page = document.querySelector('.page');
             this.sectionElems = document.querySelectorAll('.section');
+            this.orderedSections = Array.prototype.slice.call(this.sectionElems, 0);
         } catch (e) {
             console.error(e);
         }
     }
 
     init() {
-        const filterDiv = document.createElement('div');
-        const inputElem = document.createElement('input');
-        const filterModeToggleButton = document.createElement('button');
+        this.filterDiv.classList.add('filter');
 
-        filterDiv.classList.add('filter');
+        this.inputElem.type = 'text';
+        this.inputElem.placeholder = 'filter';
+        this.inputElem.addEventListener('input', () => this.filterUpdate(this.inputElem.value));
 
-        inputElem.type = 'text';
-        inputElem.placeholder = 'filter';
-        inputElem.addEventListener('input', () => this.filterUpdate(inputElem.value));
-
-        filterModeToggleButton.innerText = this.filterMode;
-        filterModeToggleButton.addEventListener('click', (e) => {
+        this.filterModeToggleButton.innerText = this.filterMode;
+        this.filterModeToggleButton.addEventListener('click', (e) => {
             this.filterModeToogle();
-            filterModeToggleButton.innerText = this.filterMode;
-            this.filterUpdate(inputElem.value);
+            this.filterModeToggleButton.innerText = this.filterMode;
+            this.filterUpdate(this.inputElem.value);
         });
 
-        filterDiv.append(inputElem);
-        filterDiv.append(filterModeToggleButton);
+        this.filterDiv.append(this.inputElem, this.filterModeToggleButton);
 
-        document.querySelector('body').prepend(filterDiv);
+        document.querySelector('body').prepend(this.filterDiv);
     }
 
     filterModeToogle() {
@@ -77,12 +78,19 @@ class Filter {
         return true;
     }
 
+    selectTargetElems(sectionElem) {
+        if (this.filterMode == 'Links') {
+            return [sectionElem.querySelectorAll('li')];
+        } else {
+            return [sectionElem.querySelector('h1'), sectionElem.querySelectorAll('a')];
+        }
+    }
+
     updateSections(filterQuery) {
         for (let i = 0; i < this.sectionElems.length; i++) {
             const sectionElem = this.sectionElems[i];
             if (filterQuery != '') {
-                const sectionName = sectionElem.querySelector('h1');
-                const sectionLinks = sectionElem.querySelectorAll('a');
+                const [sectionName, sectionLinks] = this.selectTargetElems(sectionElem);
 
                 const namesToCheck = [];
                 if (sectionName != undefined) {
@@ -105,7 +113,7 @@ class Filter {
         for (let i = 0; i < this.sectionElems.length; i++) {
             const sectionElem = this.sectionElems[i];
             if (filterQuery != '') {
-                const liElems = sectionElem.querySelectorAll('li');
+                const [liElems] = this.selectTargetElems(sectionElem);
 
                 const sectionCheckArray = [];
                 for (let j = 0; j < liElems.length; j++) {
