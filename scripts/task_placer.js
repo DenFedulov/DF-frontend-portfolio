@@ -3,34 +3,73 @@
 class TaskPlacer {
 
     constructor() {
-        this.taskElems = document.querySelectorAll('.section li');
+        this.sectionElems = document.querySelectorAll('.section');
         this.tasksFolderPath = '/views/tasks/';
     }
 
-    init() {
-        for (const elem of this.taskElems) {
+    async init() {
+        let existingTasks = await this.getExistingTasks();
+        const sectionsToTasksMap = new Map();
 
-            let fullPath = this.tasksFolderPath + elem.className + '.html';
-
-            let link = this.createLinkElement(fullPath, elem);
-            let directLink = createDirectLinkElement(fullPath);
-
-            elem.append(link);
-            elem.append(directLink);
-
+        for (let i = 0; i < existingTasks.length; i++) {
+            sectionsToTasksMap.set(this.sectionElems[i], existingTasks[i])
         }
+
+        sectionsToTasksMap.forEach((tasks, section) => {
+            const ulElem = document.createElement('ul');
+            section.append(ulElem);
+            for (let i = 0; i < tasks.length; i++) {
+                const taskName = tasks[i];
+                const liElem = document.createElement('li');
+
+                let fullPath = this.tasksFolderPath + taskName + '.html';
+
+                let link = this.createLinkElement(fullPath, taskName);
+                let directLink = createDirectLinkElement(fullPath);
+
+                liElem.append(link);
+                liElem.append(directLink);
+
+                ulElem.append(liElem);
+            }
+        });
     }
 
-    createLinkElement(path, parent) {
+    createLinkElement(path, taskName) {
         let link = document.createElement('a');
 
         link.addEventListener('click', () => load('app', path)); // from app.js
-        link.innerText = "Задача " + parent.className;
+        link.innerText = "Задача " + taskName;
 
         return link;
     }
 
+    async checkForTask(taskName) {
+        let fullPath = this.tasksFolderPath + taskName + '.html';
+        let resp = await fetch(fullPath, { method: 'HEAD' }).catch();
 
+        return resp.status == 200 ? true : false;
+    }
+
+
+    async getExistingTasks() {
+        let existingTasks = [];
+        let checkPromise;
+
+        for (let taskNum = 1; await this.checkForTask(taskNum + '-' + 1) || taskNum == 1; taskNum++) {
+            let existingSection = [];
+            for (let taskCount = 1; await checkPromise || taskCount == 1; taskCount++) {
+                let taskName = taskNum + '-' + taskCount;
+                checkPromise = this.checkForTask(taskName);
+                checkPromise.then((value) => { if (value) { existingSection.push(taskName) } });
+            }
+            existingTasks.push(existingSection);
+            console.clear();
+        }
+        console.clear();
+
+        return existingTasks;
+    }
 
 }
 

@@ -102,17 +102,21 @@ class SourceCodeReplacer {
     createHeader() {
         let toTop = this.createElementWithClass('div', 'to_top');
         let toTopLink = document.createElement('a');
+
         toTopLink.href = '#';
         toTopLink.innerHTML = '^ <br> To top';
+
         toTop.append(toTopLink);
 
         let homeHeader = this.createElementWithClass('div', 'homeheader');
         let ul = document.createElement('ul');
         let li = document.createElement('li');
         let homeLink = document.createElement('a');
+
         homeLink.href = '/';
         homeLink.target = '_parent';
         homeLink.innerText = 'Home';
+
         li.append(homeLink);
         ul.append(li);
         homeHeader.append(ul);
