@@ -1,40 +1,50 @@
-body {
-    overflow: hidden;
+.wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
 }
 
-.page {
-    display: flex;
-    position: absolute;
-    flex-direction: column;
-    height: calc(100% + 69px);
+.header {
+    background-color: #2c356b;
     width: 100%;
+    font-size: 1.15em;
+    height: 69px;
+    display: flex;
+}
+
+.header.off {
+    height: 0;
+}
+
+.bottom_wrapper {
+    font-size: 0;
+    display: flex;
+    flex-grow: 1;
 }
 
 .sidebar {
     background-color: #3f5181;
     font-size: initial;
-    overflow: hidden;
     width: 265px;
-    flex-shrink: 0;
-    height: calc(100vh - 69px);
+    min-width: 265px;
+    height: 100%;
 }
 
-.header_scroll {
+.app {
+    font-size: initial;
+    height: 100%;
+    width: 100%;
+}
+
+.header_toggle {
     position: absolute;
     left: 50%;
     margin: 0;
     height: 40px;
     opacity: 0.5;
-    top: 69px;
 }
-
-.app {
-    font-size: initial;
-    flex-grow: 1;
-    flex-shrink: 1;
-    height: calc(100vh - 69px);
-}
-
 
 .lock_scroll {
     content: url('/media/unlock.png');
@@ -45,18 +55,16 @@ body {
     height: 40px;
 }
 
+.lock_scroll.off {
+    display: none;
+}
+
 .lock_scroll.on {
     content: url('/media/lock.png');
 }
 
 .header_scroll:hover {
     opacity: 1;
-}
-
-.wrapper {
-    font-size: 0;
-    display: flex;
-    flex-grow: 1;
 }
 
 img.sidebar_toggle_button {
@@ -80,7 +88,7 @@ img.sidebar_toggle_button.off {
     margin-left: 15px;
 }
 
-.sidebar.sidebar_toggle_off {
+.sidebar.off {
     width: 80px;
     min-width: 0;
 }

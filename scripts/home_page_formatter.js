@@ -3,7 +3,7 @@
 class HomePageFormatter {
 
     constructor() {
-        this.app = document.querySelector('.app');
+        this.header = document.querySelector('.header');
         this.appFrame = document.querySelector('.app_frame');
 
         this.combos = document.querySelectorAll('.combo');
@@ -12,20 +12,13 @@ class HomePageFormatter {
         this.sidebarToggleButton = document.querySelector('.sidebar_toggle_button');
         this.sidebarFrame = document.querySelector('.sidebar_frame');
 
-        this.header = document.querySelector('.header');
-
         this.lockScroll = document.querySelector('.lock_scroll');
 
-        this.enableScrollFormat = false;
-        this.scrollDebounce = true;
+        this.enableScrollFormat = true;
     }
 
     init() {
-        window.scrollTo(0, 0);
-
-        window.addEventListener('resize', () => {
-            this.updateHeights();
-        });
+        this.lockScroll.classList.toggle("on", !this.enableScrollFormat);
 
         for (const combo of this.combos) {
             combo.parentElement.addEventListener('mouseover', function () {
@@ -43,30 +36,21 @@ class HomePageFormatter {
             });
         }
 
-        this.appFrame.onload = () => {
-            const iwindow = appFrame.contentWindow;
-
-            let prevScroll = iwindow.scrollY;
-
-            iwindow.addEventListener('scroll', () => {
-                if (this.enableScrollFormat && this.scrollDebounce) {
-                    this.scrollDebounce = false;
-                    if (prevScroll < iwindow.scrollY && window.screenY <= 0) {
-                        window.scrollTo(0, 100);
-                        prevScroll = iwindow.scrollY;
-                    } else {
-                        window.scrollTo(0, 0);
-                        prevScroll = iwindow.scrollY;
-                    }
-                    this.updateHeights();
-                    setTimeout(() => this.scrollDebounce = true, 10);
+        this.appFrame.contentWindow.addEventListener('wheel', (e) => {
+            if (this.enableScrollFormat) {
+                if (e.deltaY > 0) {
+                    this.windowScrollToggle(false);
+                } else {
+                    this.windowScrollToggle(true);
                 }
-            });
-        };
+            }
+        });
 
         window.addEventListener('sidebarLoaded', () => {
             this.toggleSidebar(true);
         });
+
+        return this;
     }
 
     toggleSidebar(enableSidebar) {
@@ -74,21 +58,10 @@ class HomePageFormatter {
             enableSidebar = !enableSidebar;
         }
 
-        this.sidebar.classList.toggle("sidebar_toggle_off", enableSidebar);
+        this.sidebar.classList.toggle("off", enableSidebar);
         this.sidebarFrame.classList.toggle("off", enableSidebar);
 
         this.sidebarToggleButton.classList.toggle("off", enableSidebar);
-
-        this.app.classList.toggle("sidebar_toggle_off", enableSidebar);
-    }
-
-    windowScrollToggle() {
-        if (window.scrollY <= 0) {
-            window.scrollTo(0, 100);
-        } else {
-            window.scrollTo(0, 0);
-        }
-        this.updateHeights();
     }
 
     lockScrollToggle() {
@@ -96,15 +69,15 @@ class HomePageFormatter {
         this.enableScrollFormat = !this.enableScrollFormat;
     }
 
+    windowScrollToggle(enableHeader) {
+        if (enableHeader !== undefined) {
+            enableHeader = !enableHeader;
+        }
 
-
-
-    updateHeights() {
-        let height = window.innerHeight - (this.header.offsetHeight - window.scrollY) + "px";
-        this.sidebar.style.height = height
-        this.app.style.height = height;
+        this.header.classList.toggle('off', enableHeader);
+        this.lockScroll.classList.toggle('off', enableHeader);
     }
+
 }
 
-const homePageFormatter = new HomePageFormatter();
-homePageFormatter.init();
+const homePageFormatter = new HomePageFormatter().init();

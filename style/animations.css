@@ -1,6 +1,4 @@
 img.sidebar_toggle_button,
-.to_top.sidebar_toggle_off,
-.to_top,
 img.sidebar_toggle_button.off {
     transition: margin-left 0.5s;
 }
@@ -9,7 +7,7 @@ img.sidebar_toggle_button.off {
     transition: width 0.5s, min-width 0.5s, max-width 0.5s;
 }
 
-.sidebar.sidebar_toggle_off {
+.sidebar.off {
     transition: width 0.5s;
 }
 
@@ -17,6 +15,8 @@ img.sidebar_toggle_button.off {
     transition: width 0.5s, margin-left 0.5s;
 }
 
+.header,
+.header.off,
 .header ul.combo,
 .header ul.combo.off,
 .header ul.combo li,
@@ -25,12 +25,12 @@ img.sidebar_toggle_button.off {
 }
 
 img.sidebar_toggle_button,
-.to_top.sidebar_toggle_off,
-.to_top,
 img.sidebar_toggle_button.off,
 .sidebar,
-.sidebar.sidebar_toggle_off,
+.sidebar.off,
 .app,
+.header,
+.header.off,
 .header ul.combo,
 .header ul.combo.off,
 .header ul.combo li,
