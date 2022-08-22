@@ -3,12 +3,10 @@ img.sidebar_toggle_button.off {
     transition: margin-left 0.5s;
 }
 
-.sidebar {
-    transition: width 0.5s, min-width 0.5s, max-width 0.5s;
-}
-
+.sidebar,
 .sidebar.off {
     transition: width 0.5s;
+    transition: width 0.5s, min-width 0.5s, max-width 0.5s;
 }
 
 .app {

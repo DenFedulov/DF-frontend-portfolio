@@ -1,25 +1,13 @@
 'use strict';
 
-function createDirectLinkElement(path) {
-    let directLink = document.createElement('a');
-
-    directLink.classList.add('directLink');
-    directLink.href = path;
-    directLink.innerText = " ▶";
-    directLink.target = "_parent";
-
-    return directLink;
-}
-
 function createInternalLink(path, name) {
     let linkElem = document.createElement('a');
 
-    linkElem.addEventListener('click', () => load('app', path)); // from app.js
+    linkElem.onclick = () => { return load('app', path); };
     linkElem.innerText = name;
+    linkElem.href = path;
 
-    let directLinkElem = createDirectLinkElement(path);
-
-    return [linkElem, directLinkElem];
+    return linkElem;
 }
 
 function createRegularLink(url, name) {
@@ -28,7 +16,7 @@ function createRegularLink(url, name) {
     linkElem.target = "_blank";
     linkElem.innerText = name;
 
-    return [linkElem];
+    return linkElem;
 }
 
 function splitTextByLines(text, array = []) {

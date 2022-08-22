@@ -32,6 +32,11 @@
     height: 100%;
 }
 
+.sidebar.off {
+    width: 80px;
+    min-width: 80px;
+}
+
 .app {
     font-size: initial;
     height: 100%;
@@ -94,15 +99,6 @@ img.sidebar_toggle_button.off {
     margin-left: 15px;
 }
 
-.sidebar.off {
-    width: 80px;
-    min-width: 0;
-}
-
-.sidebar_frame.off {
-    display: none;
-}
-
 iframe {
     display: block;
     border: 0;
@@ -111,6 +107,10 @@ iframe {
     height: 100%;
     width: 100%;
     border-image-width: 0px;
+}
+
+.sidebar_frame.off {
+    display: none;
 }
 
 .app_frame {

@@ -21,9 +21,8 @@ class TaskPlacer {
     }
 
     createLinkElement(path, taskName) {
-        let link = document.createElement('a');
+        let link = createInternalLink(path, taskName);
 
-        link.addEventListener('click', () => load('app', path)); // from app.js
         link.innerText = "Задача " + taskName;
 
         return link;
@@ -47,10 +46,8 @@ class TaskPlacer {
             let fullPath = this.tasksFolderPath + taskName + '.html';
 
             let link = this.createLinkElement(fullPath, taskName);
-            let directLink = createDirectLinkElement(fullPath);
 
             liElem.append(link);
-            liElem.append(directLink);
 
             ulElem.append(liElem);
         }

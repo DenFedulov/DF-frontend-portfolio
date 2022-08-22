@@ -13,6 +13,7 @@ function load(target, path) {
             appFrame.src = path;
         }
     }
+    return false;
 }
 
 function sidebarLoadedEvent() {

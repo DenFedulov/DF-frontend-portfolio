@@ -43,7 +43,7 @@ class LinkPlacer {
 
                     let link = this.createLink(line);
 
-                    liElem.append(...link);
+                    liElem.append(link);
                     this.uls[i].append(liElem);
                 }
             }
