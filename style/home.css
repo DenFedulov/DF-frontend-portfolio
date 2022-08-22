@@ -46,6 +46,11 @@
     opacity: 0.5;
 }
 
+.header_toggle:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
 .lock_scroll {
     content: url('/media/unlock.png');
     position: absolute;
@@ -55,16 +60,16 @@
     height: 40px;
 }
 
+.lock_scroll:hover {
+    cursor: pointer;
+}
+
 .lock_scroll.off {
     display: none;
 }
 
 .lock_scroll.on {
     content: url('/media/lock.png');
-}
-
-.header_scroll:hover {
-    opacity: 1;
 }
 
 img.sidebar_toggle_button {
@@ -76,6 +81,7 @@ img.sidebar_toggle_button {
     height: initial;
     width: initial;
     opacity: 0.5;
+    cursor: pointer;
 }
 
 img.sidebar_toggle_button:hover {

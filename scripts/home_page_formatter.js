@@ -36,15 +36,17 @@ class HomePageFormatter {
             });
         }
 
-        this.appFrame.contentWindow.addEventListener('wheel', (e) => {
-            if (this.enableScrollFormat) {
-                if (e.deltaY > 0) {
-                    this.windowScrollToggle(false);
-                } else {
-                    this.windowScrollToggle(true);
+        this.appFrame.onload = () => {
+            this.appFrame.contentWindow.addEventListener('wheel', (e) => {
+                if (this.enableScrollFormat) {
+                    if (e.deltaY > 0) {
+                        this.windowScrollToggle(false);
+                    } else {
+                        this.windowScrollToggle(true);
+                    }
                 }
-            }
-        });
+            });
+        };
 
         window.addEventListener('sidebarLoaded', () => {
             this.toggleSidebar(true);
