@@ -70,7 +70,7 @@
 }
 
 .lock_scroll.off {
-    display: none;
+    height: 0;
 }
 
 .lock_scroll.on {
