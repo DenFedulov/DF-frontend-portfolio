@@ -36,7 +36,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 input[type=range] {
-   width: 500px;
+   width: 50%;
    height: 50px;
    background-color: inherit;
 }

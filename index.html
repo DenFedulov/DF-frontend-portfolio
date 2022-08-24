@@ -20,11 +20,13 @@
                     src="media/approved_icon.png" alt="Home" title="Home"></a>
             <a class="img_button" href="https://github.com/DenFedulov" target="_blank"><img src="media/github_icon.png"
                     alt="GitHub" title="GitHub"></a>
-            <ul>
+            <ul class="themes no_select">
                 <li><a onclick="load('sidebar','/views/html/');">HTML</a></li>
                 <li><a onclick="load('sidebar','/views/css/');">CSS</a></li>
-                <li><a onclick="load('sidebar','/views/js/');">JavaScript</a>
+                <li>JavaScript
                     <ul class="combo off">
+                        <li><a onclick="load('sidebar','/views/js/');">JavaScript </a>
+                        </li>
                         <li><a onclick="load('sidebar','/views/learn_js_ru_tasks/completed_tasks.html');"> Completed
                                 learn.javascript.ru
                                 tasks (WIP)</a>
@@ -40,15 +42,14 @@
 
         </div>
         <div class="bottom_wrapper">
-            <img onclick="homePageFormatter.toggleSidebar();" src="media/sidebar_toggle_button_left.png"
-                class="sidebar_toggle_button" alt="Toggle sidebar" title="Toggle sidebar">
-
             <img class="header_toggle" src="/media/bookmark.png" alt="Toggle header" title="Toggle header"
-                onclick="homePageFormatter.windowScrollToggle();">
+                onclick="homePageFormatter.headerToggle();">
 
             <img class="lock_scroll on" src="/media/lock.png" alt="Unlock/Lock header on scroll"
                 title="Unlock/Lock header on scroll" onclick="homePageFormatter.lockScrollToggle();">
             <div class="sidebar">
+                <img onclick="homePageFormatter.toggleSidebar();" src="media/sidebar_toggle_button_left.png"
+                    class="sidebar_toggle_button" alt="Toggle sidebar" title="Toggle sidebar">
                 <iframe src="/views/html/" class="sidebar_frame"></iframe>
             </div>
 

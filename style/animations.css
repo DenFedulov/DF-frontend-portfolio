@@ -1,20 +1,15 @@
 img.sidebar_toggle_button,
-img.sidebar_toggle_button.off {
-    transition: margin-left 0.5s;
-}
-
+img.sidebar_toggle_button.off,
+.app,
 .sidebar,
 .sidebar.off {
-    transition: width 0.5s;
-    transition: width 0.5s, min-width 0.5s, max-width 0.5s;
-}
-
-.app {
-    transition: width 0.5s, margin-left 0.5s;
+    transition: width 0.5s, min-width 0.5s, max-width 0.5s, margin-left 0.5s;
 }
 
 .header,
 .header.off,
+ul.themes li,
+ul.themes.off li,
 .lock_scroll,
 .lock_scroll.off,
 .header ul.combo,
@@ -31,6 +26,8 @@ img.sidebar_toggle_button.off,
 .app,
 .header,
 .header.off,
+ul.themes li,
+ul.themes.off li,
 .lock_scroll,
 .lock_scroll.off,
 .header ul.combo,

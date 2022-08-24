@@ -4,7 +4,7 @@
     background-color: #61719c;
     border: 2px solid #7889b6;
     position: fixed;
-    left: 55%;
+    left: 75%;
     height: 30px;
     width: 40px;
     opacity: 0.5;
@@ -38,6 +38,10 @@
     cursor: pointer;
 }
 
+.themes.off {
+    display: none;
+}
+
 .header ul {
     margin: 0;
     padding: 0;
@@ -55,22 +59,25 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1em;
     flex-direction: column;
+    cursor: pointer;
+    position: relative;
 }
 
-.header ul.combo {
-    top: 69px;
+.header li ul.combo {
     margin: 0;
     padding: 2px;
     position: absolute;
+    top: 100%;
     background-color: #2d62d6;
+    flex-direction: column;
     z-index: 2;
 }
 
 .header ul.combo li {
     margin: 0;
     border-radius: 0;
+    position: relative;
 }
 
 .header ul.combo.off {
@@ -113,4 +120,35 @@
     padding: 0.8em;
     border-radius: 0.5em;
     background-color: rgb(35, 18, 97);
+}
+
+@media screen and (max-width: 800px) {
+    .themes_combo {
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: top;
+        text-align: center;
+
+        background-color: #1b4194;
+        width: 100%;
+        border-radius: 10px;
+        font-size: 1.5em;
+    }
+
+    .themes {
+        flex-direction: column;
+        width: 100%;
+        background-color: #1b4194;
+        border-radius: 10px;
+        z-index: 3;
+    }
+
+    ul.themes.contracted li {
+        height: 0;
+        padding: 0;
+        font-size: 0;
+        margin: 0;
+    }
 }

@@ -4,6 +4,10 @@ class HomePageFormatter {
 
     constructor() {
         this.header = document.querySelector('.header');
+
+        this.themesCombo = document.createElement('div');
+        this.themes = document.querySelector('.themes');
+
         this.appFrame = document.querySelector('.app_frame');
 
         this.combos = document.querySelectorAll('.combo');
@@ -18,38 +22,41 @@ class HomePageFormatter {
     }
 
     init() {
+        this.initThemesCombo();
+
+        window.addEventListener('resize', () => this.updateThemes());
+        document.addEventListener('click', () => this.contractAllCombos());
+        document.addEventListener('blur', () => this.contractAllCombos());
+
         this.lockScroll.classList.toggle("on", !this.enableScrollFormat);
 
         for (const combo of this.combos) {
-            combo.parentElement.addEventListener('mouseover', function () {
-                this.IsMouseOn = true;
-                combo.classList.remove('off');
-            });
-
-            combo.parentElement.addEventListener('mouseout', function () {
-                this.IsMouseOn = false;
-                setTimeout(() => {
-                    if (this.IsMouseOn == false) {
-                        combo.classList.add('off');
-                    }
-                }, 300)
+            combo.parentElement.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (!combo.classList.contains('off')) {
+                    this.contractAllCombos();
+                    combo.classList.toggle('off');
+                }
+                combo.classList.toggle('off');
             });
         }
 
         this.appFrame.onload = () => {
-            this.appFrame.contentWindow.addEventListener('wheel', (e) => {
-                if (this.enableScrollFormat) {
-                    if (e.deltaY > 0) {
-                        this.windowScrollToggle(false);
-                    } else {
-                        this.windowScrollToggle(true);
-                    }
-                }
-            });
+            this.initHeaderToggleEvents(this.appFrame);
+        };
+
+        this.sidebarFrame.onload = () => {
+            this.initHeaderToggleEvents(this.sidebarFrame);
         };
 
         window.addEventListener('sidebarLoaded', () => {
             this.toggleSidebar(true);
+        });
+
+        window.addEventListener('appLoaded', () => {
+            if (window.visualViewport.width <= 800) {
+                this.toggleSidebar(false);
+            }
         });
 
         return this;
@@ -71,15 +78,65 @@ class HomePageFormatter {
         this.enableScrollFormat = !this.enableScrollFormat;
     }
 
-    windowScrollToggle(enableHeader) {
+    headerToggle(enableHeader) {
         if (enableHeader !== undefined) {
             enableHeader = !enableHeader;
         }
 
+        this.contractAllCombos()
         this.header.classList.toggle('off', enableHeader);
         this.lockScroll.classList.toggle('off', enableHeader);
+        this.themes.classList.toggle('off', enableHeader);
     }
 
+    updateThemes() {
+        if (window.visualViewport.width <= 800) {
+            this.themes.classList.add('contracted');
+            this.themesCombo.append(this.themes);
+            this.header.append(this.themesCombo);
+        } else {
+            this.header.append(this.themes);
+            this.themesCombo.remove();
+        }
+    }
+
+    initThemesCombo() {
+        this.themesCombo.classList.add('themes_combo');
+        this.themesCombo.innerText = 'Themes\n▼'
+        this.themesCombo.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.themes.classList.toggle('contracted');
+        });
+
+        this.updateThemes();
+    }
+
+    contractAllCombos() {
+        this.themes.classList.add('contracted');
+        for (const combo of this.combos) {
+            combo.classList.add('off');
+        }
+    }
+
+    initHeaderToggleEvents(frame) {
+        frame.contentWindow.addEventListener('wheel', (e) => {
+            if (this.enableScrollFormat) {
+                this.headerToggle(e.deltaY < 0 ? true : false);
+            }
+        });
+
+        let touchstartY;
+        frame.contentWindow.addEventListener('touchstart', (e) => {
+            if (this.enableScrollFormat) {
+                touchstartY = e.changedTouches[0].screenY;
+            }
+        });
+        frame.contentWindow.addEventListener('touchend', (e) => {
+            if (this.enableScrollFormat) {
+                this.headerToggle(e.changedTouches[0].screenY > touchstartY ? true : false);
+            }
+        });
+    }
 }
 
 const homePageFormatter = new HomePageFormatter().init();

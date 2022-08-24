@@ -11,6 +11,7 @@ function load(target, path) {
         }
         if (target === 'app') {
             appFrame.src = path;
+            appLoadedEvent();
         }
     }
     return false;
@@ -18,5 +19,10 @@ function load(target, path) {
 
 function sidebarLoadedEvent() {
     const event = new CustomEvent('sidebarLoaded');
+    window.parent.dispatchEvent(event);
+}
+
+function appLoadedEvent() {
+    const event = new CustomEvent('appLoaded');
     window.parent.dispatchEvent(event);
 }

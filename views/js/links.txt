@@ -9,7 +9,6 @@ https://262.ecma-international.org/12.0/ ECMAScript® 2021 Language Specificatio
 https://www.w3schools.com/jsref/default.asp JavaScript reference
 https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference Справочник по JavaScript - JavaScript | MDN
 https://learn.javascript.ru/ JavaScript reference 2
-https://roadmap.sh/frontend Frontend Developer Roadmap
 https://learn.javascript.ru/shadow-dom Shadow DOM
 https://youtu.be/v7rSSy8CaYE DOM Traversal
 https://www.w3schools.com/jsref/dom_obj_all.asp HTML DOM Elements
