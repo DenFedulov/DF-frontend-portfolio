@@ -10,7 +10,7 @@ body {
 }
 
 .filter {
-    width: calc(70% - 20px);
+    width: 65%;
     text-align: center;
 }
 
