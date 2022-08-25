@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/style/main_style.css">
+    <link rel="stylesheet" type="text/css" href="/style/header.css">
+    <link rel="stylesheet" type="text/css" href="/style/code.css">
+    <title>to replace</title>
+    <script src="/scripts/source_code_replacer.js"></script>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        function sumSalaries(salaries) {
+            return Object.values(salaries).reduce((prev, cur) => prev + cur, 0)
+        }
+
+        let salaries = {
+            "John": 100,
+            "Pete": 300,
+            "Mary": 250
+        };
+
+        wConsoleLog(sumSalaries(salaries));
+    </script>
+</body>
+
+</html>
