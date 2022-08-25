@@ -16,7 +16,7 @@ class SourceCodeReplacer {
 
             window.onload = () => {
                 let body = document.querySelector('body');
-                this.htmlCode.innerText = this.getHTMLCode(body);
+                this.htmlPre.innerText = this.getHTMLCode(body);
 
                 this.moveBodyToElement(this.pageElem);
                 body.prepend(...headerElems);
@@ -69,7 +69,7 @@ class SourceCodeReplacer {
             target = document.getElementsByClassName(targetElem)[0];
 
             this.defaultXMLHttpRequest(fullPath, function (xml) {
-                target.innerHTML += "<br>" + path + ":<br>";
+                target.innerHTML += path + ":<br>";
                 target.innerText += xml.responseText;
                 target.innerHTML += "<br><br>";
             })
@@ -172,18 +172,25 @@ class SourceCodeReplacer {
 
         let htmlSection = this.createElementWithClass('div', 'code_section', 'HTML_toggle');
         htmlSection.innerText = 'HTML Source code:';
-        this.htmlCode = this.createElementWithClass('code', 'html_code');
-        htmlSection.append(this.htmlCode);
+        let htmlCode = document.createElement('code');
+        htmlSection.append(htmlCode);
+        this.htmlPre = this.createElementWithClass('pre', 'html_code');
+        htmlCode.append(this.htmlPre);
+
 
         let cssSection = this.createElementWithClass('div', 'code_section', 'CSS_toggle', 'off');
         cssSection.innerText = 'CSS Source code (linked):';
-        this.cssCode = this.createElementWithClass('code', 'css_code');
-        cssSection.append(this.cssCode);
+        let cssCode = document.createElement('code');
+        cssSection.append(cssCode);
+        let cssPre = this.createElementWithClass('pre', 'css_code');
+        cssCode.append(cssPre);
 
         let jsSection = this.createElementWithClass('div', 'code_section', 'JavaScript_toggle', 'off');
         jsSection.innerText = 'JavaScript Source code (linked):';
-        this.jsCode = this.createElementWithClass('code', 'js_code');
-        jsSection.append(this.jsCode);
+        let jsCode = document.createElement('code');
+        jsSection.append(jsCode);
+        let jsPre = this.createElementWithClass('pre', 'js_code');
+        jsCode.append(jsPre);
 
         code.append(htmlSection, cssSection, jsSection);
 
@@ -197,7 +204,7 @@ class SourceCodeReplacer {
             text = text.slice(0, liveCodeIndx);
         }
 
-        text = '\n' + location.pathname + ':' + text;
+        text = location.pathname + ':' + text;
 
         return text;
     }

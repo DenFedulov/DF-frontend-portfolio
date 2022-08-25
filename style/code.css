@@ -114,6 +114,10 @@ code {
     line-height: 1.4em;
 }
 
+code pre {
+    margin: 0;
+}
+
 @media screen and (max-width: 800px) {
     code {
         font-size: 1em;
