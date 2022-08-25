@@ -9,14 +9,16 @@ class TaskPlacer {
 
     async init() {
         let existingTasks = await this.getExistingTasks();
-        const sectionsToTasksMap = new Map();
+        let sectionToTasksMap = new Map();
 
         for (let i = 0; i < existingTasks.length; i++) {
-            sectionsToTasksMap.set(this.sectionElems[i], existingTasks[i])
+            if (this.newSections[i] == undefined) {
+                sectionToTasksMap.set(this.sectionElems[i], existingTasks[i]);
+            }
         }
 
-        sectionsToTasksMap.forEach((tasks, section) => {
-
+        sectionToTasksMap.forEach((tasks, section) => {
+            this.renderSection(section, tasks);
         });
     }
 
@@ -30,9 +32,10 @@ class TaskPlacer {
 
     async checkForTask(taskName) {
         let fullPath = this.tasksFolderPath + taskName + '.html';
-        let resp = await fetch(fullPath, { method: 'HEAD' }).catch();
+        let request = fetch(fullPath, { method: 'HEAD' });
+        let response = await request;
 
-        return resp.status == 200 ? true : false;
+        return response.status == 200 ? true : false;
     }
 
     renderSection(section, tasks) {
@@ -56,20 +59,26 @@ class TaskPlacer {
     async getExistingTasks() {
         const existingTasks = [];
         let checkPromise;
-        const sectionsToTasksMap = new Map();
+        this.newSections = [];
 
-        for (let taskNum = 1; await this.checkForTask(taskNum + '-' + 1) || taskNum == 1; taskNum++) {
-            let existingSectionTasks = [];
-            for (let taskCount = 1; await checkPromise || taskCount == 1; taskCount++) {
-                let taskName = taskNum + '-' + taskCount;
-                checkPromise = this.checkForTask(taskName);
-                checkPromise.then((value) => { if (value) { existingSectionTasks.push(taskName) } });
+        for (let taskNum = 1; taskNum == 1 || await this.checkForTask(taskNum + '-' + 1); taskNum++) {
+            let item = localStorage.getItem(taskNum);
+            if (item == null) {
+                let existingSectionTasks = [];
+                for (let taskCount = 1; await checkPromise || taskCount == 1; taskCount++) {
+                    let taskName = taskNum + '-' + taskCount;
+                    checkPromise = this.checkForTask(taskName);
+                    checkPromise.then((value) => { if (value) { existingSectionTasks.push(taskName) } });
+                }
+                existingTasks.push(existingSectionTasks);
+
+                this.renderSection(this.sectionElems[taskNum - 1], existingSectionTasks)
+
+                this.newSections.push(taskNum);
+                localStorage.setItem(taskNum, existingSectionTasks);
+            } else {
+                existingTasks.push(item.split(','));
             }
-            existingTasks.push(existingSectionTasks);
-
-            this.renderSection(this.sectionElems[taskNum - 1], existingSectionTasks)
-
-            console.clear();
         }
         console.clear();
 
