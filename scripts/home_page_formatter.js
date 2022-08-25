@@ -133,7 +133,10 @@ class HomePageFormatter {
         });
         frame.contentWindow.addEventListener('touchend', (e) => {
             if (this.enableScrollFormat) {
-                this.headerToggle(e.changedTouches[0].screenY > touchstartY ? true : false);
+                let pixelsMoved = e.changedTouches[0].screenY - touchstartY;
+                if (Math.abs(pixelsMoved) >= 50) {
+                    this.headerToggle(pixelsMoved > 0);
+                }
             }
         });
     }
