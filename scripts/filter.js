@@ -30,6 +30,7 @@ class Filter {
             this.filterModeToggleButton.innerText = this.filterMode;
             this.filterUpdate(this.inputElem.value);
         });
+        this.filterModeToggleButton.classList.add('no_select');
 
         this.filterDiv.append(this.inputElem, this.filterModeToggleButton);
 

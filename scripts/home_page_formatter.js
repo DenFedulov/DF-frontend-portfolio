@@ -26,7 +26,6 @@ class HomePageFormatter {
 
         window.addEventListener('resize', () => this.updateThemes());
         document.addEventListener('click', () => this.contractAllCombos());
-        document.addEventListener('blur', () => this.contractAllCombos());
 
         this.toggleSourceOfElem(this.lockScroll, '/media/lock.png', '/media/unlock.png', this.enableScrollFormat)
 
@@ -35,8 +34,9 @@ class HomePageFormatter {
                 e.stopPropagation();
                 if (!combo.classList.contains('off')) {
                     this.contractAllCombos();
+                    combo.classList.toggle('off');
                 }
-                combo.classList.remove('off');
+                combo.classList.toggle('off');
             });
         }
 
@@ -127,19 +127,24 @@ class HomePageFormatter {
     }
 
     initHeaderToggleEvents(frame) {
-        frame.contentWindow.addEventListener('wheel', (e) => {
+        let iwindow = frame.contentWindow;
+        let idoc = iwindow.document;
+
+        idoc.addEventListener('click', () => this.contractAllCombos());
+
+        iwindow.addEventListener('wheel', (e) => {
             if (this.enableScrollFormat) {
                 this.headerToggle(e.deltaY < 0 ? true : false);
             }
         });
 
         let touchstartY;
-        frame.contentWindow.addEventListener('touchstart', (e) => {
+        iwindow.addEventListener('touchstart', (e) => {
             if (this.enableScrollFormat) {
                 touchstartY = e.changedTouches[0].screenY;
             }
         });
-        frame.contentWindow.addEventListener('touchend', (e) => {
+        iwindow.addEventListener('touchend', (e) => {
             if (this.enableScrollFormat) {
                 let pixelsMoved = e.changedTouches[0].screenY - touchstartY;
                 if (Math.abs(pixelsMoved) >= 50) {
