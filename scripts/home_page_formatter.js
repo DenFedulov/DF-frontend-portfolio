@@ -28,7 +28,7 @@ class HomePageFormatter {
         document.addEventListener('click', () => this.contractAllCombos());
         document.addEventListener('blur', () => this.contractAllCombos());
 
-        this.lockScroll.classList.toggle("on", !this.enableScrollFormat);
+        this.toggleSourceOfElem(this.lockScroll, '/media/lock.png', '/media/unlock.png', this.enableScrollFormat)
 
         for (const combo of this.combos) {
             combo.parentElement.addEventListener('click', (e) => {
@@ -70,11 +70,20 @@ class HomePageFormatter {
         this.sidebar.classList.toggle("off", enableSidebar);
         this.sidebarFrame.classList.toggle("off", enableSidebar);
 
-        this.sidebarToggleButton.classList.toggle("off", enableSidebar);
+        this.sidebarToggleButton.classList.toggle('off', enableSidebar);
+        this.toggleSourceOfElem(this.sidebarToggleButton, "/media/sidebar_toggle_button_left.png", "/media/sidebar_toggle_button_right.png", enableSidebar);
+    }
+
+    toggleSourceOfElem(elem, s1, s2, isSecond) {
+        let path1 = location.origin + s1;
+        let path2 = location.origin + s2;
+        if (isSecond == undefined) {
+            elem.src == path1 ? elem.src = path2 : elem.src = path1;
+        } else isSecond ? elem.src = path2 : elem.src = path1;
     }
 
     lockScrollToggle() {
-        this.lockScroll.classList.toggle("on", this.enableScrollFormat);
+        this.toggleSourceOfElem(this.lockScroll, '/media/lock.png', '/media/unlock.png')
         this.enableScrollFormat = !this.enableScrollFormat;
     }
 

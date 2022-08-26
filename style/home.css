@@ -60,7 +60,6 @@
 }
 
 .lock_scroll {
-    content: url('/media/unlock.png');
     position: absolute;
     right: 15px;
     top: 15px;
@@ -76,12 +75,7 @@
     height: 0;
 }
 
-.lock_scroll.on {
-    content: url('/media/lock.png');
-}
-
 img.sidebar_toggle_button {
-    content: url('/media/sidebar_toggle_button_left.png');
     position: absolute;
     z-index: 1;
     margin-right: 15px;
@@ -97,7 +91,6 @@ img.sidebar_toggle_button:hover {
 }
 
 img.sidebar_toggle_button.off {
-    content: url('/media/sidebar_toggle_button_right.png');
     margin-right: 0;
 }
 
