@@ -2,6 +2,12 @@ body {
     background-color: #3f5181;
 }
 
+.task_refresh {
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+}
+
 .disclaimer {
     text-align: center;
     background-color: #743f81;

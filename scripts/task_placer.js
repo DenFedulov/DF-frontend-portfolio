@@ -85,6 +85,13 @@ class TaskPlacer {
         return existingTasks;
     }
 
+    refreshTasks() {
+        this.sectionElems.forEach((elem) => elem.querySelector('ul').remove());
+        localStorage.clear();
+        this.getExistingTasks();
+    }
+
 }
 
-new TaskPlacer().init();
+const taskPlacer = new TaskPlacer();
+taskPlacer.init();
