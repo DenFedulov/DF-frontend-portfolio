@@ -10,7 +10,8 @@
 }
 
 .page h2 {
-    text-align: center;
+    text-align: left;
+    margin-left: 15px;
     font-size: 25px;
 }
 

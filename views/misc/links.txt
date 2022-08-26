@@ -1,3 +1,5 @@
+planned_implementations.html > Planned implementations
+-
 https://roadmap.sh/frontend Frontend Developer Roadmap
 https://docs.emmet.io/cheat-sheet/ Emmet Cheat Sheet
 https://thispersondoesnotexist.com/ This person does not exist
