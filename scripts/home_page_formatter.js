@@ -82,8 +82,8 @@ class HomePageFormatter {
     }
 
     lockScrollToggle() {
-        this.toggleSourceOfElem(this.lockScroll, '/media/lock.png', '/media/unlock.png')
         this.enableScrollFormat = !this.enableScrollFormat;
+        this.toggleSourceOfElem(this.lockScroll, '/media/lock.png', '/media/unlock.png', this.enableScrollFormat);
     }
 
     headerToggle(enableHeader) {
