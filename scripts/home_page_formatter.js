@@ -35,9 +35,8 @@ class HomePageFormatter {
                 e.stopPropagation();
                 if (!combo.classList.contains('off')) {
                     this.contractAllCombos();
-                    combo.classList.toggle('off');
                 }
-                combo.classList.toggle('off');
+                combo.classList.remove('off');
             });
         }
 
