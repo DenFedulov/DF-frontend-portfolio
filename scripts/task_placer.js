@@ -61,24 +61,28 @@ class TaskPlacer {
         let checkPromise;
         this.newSections = [];
 
-        for (let taskNum = 1; taskNum == 1 || await this.checkForTask(taskNum + '-' + 1); taskNum++) {
-            let item = localStorage.getItem(taskNum);
-            if (item == null) {
-                let existingSectionTasks = [];
-                for (let taskCount = 1; await checkPromise || taskCount == 1; taskCount++) {
-                    let taskName = taskNum + '-' + taskCount;
-                    checkPromise = this.checkForTask(taskName);
-                    checkPromise.then((value) => { if (value) { existingSectionTasks.push(taskName) } });
-                }
-                existingTasks.push(existingSectionTasks);
+        let cachedItems = [];
+        for (let i = 1; i <= localStorage.length; i++) {
+            let item = localStorage.getItem(i).split(',');
+            cachedItems.push(i);
+            existingTasks.push(item);
+        }
 
-                this.renderSection(this.sectionElems[taskNum - 1], existingSectionTasks)
+        for (let taskNum = 1; taskNum != cachedItems[taskNum - 1] && (taskNum == 1 || await this.checkForTask(taskNum + '-' + 1)); taskNum++) {
+            let existingSectionTasks = [];
 
-                this.newSections.push(taskNum);
-                localStorage.setItem(taskNum, existingSectionTasks);
-            } else {
-                existingTasks.push(item.split(','));
+            for (let taskCount = 1; taskCount == 1 || await checkPromise; taskCount++) {
+                let taskName = taskNum + '-' + taskCount;
+                checkPromise = this.checkForTask(taskName);
+                checkPromise.then((value) => { if (value) { existingSectionTasks.push(taskName) } });
             }
+            existingTasks.push(existingSectionTasks);
+
+            this.renderSection(this.sectionElems[taskNum - 1], existingSectionTasks);
+            this.newSections.push(taskNum);
+
+            localStorage.setItem(taskNum, existingSectionTasks);
+            console.clear();
         }
         console.clear();
 
