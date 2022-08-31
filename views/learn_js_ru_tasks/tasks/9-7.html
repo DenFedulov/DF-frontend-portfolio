@@ -1,40 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/style/main_style.css">
-    <link rel="stylesheet" type="text/css" href="/style/header.css">
-    <link rel="stylesheet" type="text/css" href="/style/code.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/style/main_style.css" />
+    <link rel="stylesheet" type="text/css" href="/style/header.css" />
+    <link rel="stylesheet" type="text/css" href="/style/code.css" />
     <title>to replace</title>
     <script src="/scripts/source_code_replacer.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
-        'use strict';
+      "use strict";
 
-        function calcPrimes(interval) {
-            let primeArray = [];
+      function calcPrimes(interval) {
+        let primeArray = [];
 
-            for (let i = 2; i < interval; i++) {
-                for (let j = 2; j <= i; j++) {
-
-                    if (i == j) {
-                        primeArray.push(i);
-                    } else if (i % j == 0) {
-                        break;
-                    }
-                }
-
+        for (let i = 2; i < interval; i++) {
+          for (let j = 2; j <= i; j++) {
+            if (i == j) {
+              primeArray.push(i);
+            } else if (i % j == 0) {
+              break;
             }
-            return primeArray;
+          }
         }
+        return primeArray;
+      }
 
-        wConsoleLog(calcPrimes(50));
+      wConsoleLog(calcPrimes(50));
     </script>
-</body>
-
+  </body>
 </html>

@@ -1,37 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/style/main_style.css">
-    <link rel="stylesheet" type="text/css" href="/style/header.css">
-    <link rel="stylesheet" type="text/css" href="/style/code.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/style/main_style.css" />
+    <link rel="stylesheet" type="text/css" href="/style/header.css" />
+    <link rel="stylesheet" type="text/css" href="/style/code.css" />
     <title>to replace</title>
     <script src="/scripts/source_code_replacer.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
-        'use strict';
-        let x = +prompt("Введите число");
-        let n = +prompt("Введите степень");
+      "use strict";
+      let x = +prompt("Введите число");
+      let n = +prompt("Введите степень");
 
-        pow(x, n);
+      pow(x, n);
 
-        function pow(x, n) {
-            if (n < 1 || Number.isInteger(n) == false) {
-                return wConsoleLog('Неправильная степень');
-            }
-            let sum = x;
-            for (let i = 1; i < n; i++) {
-                sum *= x;
-            }
-            wConsoleLog(sum);
-            return sum;
+      function pow(x, n) {
+        if (n < 1 || Number.isInteger(n) == false) {
+          return wConsoleLog("Неправильная степень");
         }
+        let sum = x;
+        for (let i = 1; i < n; i++) {
+          sum *= x;
+        }
+        wConsoleLog(sum);
+        return sum;
+      }
     </script>
-</body>
-
+  </body>
 </html>

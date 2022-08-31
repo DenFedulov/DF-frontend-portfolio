@@ -1,5 +1,5 @@
-'use strict';
+"use strict";
 
 if (window === window.parent) {
-    window.location.replace(location.origin);
+  window.location.replace(location.origin);
 }

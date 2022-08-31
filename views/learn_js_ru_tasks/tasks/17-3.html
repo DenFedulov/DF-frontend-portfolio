@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/style/main_style.css">
-    <link rel="stylesheet" type="text/css" href="/style/header.css">
-    <link rel="stylesheet" type="text/css" href="/style/code.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/style/main_style.css" />
+    <link rel="stylesheet" type="text/css" href="/style/header.css" />
+    <link rel="stylesheet" type="text/css" href="/style/code.css" />
     <title>to replace</title>
     <script src="/scripts/source_code_replacer.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
-        'use strict';
-        function Accumulator(startingValue) {
-            this.value = startingValue;
+      "use strict";
+      function Accumulator(startingValue) {
+        this.value = startingValue;
 
-            this.read = () => {
-                this.value += +prompt('введите число', '1');
-            };
-        }
+        this.read = () => {
+          this.value += +prompt("введите число", "1");
+        };
+      }
 
-        let accumulator = new Accumulator(1); // начальное значение 1
+      let accumulator = new Accumulator(1); // начальное значение 1
 
-        accumulator.read(); // прибавит ввод prompt к текущему значению
-        accumulator.read(); // прибавит ввод prompt к текущему значению
+      accumulator.read(); // прибавит ввод prompt к текущему значению
+      accumulator.read(); // прибавит ввод prompt к текущему значению
 
-        wConsoleLog(accumulator.value); // выведет сумму этих значений
+      wConsoleLog(accumulator.value); // выведет сумму этих значений
     </script>
-</body>
-
+  </body>
 </html>

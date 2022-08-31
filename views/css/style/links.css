@@ -1,20 +1,20 @@
 .page {
-    background-color: grey;
+  background-color: grey;
 }
 
 .page a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .page a:hover {
-    text-decoration: line-through;
-    color: #8a2be2;
+  text-decoration: line-through;
+  color: #8a2be2;
 }
 
 .page a:visited {
-    color: #5858ff;
+  color: #5858ff;
 }
 
 .page a:active {
-    color: #008000;
+  color: #008000;
 }

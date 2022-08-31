@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM</title>
-    <link rel="stylesheet" type="text/css" href="/style/main_style.css">
-    <link rel="stylesheet" type="text/css" href="/style/header.css">
-    <link rel="stylesheet" type="text/css" href="/style/code.css">
+    <link rel="stylesheet" type="text/css" href="/style/main_style.css" />
+    <link rel="stylesheet" type="text/css" href="/style/header.css" />
+    <link rel="stylesheet" type="text/css" href="/style/code.css" />
     <script src="/scripts/source_code_replacer.js"></script>
     <script>
-        replaceCodeSection("/views/js/scripts/DOM.js", "js_code");
+      replaceCodeSection("/views/js/scripts/DOM.js", "js_code");
     </script>
-</head>
+  </head>
 
-<body>
-    <div><span id="sp">Span1 </span>
-        <span title="Title check" id="sp2" data-test="123" data-test-name="456" class="test test2">Span2</span>
+  <body>
+    <div>
+      <span id="sp">Span1 </span>
+      <span
+        title="Title check"
+        id="sp2"
+        data-test="123"
+        data-test-name="456"
+        class="test test2"
+        >Span2</span
+      >
     </div>
-    <button onclick="changeImage();">Click
-        me!</button>
-    <img id="img" src="/media/dog.jpg" style="width: 200px; height: 200px;" alt="dog should be here">
+    <button onclick="changeImage();">Click me!</button>
+    <img
+      id="img"
+      src="/media/dog.jpg"
+      style="width: 200px; height: 200px"
+      alt="dog should be here"
+    />
     <script src="/views/js/scripts/DOM.js"></script>
-</body>
-
+  </body>
 </html>

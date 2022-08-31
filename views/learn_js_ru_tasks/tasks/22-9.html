@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/style/main_style.css">
-    <link rel="stylesheet" type="text/css" href="/style/header.css">
-    <link rel="stylesheet" type="text/css" href="/style/code.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/style/main_style.css" />
+    <link rel="stylesheet" type="text/css" href="/style/header.css" />
+    <link rel="stylesheet" type="text/css" href="/style/code.css" />
     <title>to replace</title>
     <script src="/scripts/source_code_replacer.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
-        'use strict';
+      "use strict";
 
-        function sortByAge(arr) {
-            arr.sort((a, b) => a.age - b.age);
-        }
+      function sortByAge(arr) {
+        arr.sort((a, b) => a.age - b.age);
+      }
 
-        let vasya = { name: "Вася", age: 25 };
-        let petya = { name: "Петя", age: 30 };
-        let masha = { name: "Маша", age: 28 };
+      let vasya = { name: "Вася", age: 25 };
+      let petya = { name: "Петя", age: 30 };
+      let masha = { name: "Маша", age: 28 };
 
-        let users = [vasya, petya, masha];
+      let users = [vasya, petya, masha];
 
-        sortByAge(users);
+      sortByAge(users);
 
-        wConsoleLog(users); 
+      wConsoleLog(users);
     </script>
-</body>
-
+  </body>
 </html>

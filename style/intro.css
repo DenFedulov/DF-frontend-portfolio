@@ -1,14 +1,14 @@
 .intro {
-    font-size: 1.5em;
-    padding: 20px;
+  font-size: 1.5em;
+  padding: 20px;
 }
 
 .intro h1 {
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
 }
 
 .intro ul {
-    text-align: left;
+  text-align: left;
 }

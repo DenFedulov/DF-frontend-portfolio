@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/style/main_style.css">
-    <link rel="stylesheet" type="text/css" href="/style/header.css">
-    <link rel="stylesheet" type="text/css" href="/style/code.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/style/main_style.css" />
+    <link rel="stylesheet" type="text/css" href="/style/header.css" />
+    <link rel="stylesheet" type="text/css" href="/style/code.css" />
     <title>to replace</title>
     <script src="/scripts/source_code_replacer.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
-        'use strict';
+      "use strict";
 
-        function aclean(arr) {
-            let clean = new Map();
+      function aclean(arr) {
+        let clean = new Map();
 
-            for (let i = arr.length - 1; i >= 0; i--) {
-                let mod = arr[i].toLowerCase().split('').sort().join('');
-                clean.set(mod, arr[i]);
-            }
-
-            return Array.from(clean.values());
+        for (let i = arr.length - 1; i >= 0; i--) {
+          let mod = arr[i].toLowerCase().split("").sort().join("");
+          clean.set(mod, arr[i]);
         }
 
-        let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+        return Array.from(clean.values());
+      }
 
-        wConsoleLog(aclean(arr));
+      let arr = [
+        "nap",
+        "teachers",
+        "cheaters",
+        "PAN",
+        "ear",
+        "era",
+        "hectares",
+      ];
+
+      wConsoleLog(aclean(arr));
     </script>
-</body>
-
+  </body>
 </html>

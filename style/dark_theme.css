@@ -1,28 +1,28 @@
 .page {
-    background-color: #3d3d3d;
-    color: #fff;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: #3d3d3d;
+  color: #fff;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .page h1 {
-    text-align: center;
-    font-size: 30px;
+  text-align: center;
+  font-size: 30px;
 }
 
 .page h2 {
-    text-align: left;
-    margin-left: 15px;
-    font-size: 25px;
+  text-align: left;
+  margin-left: 15px;
+  font-size: 25px;
 }
 
 .page h3 {
-    margin: 5px;
-    font-size: 20px;
+  margin: 5px;
+  font-size: 20px;
 }
 
 .page .tag {
-    margin-top: 5px;
-    margin-bottom: 20px;
-    background-color: #555555;
-    padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  background-color: #555555;
+  padding: 10px;
 }

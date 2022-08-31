@@ -1,54 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Templates</title>
-    <link rel="stylesheet" type="text/css" href="/style/main_style.css">
-    <link rel="stylesheet" type="text/css" href="/style/header.css">
-    <link rel="stylesheet" type="text/css" href="/style/code.css">
+    <link rel="stylesheet" type="text/css" href="/style/main_style.css" />
+    <link rel="stylesheet" type="text/css" href="/style/header.css" />
+    <link rel="stylesheet" type="text/css" href="/style/code.css" />
     <style>
-        #text {
-            padding: 10px;
-        }
+      #text {
+        padding: 10px;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="homeheader">
-        <ul>
-            <li><a href="/" target="_parent">Home</a></li>
-        </ul>
+      <ul>
+        <li><a href="/" target="_parent">Home</a></li>
+      </ul>
     </div>
-    Frequent special characters:<br>
-    &lt; = &amp;lt;<br>
-    &gt; = &amp;gt;<br>
-    &quot; = &amp;quot;<br>
-    & = &amp;amp;<br>
+    Frequent special characters:<br />
+    &lt; = &amp;lt;<br />
+    &gt; = &amp;gt;<br />
+    &quot; = &amp;quot;<br />
+    & = &amp;amp;<br />
     <div id="text">
-        <div class="html_template">Style links:
-            <link rel="stylesheet" type="text/css" href="/style/main_style.css">
-            <link rel="stylesheet" type="text/css" href="/style/header.css">
-            <link rel="stylesheet" type="text/css" href="/style/code.css">
-            <link rel="stylesheet" type="text/css" href="/style/links_style.css">
-            <link rel="stylesheet" type="text/css" href="/style/animations.css">
+      <div class="html_template">
+        Style links:
+        <link rel="stylesheet" type="text/css" href="/style/main_style.css" />
+        <link rel="stylesheet" type="text/css" href="/style/header.css" />
+        <link rel="stylesheet" type="text/css" href="/style/code.css" />
+        <link rel="stylesheet" type="text/css" href="/style/links_style.css" />
+        <link rel="stylesheet" type="text/css" href="/style/animations.css" />
 
-            HTML template:
+        HTML template:
 
-            <!-- <script src="/scripts/source_code_replacer.js"></script>
+        <!-- <script src="/scripts/source_code_replacer.js"></script>
             <script>
                 replaceCodeSection("path", "css_code");
                 replaceCodeSection("path", "js_code");
             </script> -->
-        </div>
-
+      </div>
     </div>
     <script>
-        const html_template = document.querySelector('.html_template');
-        html_template.innerText = html_template.innerHTML;
+      const html_template = document.querySelector(".html_template");
+      html_template.innerText = html_template.innerHTML;
     </script>
-</body>
-
+  </body>
 </html>

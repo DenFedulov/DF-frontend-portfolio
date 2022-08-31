@@ -1,40 +1,42 @@
-.parent{
-    background-color: gray;
-    color: black;
-    padding: 5px;
-    height: 500px;
+.parent {
+  background-color: gray;
+  color: black;
+  padding: 5px;
+  height: 500px;
 }
 
-.child1{
-    background-color: red;
-    position: relative;
-    left: 15px;
-    right: 2px;
-    top: 4px;
-    bottom: 5px;
+.child1 {
+  background-color: red;
+  position: relative;
+  left: 15px;
+  right: 2px;
+  top: 4px;
+  bottom: 5px;
 }
 
-.child2{
-    background-color: green;
-    position: fixed;
-    left: 50px;
+.child2 {
+  background-color: green;
+  position: fixed;
+  left: 50px;
 }
 
-.child3{
-    background-color: blue;
-    position: sticky;
-    top: 0;
-    
+.child3 {
+  background-color: blue;
+  position: sticky;
+  top: 0;
 }
 
-.child4{
-    background-color: purple;
-    position: absolute;
-    top: 200px;
-    left: 50px;
+.child4 {
+  background-color: purple;
+  position: absolute;
+  top: 200px;
+  left: 50px;
 }
 
-.child1, .child2, .child3, .child4 {
-    margin: 2px;
-    color: white;
+.child1,
+.child2,
+.child3,
+.child4 {
+  margin: 2px;
+  color: white;
 }

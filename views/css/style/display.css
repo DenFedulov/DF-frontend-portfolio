@@ -1,23 +1,23 @@
-#div-1{
-    display: block; /* default */
-    background-color: brown;
+#div-1 {
+  display: block; /* default */
+  background-color: brown;
 }
 
-#span-1{
-    display: inline;
-    background-color: cyan;
-    /* height: ; width: ; don't work with inline*/
+#span-1 {
+  display: inline;
+  background-color: cyan;
+  /* height: ; width: ; don't work with inline*/
 }
 
-#span-2{
-    display: inline-block;
-    background-color: green;
-    height: 40px;
-    width: 200px;
-    /* inline-block is default for images */
+#span-2 {
+  display: inline-block;
+  background-color: green;
+  height: 40px;
+  width: 200px;
+  /* inline-block is default for images */
 }
 
-#div-2{
-    display: none;
-    background-color: indianred;
+#div-2 {
+  display: none;
+  background-color: indianred;
 }
