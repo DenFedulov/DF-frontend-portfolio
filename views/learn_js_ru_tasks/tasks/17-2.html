@@ -1,41 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/style/main_style.css">
-    <link rel="stylesheet" type="text/css" href="/style/header.css">
-    <link rel="stylesheet" type="text/css" href="/style/code.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/style/main_style.css" />
+    <link rel="stylesheet" type="text/css" href="/style/header.css" />
+    <link rel="stylesheet" type="text/css" href="/style/code.css" />
     <title>to replace</title>
     <script src="/scripts/source_code_replacer.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
-        'use strict';
-        function Calculator() {
-            this.read = () => {
-                this.a = +prompt('первое число', '2');
-                this.b = +prompt('второе число', '3');
-            };
+      "use strict";
+      function Calculator() {
+        this.read = () => {
+          this.a = +prompt("первое число", "2");
+          this.b = +prompt("второе число", "3");
+        };
 
-            this.sum = () => {
-                return this.a + this.b;
-            };
+        this.sum = () => {
+          return this.a + this.b;
+        };
 
-            this.mul = () => {
-                return this.a * this.b;
-            };
-        }
+        this.mul = () => {
+          return this.a * this.b;
+        };
+      }
 
-        let calculator = new Calculator();
-        calculator.read();
+      let calculator = new Calculator();
+      calculator.read();
 
-        wConsoleLog("Sum=" + calculator.sum());
-        wConsoleLog("Mul=" + calculator.mul());
+      wConsoleLog("Sum=" + calculator.sum());
+      wConsoleLog("Mul=" + calculator.mul());
     </script>
-</body>
-
+  </body>
 </html>

@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/style/main_style.css">
-    <link rel="stylesheet" type="text/css" href="/style/header.css">
-    <link rel="stylesheet" type="text/css" href="/style/code.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/style/main_style.css" />
+    <link rel="stylesheet" type="text/css" href="/style/header.css" />
+    <link rel="stylesheet" type="text/css" href="/style/code.css" />
     <title>to replace</title>
     <script src="/scripts/source_code_replacer.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
-        'use strict';
+      "use strict";
 
-        function camelize(str) {
-            return str.split('-').map((value, i) => {
-                if (i > 0) {
-                    return value.charAt(0).toUpperCase() + value.slice(1);
-                }
-                return value;
-            }).join('');
-        }
+      function camelize(str) {
+        return str
+          .split("-")
+          .map((value, i) => {
+            if (i > 0) {
+              return value.charAt(0).toUpperCase() + value.slice(1);
+            }
+            return value;
+          })
+          .join("");
+      }
 
-        wConsoleLog(camelize('background-color'));
-        wConsoleLog(camelize('list-style-image'));
-        wConsoleLog(camelize('-webkit-transition'));
+      wConsoleLog(camelize("background-color"));
+      wConsoleLog(camelize("list-style-image"));
+      wConsoleLog(camelize("-webkit-transition"));
     </script>
-</body>
-
+  </body>
 </html>

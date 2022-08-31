@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/style/main_style.css">
-    <link rel="stylesheet" type="text/css" href="/style/header.css">
-    <link rel="stylesheet" type="text/css" href="/style/code.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/style/main_style.css" />
+    <link rel="stylesheet" type="text/css" href="/style/header.css" />
+    <link rel="stylesheet" type="text/css" href="/style/code.css" />
     <title>to replace</title>
     <script src="/scripts/source_code_replacer.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
-        "use strict";
-        let styles = ['Джаз', 'Блюз'];
-        wConsoleLog(styles);
+      "use strict";
+      let styles = ["Джаз", "Блюз"];
+      wConsoleLog(styles);
 
-        styles.push('Рок-н-ролл')
-        wConsoleLog(styles);
+      styles.push("Рок-н-ролл");
+      wConsoleLog(styles);
 
-        styles[Math.floor(styles.length - 1 / 2)] = 'Классика';
-        wConsoleLog(styles);
+      styles[Math.floor(styles.length - 1 / 2)] = "Классика";
+      wConsoleLog(styles);
 
-        wConsoleLog(styles.shift());
-        wConsoleLog(styles);
+      wConsoleLog(styles.shift());
+      wConsoleLog(styles);
 
-        styles.unshift('Рэп', 'Регги');
-        wConsoleLog(styles);
+      styles.unshift("Рэп", "Регги");
+      wConsoleLog(styles);
     </script>
-</body>
-
+  </body>
 </html>

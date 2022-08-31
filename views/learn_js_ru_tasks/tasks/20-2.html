@@ -1,36 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/style/main_style.css">
-    <link rel="stylesheet" type="text/css" href="/style/header.css">
-    <link rel="stylesheet" type="text/css" href="/style/code.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/style/main_style.css" />
+    <link rel="stylesheet" type="text/css" href="/style/header.css" />
+    <link rel="stylesheet" type="text/css" href="/style/code.css" />
     <title>to replace</title>
     <script src="/scripts/source_code_replacer.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
-        "use strict";
-        function checkSpam(str) {
+      "use strict";
+      function checkSpam(str) {
+        let badWords = ["viagra", "xxx"];
+        let lowStr = str.toLowerCase();
 
-            let badWords = ['viagra', 'xxx'];
-            let lowStr = str.toLowerCase();
-
-            for (const word of badWords) {
-                if (lowStr.indexOf(word) != -1) return true;
-            }
-
-            return false;
+        for (const word of badWords) {
+          if (lowStr.indexOf(word) != -1) return true;
         }
 
-        wConsoleLog(checkSpam("buy ViAgRA now"));
-        wConsoleLog(checkSpam("free xxxxx"));
-        wConsoleLog(checkSpam("innocent rabbit"));
-    </script>
-</body>
+        return false;
+      }
 
+      wConsoleLog(checkSpam("buy ViAgRA now"));
+      wConsoleLog(checkSpam("free xxxxx"));
+      wConsoleLog(checkSpam("innocent rabbit"));
+    </script>
+  </body>
 </html>

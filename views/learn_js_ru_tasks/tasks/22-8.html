@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/style/main_style.css">
-    <link rel="stylesheet" type="text/css" href="/style/header.css">
-    <link rel="stylesheet" type="text/css" href="/style/code.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/style/main_style.css" />
+    <link rel="stylesheet" type="text/css" href="/style/header.css" />
+    <link rel="stylesheet" type="text/css" href="/style/code.css" />
     <title>to replace</title>
     <script src="/scripts/source_code_replacer.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
-        'use strict';
+      "use strict";
 
-        let vasya = { name: "Вася", surname: "Пупкин", id: 1 };
-        let petya = { name: "Петя", surname: "Иванов", id: 2 };
-        let masha = { name: "Маша", surname: "Петрова", id: 3 };
+      let vasya = { name: "Вася", surname: "Пупкин", id: 1 };
+      let petya = { name: "Петя", surname: "Иванов", id: 2 };
+      let masha = { name: "Маша", surname: "Петрова", id: 3 };
 
-        let users = [vasya, petya, masha];
+      let users = [vasya, petya, masha];
 
-        let names = users.map((value) => {
-            return { fullName: `${value.name} ${value.surname}`, id: value.id };
-        })
+      let names = users.map((value) => {
+        return { fullName: `${value.name} ${value.surname}`, id: value.id };
+      });
 
-        wConsoleLog(names); 
+      wConsoleLog(names);
     </script>
-</body>
-
+  </body>
 </html>

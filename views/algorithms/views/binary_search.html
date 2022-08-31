@@ -1,52 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/style/main_style.css">
-    <link rel="stylesheet" type="text/css" href="/style/header.css">
-    <link rel="stylesheet" type="text/css" href="/style/code.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/style/main_style.css" />
+    <link rel="stylesheet" type="text/css" href="/style/header.css" />
+    <link rel="stylesheet" type="text/css" href="/style/code.css" />
     <title>Binary search</title>
 
     <script src="/scripts/source_code_replacer.js"></script>
     <script>
-        replaceCodeSection("/views/algorithms/scripts/binary_search.js", "js_code");
-        replaceCodeSection("/views/algorithms/scripts/array_generators.js", "js_code");
+      replaceCodeSection(
+        "/views/algorithms/scripts/binary_search.js",
+        "js_code"
+      );
+      replaceCodeSection(
+        "/views/algorithms/scripts/array_generators.js",
+        "js_code"
+      );
     </script>
     <script src="/views/algorithms/scripts/array_generators.js"></script>
-</head>
+  </head>
 
-<body>
-    <p>Given a sorted array of n integers and a target value, determine if the target exists in the array in
-        logarithmic time using the binary search algorithm. If target exists in the array, print the index of it.
+  <body>
+    <p>
+      Given a sorted array of n integers and a target value, determine if the
+      target exists in the array in logarithmic time using the binary search
+      algorithm. If target exists in the array, print the index of it.
     </p>
     <p>Example:</p>
     <p>
-        Input: <br>
-        <br>
-        nums[] = [2, 3, 5, 7, 9]<br>
-        target = 7<br>
-        <br>
-        Output: Element found at index 3<br>
-        <br>
-        <br>
-        Input:<br>
-        <br>
-        nums[] = [1, 4, 5, 8, 9]<br>
-        target = 2<br>
-        <br>
-        Output: Element not found<br>
+      Input: <br />
+      <br />
+      nums[] = [2, 3, 5, 7, 9]<br />
+      target = 7<br />
+      <br />
+      Output: Element found at index 3<br />
+      <br />
+      <br />
+      Input:<br />
+      <br />
+      nums[] = [1, 4, 5, 8, 9]<br />
+      target = 2<br />
+      <br />
+      Output: Element not found<br />
     </p>
     <script src="/views/algorithms/scripts/binary_search.js"></script>
     <script>
-        let arr = genSortedRandomNoDupArray(10, 0, 15);
-        let target = randomInt(0, 15);
-        wConsoleLog(arr);
-        wConsoleLog('target =>', target);
-        wConsoleLog(findValue(arr, target));
+      let arr = genSortedRandomNoDupArray(10, 0, 15);
+      let target = randomInt(0, 15);
+      wConsoleLog(arr);
+      wConsoleLog("target =>", target);
+      wConsoleLog(findValue(arr, target));
     </script>
-</body>
-
+  </body>
 </html>

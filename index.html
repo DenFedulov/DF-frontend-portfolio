@@ -1,66 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/style/main_style.css">
-    <link rel="stylesheet" type="text/css" href="/style/header.css">
-    <link rel="stylesheet" type="text/css" href="/style/animations.css">
-    <link rel="stylesheet" type="text/css" href="/style/links_style.css">
-    <link rel="stylesheet" type="text/css" href="/style/home.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/style/main_style.css" />
+    <link rel="stylesheet" type="text/css" href="/style/header.css" />
+    <link rel="stylesheet" type="text/css" href="/style/animations.css" />
+    <link rel="stylesheet" type="text/css" href="/style/links_style.css" />
+    <link rel="stylesheet" type="text/css" href="/style/home.css" />
     <title>Denis Fedulov portfolio website</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="wrapper">
-        <div class="header">
-            <a class="img_button" href="/views/intro/" onclick="return load('app','/views/intro/');"><img
-                    src="media/approved_icon.png" alt="Home" title="Home"></a>
-            <a class="img_button" href="https://github.com/DenFedulov" target="_blank"><img src="media/github_icon.png"
-                    alt="GitHub" title="GitHub"></a>
-            <ul class="themes no_select">
-                <li onclick="load('sidebar','/views/html/');"><a>HTML</a></li>
-                <li onclick="load('sidebar','/views/css/');"><a>CSS</a></li>
-                <li>JavaScript
-                    <ul class="combo off">
-                        <li onclick="load('sidebar','/views/js/');"><a>JavaScript </a>
-                        </li>
-                        <li onclick="load('sidebar','/views/learn_js_ru_tasks/completed_tasks.html');"><a> Completed
-                                learn.javascript.ru
-                                tasks (WIP)</a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li onclick="load('sidebar','/views/algorithms/');"><a>Algorithms</a></li>
-                <li onclick="load('sidebar','/views/internet/');"><a>Internet</a></li>
-                <li onclick="load('sidebar','/views/misc/');"><a>Misc.</a></li>
+      <div class="header">
+        <a
+          class="img_button"
+          href="/views/intro/"
+          onclick="return load('app','/views/intro/');"
+          ><img src="media/approved_icon.png" alt="Home" title="Home"
+        /></a>
+        <a
+          class="img_button"
+          href="https://github.com/DenFedulov"
+          target="_blank"
+          ><img src="media/github_icon.png" alt="GitHub" title="GitHub"
+        /></a>
+        <ul class="themes no_select">
+          <li onclick="load('sidebar','/views/html/');"><a>HTML</a></li>
+          <li onclick="load('sidebar','/views/css/');"><a>CSS</a></li>
+          <li>
+            JavaScript
+            <ul class="combo off">
+              <li onclick="load('sidebar','/views/js/');">
+                <a>JavaScript </a>
+              </li>
+              <li
+                onclick="load('sidebar','/views/learn_js_ru_tasks/completed_tasks.html');"
+              >
+                <a> Completed learn.javascript.ru tasks (WIP)</a>
+              </li>
             </ul>
+          </li>
 
+          <li onclick="load('sidebar','/views/algorithms/');">
+            <a>Algorithms</a>
+          </li>
+          <li onclick="load('sidebar','/views/internet/');"><a>Internet</a></li>
+          <li onclick="load('sidebar','/views/misc/');"><a>Misc.</a></li>
+        </ul>
+      </div>
+      <div class="bottom_wrapper">
+        <img
+          class="header_toggle"
+          src="/media/bookmark.png"
+          alt="Toggle header"
+          title="Toggle header"
+          onclick="homePageFormatter.headerToggle();"
+        />
 
+        <img
+          class="lock_scroll on"
+          src="/media/unlock.png"
+          alt="Unlock/Lock header on scroll"
+          title="Unlock/Lock header on scroll"
+          onclick="homePageFormatter.lockScrollToggle();"
+        />
+        <div class="sidebar">
+          <img
+            onclick="homePageFormatter.toggleSidebar();"
+            src="media/sidebar_toggle_button_left.png"
+            class="sidebar_toggle_button"
+            alt="Toggle sidebar"
+            title="Toggle sidebar"
+          />
+          <iframe src="/views/html/" class="sidebar_frame"></iframe>
         </div>
-        <div class="bottom_wrapper">
-            <img class="header_toggle" src="/media/bookmark.png" alt="Toggle header" title="Toggle header"
-                onclick="homePageFormatter.headerToggle();">
 
-            <img class="lock_scroll on" src="/media/unlock.png" alt="Unlock/Lock header on scroll"
-                title="Unlock/Lock header on scroll" onclick="homePageFormatter.lockScrollToggle();">
-            <div class="sidebar">
-                <img onclick="homePageFormatter.toggleSidebar();" src="media/sidebar_toggle_button_left.png"
-                    class="sidebar_toggle_button" alt="Toggle sidebar" title="Toggle sidebar">
-                <iframe src="/views/html/" class="sidebar_frame"></iframe>
-            </div>
-
-            <div class="app">
-                <iframe src="/views/intro/" class="app_frame"></iframe>
-            </div>
+        <div class="app">
+          <iframe src="/views/intro/" class="app_frame"></iframe>
         </div>
+      </div>
     </div>
 
     <script src="/scripts/app.js"></script>
     <script src="/scripts/home_page_formatter.js"></script>
-</body>
-
+  </body>
 </html>

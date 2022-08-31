@@ -1,52 +1,51 @@
 .page {
-    text-align: center;
-    background-color: rgb(161, 161, 161);
-
+  text-align: center;
+  background-color: rgb(161, 161, 161);
 }
 
 em {
-    color: green;
-    font-style: normal;
+  color: green;
+  font-style: normal;
 }
 
 .heading {
-    text-align: center;
+  text-align: center;
 }
 
 #banner {
-    max-height: 100px;
-    overflow: hidden;
+  max-height: 100px;
+  overflow: hidden;
 }
 
 #banner img {
-    width: 80%;
-    height: 200px;
+  width: 80%;
+  height: 200px;
 }
 
 .container {
-    width: 90%;
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    /* same as above
+  width: 90%;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  /* same as above
     font: bold 20px "Comic Sans MS", cursive, sans-serif;
     */
-    line-height: 1.5em;
-    margin: auto;
+  line-height: 1.5em;
+  margin: auto;
 }
 
 .form1 {
-    color: white;
-    background-color: black;
-    border: 5px blue solid;
-    /*same as above
+  color: white;
+  background-color: black;
+  border: 5px blue solid;
+  /*same as above
     border-right: 5px blue solid;
     border-left: 5px blue solid;
     border-top: 5px blue solid;
     border-bottom: 5px blue solid;
     */
-    border-left-style: dashed;
-    border-top-width: 2px;
-    padding: 10px;
-    margin: 0;
+  border-left-style: dashed;
+  border-top-width: 2px;
+  padding: 10px;
+  margin: 0;
 }

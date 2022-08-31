@@ -1,39 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/style/main_style.css">
-    <link rel="stylesheet" type="text/css" href="/style/header.css">
-    <link rel="stylesheet" type="text/css" href="/style/code.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/style/main_style.css" />
+    <link rel="stylesheet" type="text/css" href="/style/header.css" />
+    <link rel="stylesheet" type="text/css" href="/style/code.css" />
     <title>to replace</title>
     <script src="/scripts/source_code_replacer.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
-        "use strict";
+      "use strict";
 
-        function sumInput() {
-            let num = [];
-            while (true) {
-                let input = prompt('введите число', 0);
-                if (input == '' || input == null || !isFinite(input)) break;
-                num.push(+input);
-            }
-
-            let sum = 0;
-
-            for (let i = 0; i < num.length; i++) {
-                sum += num[i];
-            }
-            return sum;
+      function sumInput() {
+        let num = [];
+        while (true) {
+          let input = prompt("введите число", 0);
+          if (input == "" || input == null || !isFinite(input)) break;
+          num.push(+input);
         }
 
-        wConsoleLog(sumInput());
-    </script>
-</body>
+        let sum = 0;
 
+        for (let i = 0; i < num.length; i++) {
+          sum += num[i];
+        }
+        return sum;
+      }
+
+      wConsoleLog(sumInput());
+    </script>
+  </body>
 </html>

@@ -1,61 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/style/main_style.css">
-    <link rel="stylesheet" type="text/css" href="/style/header.css">
-    <link rel="stylesheet" type="text/css" href="/style/code.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/style/main_style.css" />
+    <link rel="stylesheet" type="text/css" href="/style/header.css" />
+    <link rel="stylesheet" type="text/css" href="/style/code.css" />
     <title>to replace</title>
     <script src="/scripts/source_code_replacer.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
-        'use strict';
-        let calculator = {
-            readNumbers: [],
+      "use strict";
+      let calculator = {
+        readNumbers: [],
 
-            read(a, b) {
-                if (a && b) {
-                    this.readNumbers.push(a);
-                    this.readNumbers.push(b);
-                }
-            },
+        read(a, b) {
+          if (a && b) {
+            this.readNumbers.push(a);
+            this.readNumbers.push(b);
+          }
+        },
 
-            sum() {
-                let sum = 0;
+        sum() {
+          let sum = 0;
 
-                for (const index in this.readNumbers) {
-                    if (Object.hasOwnProperty.call(this.readNumbers, index)) {
-                        const element = this.readNumbers[index];
-                        sum += element;
-                    }
-                }
-                return sum;
-            },
-
-            mul() {
-                if (this.readNumbers.length <= 0) return 0;
-
-                let mul = 1;
-
-                for (const index in this.readNumbers) {
-                    if (Object.hasOwnProperty.call(this.readNumbers, index)) {
-                        const element = this.readNumbers[index];
-                        mul *= element;
-                    }
-                }
-                return mul;
+          for (const index in this.readNumbers) {
+            if (Object.hasOwnProperty.call(this.readNumbers, index)) {
+              const element = this.readNumbers[index];
+              sum += element;
             }
-        };
+          }
+          return sum;
+        },
 
-        calculator.read(3, 5);
-        wConsoleLog(calculator.sum());
-        wConsoleLog(calculator.mul());
+        mul() {
+          if (this.readNumbers.length <= 0) return 0;
+
+          let mul = 1;
+
+          for (const index in this.readNumbers) {
+            if (Object.hasOwnProperty.call(this.readNumbers, index)) {
+              const element = this.readNumbers[index];
+              mul *= element;
+            }
+          }
+          return mul;
+        },
+      };
+
+      calculator.read(3, 5);
+      wConsoleLog(calculator.sum());
+      wConsoleLog(calculator.mul());
     </script>
-</body>
-
+  </body>
 </html>
